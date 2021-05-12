@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; /* 10px */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #3c3b37;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.box {
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+}
+
+.box__item > * {
+  margin-bottom: 1.5rem;
+}
+
+.box__item {
+  text-align: center;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  max-width: 35rem;
+  padding: 2rem;
+  transition: 0.5s;
+}
+
+.box__item:hover {
+  background-color: #232b35;
+  color: #fff;
+  border-radius: 1rem;
+}
+
+.box__pic {
+  background: url("https://picsum.photos/200");
+  width: 12rem;
+  height: 12rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
+
+.box__title {
+  font-size: 2.5rem;
+  padding-top: 1rem;
+}
+
+.box__text {
+  line-height: 1.5;
+}
+
+.box__link {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 0.4rem;
+  font-weight: 500;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.5rem;
+  color: #3c3b37;
+  transition: .5s;
+}
