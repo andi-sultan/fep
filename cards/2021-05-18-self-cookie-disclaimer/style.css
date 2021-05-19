@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; /* 10px */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #3c3b37;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.top-navbar {
+  text-align: center;
+  background-color: lightgreen;
+  height: 3rem;
+  line-height: 3rem;
+}
+.top-navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+.top-navbar a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 3rem);
+  justify-content: center;
+  background-color: #f5f5f5;
+}
+
+.card{
+  width: 35rem;
+  background-color: #fff;
+  border-radius: 2rem;
+  padding: 2rem;
+  position: relative;
+  text-align: center;
+}
+
+.close-btn{
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  padding: .5rem;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  color: #5e5d57;
+  font-size: 2rem;
+  background-color: #f7f7f7;
+  cursor: pointer;
+}
+
+img.cookie-pic{
+  width: 8rem;
+  height: 8rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-title{
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.card-text a{
+  text-decoration: underline;
+}
