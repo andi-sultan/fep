@@ -14,7 +14,10 @@
 :root {
   --base-background: #f8f8f8;
   --base-background-dark: #181818;
-  --base-color: #3c3b37;
+  --base-color-primary: #3c3b37;
+  --base-color-secondary: #606060;
+  --base-color-dark-primary: #fff;
+  --base-color-dark-secondary: #aaa;
 }
 
 html {
@@ -23,7 +26,7 @@ html {
 
 body {
   font-family: "Roboto", sans-serif;
-  color: var(--base-color);
+  color: var(--base-color-primary);
   box-sizing: border-box;
   font-size: 1.6rem;
   background-color: var(--base-background);
@@ -64,7 +67,7 @@ a {
 }
 .card-dark {
   background-color: var(--base-background-dark);
-  color: #fff;
+  color: var(--base-color-dark-primary);
 }
 
 .card-item {
@@ -74,17 +77,78 @@ a {
   flex-direction: column;
 }
 
+.card-thumbnail {
+  position: relative;
+}
+
 .card-thumbnail-img {
   width: 100%;
 }
 
+.card-add {
+  visibility: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  color: #fff;
+  cursor: pointer;
+  height: 3.2rem;
+}
+
+.card-thumbnail:hover .card-add {
+  visibility: visible;
+}
+.card-add-text {
+  display: flex;
+  align-items: center;
+  width: 0;
+  border-radius: 0.4rem 0 0 0.4rem;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: width 0.2s ease-out, padding 0.2s ease-out;
+}
+.card-add:hover .card-add-text {
+  background-color: var(--base-background-dark);
+  transition: width 0.2s ease-out 0.5s, padding 0s ease-out 0.5s;
+  width: 100%;
+  padding-left: 0.6rem;
+}
+.card-add-btn {
+  border-radius: 0.4rem;
+  font-size: 1.6rem;
+  flex: 0 0 3.2rem;
+  width: 3.2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.card-add:hover .card-add-btn {
+  transition: 0s 0.5s;
+  border-radius: 0 0.4rem 0.4rem 0;
+  background-color: var(--base-background-dark);
+}
+
+.card-add.card-add-to-playlist {
+  top: 3.9rem;
+}
+
 .card-title {
   display: flex;
+  margin-top: 1rem;
 }
 
 .card-profile {
   flex: 1;
-  margin-top: 0.7rem;
   margin-right: 0.7rem;
 }
 
@@ -95,11 +159,27 @@ a {
 }
 
 .card-detail {
-  margin-top: 1rem;
   flex: 5;
   display: flex;
   flex-direction: column;
   font-size: 1.4rem;
+}
+
+.card-btn {
+  visibility: hidden;
+  margin: 0 0.35rem 0;
+  padding: 0 0.35rem 0;
+  cursor: pointer;
+  color: hsl(49, 4%, 55%);
+}
+.card-btn:hover {
+  color: hsl(43, 5%, 40%);
+}
+.card-dark .card-btn:hover {
+  color: #fff;
+}
+.card-title:hover .card-btn {
+  visibility: visible;
 }
 
 .card-vid-title {
@@ -109,10 +189,22 @@ a {
 .card-channel {
   margin-top: 0.6rem;
 }
+.card-channel,
+.card-view {
+  color: var(--base-color-secondary);
+}
+.card-dark .card-channel,
+.card-dark .card-view {
+  color: var(--base-color-dark-secondary);
+}
 
 @media (max-width: 800px) {
   .card-profile-img {
     max-width: 5rem;
+  }
+  .card-btn {
+    visibility: visible;
+    padding: 0 1rem 0;
   }
 }
 @media (max-width: 600px) {
