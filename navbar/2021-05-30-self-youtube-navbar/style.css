@@ -139,6 +139,7 @@ a {
 
 .nav-logo {
   margin-left: 0.5rem;
+  margin-right: 3.5rem;
 }
 
 .nav-img {
@@ -252,4 +253,16 @@ a {
 
 .mb-1 {
   margin-bottom: 1rem;
+}
+
+.show-on-mobile {
+  display: none;
+}
+@media (max-width: 700px) {
+  .show-on-mobile {
+    display: revert;
+  }
+  .hide-on-mobile {
+    display: none;
+  }
 }
