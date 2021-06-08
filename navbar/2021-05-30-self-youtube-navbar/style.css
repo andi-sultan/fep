@@ -13,10 +13,11 @@
 
 :root {
   --base-background: #efefef;
+  --base-background-dark: #202020;
   --base-color: #3c3b37;
   --base-color-light: #827f76;
   --border: #ccc;
-  --border-dark: #474747;
+  --border-dark: #303030;
 }
 
 html {
@@ -62,14 +63,18 @@ a {
   width: 100%;
 }
 
-.nav-mobile {
+.nav-mobile,
+.nav-desktop-small {
   max-width: 800px;
   margin: 0 auto;
+}
+
+.nav-mobile {
   box-shadow: 0 0.4rem 0.2rem -0.2rem rgb(0, 0, 0, 0.2);
 }
 
 .nav-dark {
-  background-color: var(--base-color);
+  background-color: var(--base-background-dark);
   color: #fff;
 }
 
@@ -92,7 +97,8 @@ a {
   flex: 2;
 }
 
-.nav-mobile .nav-center {
+.nav-mobile .nav-center,
+.nav-desktop-small .nav-center {
   flex: 10;
   padding-right: 0;
 }
@@ -157,35 +163,36 @@ a {
 }
 
 .search {
-  height: 3.2rem;
+  height: 3.4rem;
   flex: 1;
 }
-.nav-mobile .search {
+.search-mobile {
   height: 4rem;
 }
 .search-text {
   border: 0.1rem solid var(--border);
-  border-radius: 0.4rem 0 0 0.4rem;
+  border-radius: 0.3rem 0 0 0.3rem;
   height: 100%;
   width: 100%;
   padding: 0 1rem;
   color: inherit;
+  font-size: 1.6rem;
 }
 .search-dark .search-text {
   border: 0.1rem solid var(--border-dark);
-  background-color: #222;
+  background-color: #121212;
   color: #fff;
 }
-.nav-mobile .search-dark .search-text {
+.search-mobile.search-dark .search-text {
   border: 0;
   border-radius: 0;
-  border-bottom: 0.3rem solid var(--border);
+  border-bottom: 0.3rem solid #fff;
   background-color: transparent;
 }
-.nav-mobile .search-dark .search-text::placeholder {
+.search-mobile.search-dark .search-text::placeholder {
   color: #aaa;
 }
-.nav-mobile .search-text {
+.search-mobile .search-text {
   border: 0;
   border-radius: 0;
   border-bottom: 0.3rem solid var(--base-color);
@@ -197,7 +204,7 @@ a {
   border-bottom: 0.1rem solid var(--border);
   border-right: 0.1rem solid var(--border);
   border-top: 0.1rem solid var(--border);
-  border-radius: 0 0.4rem 0.4rem 0;
+  border-radius: 0 0.3rem 0.3rem 0;
   color: var(--base-color-light);
   cursor: pointer;
   display: flex;
@@ -206,13 +213,13 @@ a {
   justify-content: center;
   text-align: center;
   transition: 0.3s;
-  width: 6rem;
+  min-width: 7rem;
 }
 .search-dark .search-btn {
   border-bottom: 0.1rem solid var(--border-dark);
   border-right: 0.1rem solid var(--border-dark);
   border-top: 0.1rem solid var(--border-dark);
-  background-color: var(--base-color);
+  background-color: #313131;
 }
 .search-btn:hover {
   background-color: #f2f2f2;
