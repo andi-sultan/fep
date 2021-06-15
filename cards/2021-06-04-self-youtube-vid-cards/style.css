@@ -157,9 +157,52 @@ a {
   width: 3.2rem;
 }
 
+.card-playlist-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 60%;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-playlist-overlay-text {
+  margin-bottom: 1rem;
+}
+
+.card-playlist-full {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  cursor: pointer;
+}
+.card-item:hover .card-playlist-full {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-playlist-full-text {
+  margin-left: 1rem;
+  text-transform: uppercase;
+}
+
 .card-title {
   display: flex;
   margin-top: 1rem;
+}
+.card-title.card-title-playlist {
+  margin-top: 0rem;
 }
 
 .card-profile {
@@ -178,6 +221,12 @@ a {
   display: flex;
   flex-direction: column;
   font-size: 1.4rem;
+}
+
+.card-detail-playlist .card-vid-title,
+.card-detail-playlist .card-channel,
+.card-detail-playlist .card-view {
+  margin-top: 0.4rem;
 }
 
 .card-btn {
@@ -204,6 +253,10 @@ a {
 .card-channel {
   margin-top: 0.6rem;
 }
+.card-title .card-channel {
+  margin-top: 1rem;
+}
+
 .card-channel,
 .card-view {
   color: var(--base-color-secondary);
@@ -211,6 +264,27 @@ a {
 .card-dark .card-channel,
 .card-dark .card-view {
   color: var(--base-color-dark-secondary);
+}
+
+.card-view {
+  margin-top: 0.3rem;
+}
+
+.card-view-playlist {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--base-color-secondary);
+}
+.card-view-playlist:hover{
+  color: var(--base-color-primary);
+}
+.card-dark .card-view-playlist {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--base-color-dark-secondary);
+}
+.card-dark .card-view-playlist:hover{
+  color: var(--base-color-dark-primary);
 }
 
 @media (max-width: 800px) {
