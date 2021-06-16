@@ -83,6 +83,7 @@ a {
 
 .card-thumbnail-img {
   width: 100%;
+  height: 100%;
 }
 
 .card-add {
@@ -199,10 +200,7 @@ a {
 
 .card-title {
   display: flex;
-  margin-top: 1rem;
-}
-.card-title.card-title-playlist {
-  margin-top: 0rem;
+  margin-top: 0.7rem;
 }
 
 .card-profile {
@@ -223,10 +221,8 @@ a {
   font-size: 1.4rem;
 }
 
-.card-detail-playlist .card-vid-title,
-.card-detail-playlist .card-channel,
-.card-detail-playlist .card-view {
-  margin-top: 0.4rem;
+.card-detail > * {
+  margin-bottom: 0.4rem;
 }
 
 .card-btn {
@@ -248,13 +244,7 @@ a {
 
 .card-vid-title {
   font-weight: 700;
-}
-
-.card-channel {
-  margin-top: 0.6rem;
-}
-.card-title .card-channel {
-  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .card-channel,
@@ -266,16 +256,13 @@ a {
   color: var(--base-color-dark-secondary);
 }
 
-.card-view {
-  margin-top: 0.3rem;
-}
-
 .card-view-playlist {
   text-transform: uppercase;
   font-weight: 500;
   color: var(--base-color-secondary);
 }
-.card-view-playlist:hover{
+.card-view-playlist:hover,
+.card-channel:hover {
   color: var(--base-color-primary);
 }
 .card-dark .card-view-playlist {
@@ -283,8 +270,35 @@ a {
   font-weight: 500;
   color: var(--base-color-dark-secondary);
 }
-.card-dark .card-view-playlist:hover{
+.card-dark .card-view-playlist:hover,
+.card-dark .card-channel:hover {
   color: var(--base-color-dark-primary);
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  display: inline-block;
+  border-radius: 0.3rem;
+  max-width: 16rem;
+  padding: 1rem;
+  color: #fff;
+  top: -4rem;
+  left: 0;
+  font-size: 1.4rem;
+  background-color: rgba(100, 100, 100, 0.9);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }
 
 @media (max-width: 800px) {
