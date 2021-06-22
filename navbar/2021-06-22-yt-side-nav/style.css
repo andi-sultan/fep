@@ -73,7 +73,7 @@ a {
   height: calc(100vh - 3rem);
   overflow-y: auto;
   /* for firefox scrollbar */
-  scrollbar-width: auto;
+  scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb-bg) transparent;
 }
 .side-nav::-webkit-scrollbar {
@@ -124,27 +124,44 @@ a {
 
 .side-nav-icon {
   width: 2.4rem;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-right: 2.4rem;
   font-size: 1.8rem;
   text-align: center;
 }
 
-.side-nav-channel{
-  width: 2.4rem;
-  min-height: 2.4rem;
-  margin-right: 2.4rem;
-  display: flex;
-}
 .side-nav-channel-img{
   width: 2.4rem;
-  min-height: 2.4rem;
   margin-right: 2.4rem;
-  display: flex;
   border-radius: 50%;
+}
+
+.side-nav-item.active .side-nav-text{
+  font-weight: 500;
+}
+
+.side-nav-label{
+  padding: .7rem 2.8rem .7rem 2.4rem;
+  font-size: 1.4rem;
+}
+.side-nav-label-text{
+  margin-bottom: 1.5rem;
+}
+.side-nav-label-btn{
+  border: .1rem solid #3ea6ff;
+  background-color: transparent;
+  border-radius: .2rem;
+  text-transform: uppercase;
+  color: #3ea6ff;
+  padding: .6rem 1.2rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.side-nav-label-btn-icon{
+  margin-right: .7rem;
+  font-size: 2rem;
 }
 
 .side-nav-separator{
