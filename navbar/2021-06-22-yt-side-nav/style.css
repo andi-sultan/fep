@@ -92,7 +92,7 @@ a {
 }
 
 .side-nav-group {
-  padding-bottom: .7rem;
+  padding-bottom: 0.7rem;
 }
 
 .side-nav-item {
@@ -112,13 +112,13 @@ a {
   background-color: var(--base-background-active-click);
 }
 
-.side-nav-head{
+.side-nav-head {
   text-transform: uppercase;
   color: var(--base-color-secondary);
   font-weight: 500;
   margin-left: 2.4rem;
-  margin-bottom: .7rem;
-  padding-top: .7rem;
+  margin-bottom: 0.7rem;
+  padding-top: 0.7rem;
   font-size: 1.4rem;
 }
 
@@ -129,59 +129,59 @@ a {
   text-align: center;
 }
 
-.side-nav-channel-img{
+.side-nav-channel-img {
   width: 2.4rem;
   margin-right: 2.4rem;
   border-radius: 50%;
 }
 
-.side-nav-item.active .side-nav-text{
+.side-nav-item.active .side-nav-text {
   font-weight: 500;
 }
 
-.side-nav-label{
-  padding: .7rem 2.8rem .7rem 2.4rem;
+.side-nav-label {
+  padding: 0.7rem 2.8rem 0.7rem 2.4rem;
   font-size: 1.4rem;
 }
-.side-nav-label-text{
+.side-nav-label-text {
   margin-bottom: 1.5rem;
 }
-.side-nav-label-btn{
-  border: .1rem solid #3ea6ff;
+.side-nav-label-btn {
+  border: 0.1rem solid #3ea6ff;
   background-color: transparent;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
   text-transform: uppercase;
   color: #3ea6ff;
-  padding: .6rem 1.2rem;
+  padding: 0.6rem 1.2rem;
   font-weight: 500;
   font-size: 1.5rem;
   display: flex;
   align-items: center;
   cursor: pointer;
 }
-.side-nav-label-btn-icon{
-  margin-right: .7rem;
+.side-nav-label-btn-icon {
+  margin-right: 0.7rem;
   font-size: 2rem;
 }
 
-.side-nav-separator{
-  border-top: .1rem solid var(--separator-color);
-  margin-bottom: .7rem;
+.side-nav-separator {
+  border-top: 0.1rem solid var(--separator-color);
+  margin-bottom: 0.7rem;
 }
 
-.side-nav-footer{
-  padding: .7rem 2.4rem;
+.side-nav-footer {
+  padding: 0.7rem 2.4rem;
 }
-.side-nav-footer-group{
+.side-nav-footer-group {
   font-size: 1.3rem;
-  margin-bottom: .7rem;
+  margin-bottom: 0.7rem;
   line-height: 1.5;
 }
-.side-nav-footer-link{
+.side-nav-footer-link {
   font-weight: 500;
   color: var(--base-color-secondary);
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
-.side-nav-footer-group.copyright{
+.side-nav-footer-group.copyright {
   padding-top: 1rem;
 }
