@@ -14,18 +14,31 @@
 :root {
   --base-background: #f8f8f8;
   --base-background-secondary: #ececec;
-  --base-background-hover: #f2f2f2;
-  --base-background-active: #e6e6e6;
+
+  --base-background-hover: hsl(0, 0%, 95%);
+  --base-background-active: hsl(0, 0%, 90%);
   --base-background-active-click: hsl(0, 0%, 80%);
+
+  --base-background-hover-dark: hsl(0, 0%, 30%);
+  --base-background-active-dark: hsl(0, 0%, 22%);
+  --base-background-active-click-dark: hsl(0, 0%, 40%);
+
   --base-background-dark: #181818;
   --base-background-dark-secondary: #454545;
+
   --base-color-primary: #3c3b37;
   --base-color-secondary: #606060;
+
   --base-color-dark-primary: #fff;
   --base-color-dark-secondary: #aaa;
+
   --scrollbar-thumb-bg: #e3e3e3;
   --scrollbar-thumb-bg-hover: hsl(0, 0%, 70%);
   --separator-color: #e3e3e3;
+
+  --scrollbar-thumb-bg-dark: hsl(0, 0%, 40%);
+  --scrollbar-thumb-bg-hover-dark: hsl(0, 0%, 60%);
+  --separator-color-dark: #181818;
 }
 
 html {
@@ -60,10 +73,11 @@ a {
 }
 
 .container {
-  width: 100%;
+  display: flex;
 }
-.container-dark {
-  background-color: var(--base-background-dark);
+
+.ml-1 {
+  margin-left: 1rem;
 }
 
 .side-nav {
@@ -184,4 +198,48 @@ a {
 }
 .side-nav-footer-group.copyright {
   padding-top: 1rem;
+}
+
+/* dark mode */
+.side-nav-dark.side-nav {
+  /* for firefox scrollbar */
+  scrollbar-color: var(--scrollbar-thumb-bg-dark) transparent;
+}
+.side-nav-dark.side-nav::-webkit-scrollbar-track {
+  background: var(--base-background-dark);
+}
+.side-nav-dark.side-nav:hover::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-bg-dark);
+  border: 0.5rem solid var(--base-background-dark);
+  border-radius: 1rem;
+}
+.side-nav-dark.side-nav:hover::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-bg-hover-dark);
+}
+
+.side-nav-dark {
+  color: var(--base-color-dark-primary);
+  background-color: var(--base-background-dark);
+}
+
+.side-nav-dark .side-nav-item:hover {
+  background-color: var(--base-background-hover-dark);
+}
+.side-nav-dark .side-nav-item.active {
+  background-color: var(--base-background-active-dark);
+}
+.side-nav-dark .side-nav-item:hover.active {
+  background-color: var(--base-background-hover-dark);
+}
+.side-nav-dark .side-nav-item:active,
+.side-nav-dark .side-nav-item:active.active {
+  background-color: var(--base-background-active-click-dark);
+}
+
+.side-nav-dark .side-nav-head {
+  color: var(--base-color-dark-secondary);
+}
+
+.side-nav-dark .side-nav-separator {
+  border-color: var(--base-background-dark-secondary);
 }
