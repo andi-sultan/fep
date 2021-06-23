@@ -15,10 +15,10 @@
   --base-background: #f8f8f8;
   --base-background-secondary: #ececec;
 
-  --side-nav-item-hover: hsl(0, 0%, 90%);
-  --side-nav-item-active: hsl(0, 0%, 80%);
-  --side-nav-item-active-hover: hsl(0, 0%, 70%);
-  --side-nav-item-click: hsl(0, 0%, 60%);
+  --side-nav-item-hover: hsl(0, 0%, 95%);
+  --side-nav-item-active: hsl(0, 0%, 85%);
+  --side-nav-item-active-hover: hsl(0, 0%, 75%);
+  --side-nav-item-click: hsl(0, 0%, 65%);
 
   --side-nav-item-hover-dark: hsl(0, 0%, 30%);
   --side-nav-item-active-dark: hsl(0, 0%, 30%);
