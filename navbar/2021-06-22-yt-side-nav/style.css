@@ -15,13 +15,15 @@
   --base-background: #f8f8f8;
   --base-background-secondary: #ececec;
 
-  --base-background-hover: hsl(0, 0%, 95%);
-  --base-background-active: hsl(0, 0%, 90%);
-  --base-background-active-click: hsl(0, 0%, 80%);
+  --side-nav-item-hover: hsl(0, 0%, 90%);
+  --side-nav-item-active: hsl(0, 0%, 80%);
+  --side-nav-item-active-hover: hsl(0, 0%, 70%);
+  --side-nav-item-click: hsl(0, 0%, 60%);
 
-  --base-background-hover-dark: hsl(0, 0%, 30%);
-  --base-background-active-dark: hsl(0, 0%, 22%);
-  --base-background-active-click-dark: hsl(0, 0%, 40%);
+  --side-nav-item-hover-dark: hsl(0, 0%, 30%);
+  --side-nav-item-active-dark: hsl(0, 0%, 30%);
+  --side-nav-item-active-hover-dark: hsl(0, 0%, 40%);
+  --side-nav-item-click-dark: hsl(0, 0%, 50%);
 
   --base-background-dark: #181818;
   --base-background-dark-secondary: #454545;
@@ -117,13 +119,17 @@ a {
   padding: 0 2.4rem;
 }
 .side-nav-item:hover {
-  background-color: var(--base-background-hover);
+  background-color: var(--side-nav-item-hover);
 }
 .side-nav-item.active {
-  background-color: var(--base-background-active);
+  background-color: var(--side-nav-item-active);
 }
-.side-nav-item:active {
-  background-color: var(--base-background-active-click);
+.side-nav-item:hover.active {
+  background-color: var(--side-nav-item-active-hover);
+}
+.side-nav-item:active,
+.side-nav-item:active.active {
+  background-color: var(--side-nav-item-click);
 }
 
 .side-nav-head {
@@ -159,6 +165,7 @@ a {
 }
 .side-nav-label-text {
   margin-bottom: 1.5rem;
+  line-height: 1.5;
 }
 .side-nav-label-btn {
   border: 0.1rem solid #3ea6ff;
@@ -223,17 +230,17 @@ a {
 }
 
 .side-nav-dark .side-nav-item:hover {
-  background-color: var(--base-background-hover-dark);
+  background-color: var(--side-nav-item-hover-dark);
 }
 .side-nav-dark .side-nav-item.active {
-  background-color: var(--base-background-active-dark);
+  background-color: var(--side-nav-item-active-dark);
 }
 .side-nav-dark .side-nav-item:hover.active {
-  background-color: var(--base-background-hover-dark);
+  background-color: var(--side-nav-item-active-hover-dark);
 }
 .side-nav-dark .side-nav-item:active,
 .side-nav-dark .side-nav-item:active.active {
-  background-color: var(--base-background-active-click-dark);
+  background-color: var(--side-nav-item-click-dark);
 }
 
 .side-nav-dark .side-nav-head {
