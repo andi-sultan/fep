@@ -54,12 +54,12 @@ a:hover {
   width: 100%;
   background-color: #f8f8f8;
   border-top: 0.5rem solid #494f5d;
-  padding: 3rem 4rem 1rem;
+  padding: 3rem 4rem 0;
   font-size: 1.4rem;
 }
 
 .footer-group {
-  margin: 0 0 4rem 0 auto;
+  margin: 0 auto 4rem;
   max-width: 1400px;
   display: flex;
   justify-content: space-between;
@@ -71,6 +71,7 @@ a:hover {
 
 .footer-group.footer-group-nav {
   align-items: center;
+  margin-bottom: 2rem;
 }
 
 .footer-col {
