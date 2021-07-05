@@ -105,6 +105,9 @@ a:hover {
   display: block;
   margin-bottom: 1.5rem;
 }
+.footer-col-link:last-of-type {
+  margin-bottom: 0;
+}
 
 .footer-nav {
   color: hsl(48, 4%, 30%);
