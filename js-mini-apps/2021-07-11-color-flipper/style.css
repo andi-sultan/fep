@@ -58,3 +58,13 @@ a:hover {
     padding: 1rem;
     border-radius: 0.4rem;
 }
+
+.btn{
+    padding: 1rem;
+    border: .3rem solid #3c3b37;
+    border-radius: 1rem;
+    font-weight: 600;
+    background-color: #fff;
+    color: #3c3b37;
+    font-size: 1.8rem;
+}
