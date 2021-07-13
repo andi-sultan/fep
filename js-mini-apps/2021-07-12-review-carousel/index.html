@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>2021-07-12-review-carousel</title>
+</head>
+
+<body>
+    <div class="top-navbar">
+        <a href="/index.html">Home</a> | <a
+            href="https://www.freecodecamp.org/news/javascript-projects-for-beginners/#how-to-create-a-review-carousel">Inspiration</a>
+    </div>
+
+    <div class="container">
+        <div class="carousel">
+            <h2 class="carousel__title">Our Reviews</h2>
+            <div class="carousel__card">
+                <div class="carousel__profile"><img src="" alt="card-profile-pic" id="carousel-img"
+                        class="carousel__profile-pic"></div>
+                <h3 id="carousel-name" class="carousel__name"></h3>
+                <h4 id="carousel-occupation" class="carousel__occupation"></h4>
+                <p id="carousel-review" class="carousel__review"></p>
+                <div>
+                    <button id="carousel-prev" class="carousel__btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="carousel-next" class="carousel__btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <button id="carousel-surprise" class="carousel__btn carousel__btn--surprise">surprise me</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script2.js"></script>
+</body>
+
+</html>
