@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap");
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: inherit;
+}
+
+html {
+    font-size: 62.5%; /* 10px */
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #3c3b37;
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    background-color: #efefef;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.top-navbar {
+    text-align: center;
+    background-color: lightgreen;
+    height: 3rem;
+    line-height: 3rem;
+}
+.top-navbar a {
+    text-decoration: none;
+    color: inherit;
+}
+.top-navbar a:hover {
+    text-decoration: underline;
+}
+
+button {
+    font-size: 4rem;
+    padding: 0.7rem 2rem;
+}
+
+.container {
+    min-height: calc(100vh - 3rem);
+    display: flex;
+}
+
+.side {
+    padding: 2rem;
+    flex-shrink: 0;
+    width: 30rem;
+    background-color: royalblue;
+    overflow-x: hidden;
+    transition: 0.5s ease-in-out;
+    color: #fff;
+}
+
+.hide {
+    margin-left: -30rem;
+}
+
+.main {
+    width: 100%;
+}
+
+.nav {
+    min-height: 5rem;
+    background-color: #fff;
+    box-shadow: 0px 2px 10px -4px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 2px 10px -4px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 2px 10px -4px rgba(0, 0, 0, 0.1);
+}
