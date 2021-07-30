@@ -18,17 +18,70 @@
     </div>
 
     <div class="container">
-        <div class="side">Sidebar</div>
+        <div class="side"><span>Sidebar</span> <button class="side-btn"><i class="fas fa-times"></i></button></div>
         <div class="main">
+            <div class="main-disabled-layer"></div>
             <div class="nav"><button class="nav-btn"><i class="fas fa-bars"></i></button></div>
+            <div class="content">Content</div>
         </div>
     </div>
 
     <script>
-        const btnNav = document.querySelector('.nav-btn')
         const sidebar = document.querySelector('.side')
+        const main = document.querySelector('.main')
+        const mainDisabledLayer = document.querySelector('.main-disabled-layer')
+
+        function sidebarIsShown() { return !sidebar.classList.contains('side-hide') }
+        function windowWidthIsMobile() { return window.innerWidth < 768 }
+
+        function removemainDisabledLayer() { mainDisabledLayer.classList.remove('show-layer') }
+        function showSidebar() { sidebar.classList.remove('side-hide') }
+        function shrinkMain() { main.classList.remove('main-full') }
+
+        function disableMainWhenSidebarIsShown() {
+            if (!main.classList.contains('main-full')) main.classList.add('main-full')
+            if (!mainDisabledLayer.classList.contains('show-layer')) mainDisabledLayer.classList.add('show-layer')
+        }
+
+        function expandMainAndHideSidebar() {
+            if (!main.classList.contains('main-full')) main.classList.add('main-full')
+            if (!sidebar.classList.contains('side-hide')) sidebar.classList.add('side-hide')
+        }
+
+        window.onresize = () => {
+            if (sidebarIsShown()) {
+                if (windowWidthIsMobile()) {
+                    disableMainWhenSidebarIsShown()
+                } else {
+                    shrinkMain()
+                    removemainDisabledLayer()
+                }
+            }
+        }
+
+        const btnSideClose = document.querySelector('.side-btn')
+        btnSideClose.addEventListener('click', () => {
+            expandMainAndHideSidebar()
+            removemainDisabledLayer()
+        })
+        mainDisabledLayer.addEventListener('click', () => {
+            expandMainAndHideSidebar()
+            removemainDisabledLayer()
+        })
+
+        const btnNav = document.querySelector('.nav-btn')
         btnNav.addEventListener('click', () => {
-            sidebar.classList.toggle('hide')
+            if (!sidebarIsShown()) {
+                if (windowWidthIsMobile()) {
+                    showSidebar()
+                    disableMainWhenSidebarIsShown()
+                } else {
+                    shrinkMain()
+                    showSidebar()
+                }
+            } else {
+                expandMainAndHideSidebar()
+            }
         })
     </script>
 </body>
