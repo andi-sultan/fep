@@ -48,7 +48,6 @@
         const btnSideClose = document.querySelector('.side-btn')
         btnSideClose.addEventListener('click', () => {
             if (window.innerWidth <= 768) {
-                sidebar.classList.remove('side-hide')
                 sidebar.classList.remove('side-show-on-mobile')
                 mainDisabledLayer.classList.remove('show-layer')
             } else {
