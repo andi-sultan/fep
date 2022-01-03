@@ -7,11 +7,11 @@
   box-sizing: inherit;
   font-family: inherit;
 }
-*:focus{
+*:focus {
   outline: none;
 }
 
-:root{
+:root {
   --base-background: #f8f8f8;
   --base-background-secondary: #ececec;
   --base-background-dark: #181818;
@@ -20,13 +20,17 @@
   --base-color-secondary: #606060;
   --base-color-dark-primary: #fff;
   --base-color-dark-secondary: #aaa;
+  --box-color: hsl(0, 0%, 73%);
+  --box-color-dark: hsl(0, 0%, 33%);
+  --blue-select: hsl(206, 100%, 33%);
+  --blue-select-dark: hsl(209, 100%, 50%);
 }
 
-html{
+html {
   font-size: 62.5%; /* 10px */
 }
 
-body{
+body {
   font-family: "Roboto", sans-serif;
   color: var(--base-color-primary);
   box-sizing: border-box;
@@ -34,7 +38,7 @@ body{
   background-color: var(--base-background);
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
@@ -53,19 +57,66 @@ a{
   text-decoration: underline;
 }
 
-.timestamp-box{
-  max-width: 35rem;
+.container {
+  padding: 2rem 0 0 2rem;
 }
 
-.timestamp-head{
+.timestamp-box {
+  max-width: 45rem;
+  border: 1px solid var(--box-color);
+}
+
+.timestamp-head {
   display: flex;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   background-color: #fff;
-  border: 1px solid var(--base-background-secondary);
+  border-bottom: 1px solid var(--box-color);
 }
 
-.timestamp-close-btn{
+.timestamp-close-btn {
   width: 2rem;
   height: 2rem;
+}
+
+.timestamp-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.timestamp-item:hover{
+  background-color: hsla(0, 0%, 0%, 0.1);
+}
+
+.timestamp-link{
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.timestamp-indicator {
+  padding: 0 .5rem;
+}
+.timestamp-dot {
+  width: .7rem;
+  height: .7rem;
+  border-radius: 50%;
+  background-color: var(--blue-select);
+}
+
+.timestamp-thumbnail {
+  max-width: 10rem;
+  margin-right: 1rem;
+}
+
+.timestamp-thumbnail-img {
+  width: 100%;
+}
+
+.timestamp-share-btn{
+  text-align: center;
+  cursor: pointer;
+  padding: .5rem;
+  margin-right: 1.5rem;
 }
