@@ -52,3 +52,20 @@ a{
 .top-navbar a:hover {
   text-decoration: underline;
 }
+
+.timestamp-box{
+  max-width: 35rem;
+}
+
+.timestamp-head{
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: #fff;
+  border: 1px solid var(--base-background-secondary);
+}
+
+.timestamp-close-btn{
+  width: 2rem;
+  height: 2rem;
+}
