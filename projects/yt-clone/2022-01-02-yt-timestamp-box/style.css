@@ -62,7 +62,7 @@ a {
 }
 
 .timestamp-box {
-  max-width: 45rem;
+  max-width: 43rem;
   border: 1px solid var(--box-color);
 }
 
@@ -138,7 +138,6 @@ a {
   /* display: flex is used to remove 
   bottom space when filled with an image */
   max-width: 10rem;
-  margin-right: 1rem;
 }
 .timestamp-thumbnail-img {
   border: 2px solid transparent;
@@ -150,10 +149,18 @@ a {
   background-color: var(--blue-select);
 }
 
+.timestamp-detail {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  padding-right: 1rem;
+}
+
 .timestamp-segment-text {
   font-size: 1.4rem;
   font-weight: 500;
-  margin-bottom: 1.5rem;
+  margin-bottom: .7rem;
+  max-height: 4rem;
 }
 
 .timestamp-time-text {
@@ -161,7 +168,7 @@ a {
   color: var(--blue-select);
   border-radius: 3px;
   font-size: 1.2rem;
-  padding: 0.1rem 0.3rem;
+  padding: 0.4rem 0.7rem;
   font-weight: 500;
 }
 
