@@ -77,6 +77,31 @@ a {
 .timestamp-close-btn {
   width: 2rem;
   height: 2rem;
+  cursor: pointer;
+}
+
+.timestamp-body {
+  max-height: 40rem;
+  overflow-y: auto;
+  /* for firefox scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: hsl(0, 0%, 35%) transparent;
+}
+
+/* for chrome scrollbar */
+.timestamp-body::-webkit-scrollbar {
+  width: 1.6rem;
+  border-radius: 1rem;
+}
+.timestamp-body::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 0%, 35%);
+  border: 0.4rem solid hsl(0, 0%, 100%);
+  border-radius: 2rem;
+}
+.timestamp-body::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 50%);
+  border: 0.4rem solid hsl(0, 0%, 100%);
+  border-radius: 2rem;
 }
 
 .timestamp-item {
@@ -85,38 +110,65 @@ a {
   align-items: center;
   padding: 1rem 0;
 }
-.timestamp-item:hover{
-  background-color: hsla(0, 0%, 0%, 0.1);
+.timestamp-item:hover,
+.timestamp-item.timestamp-item-active {
+  background-color: hsla(0, 0%, 0%, 0.025);
 }
 
-.timestamp-link{
+.timestamp-link {
   display: flex;
   align-items: center;
   flex: 1;
 }
 
 .timestamp-indicator {
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
 }
 .timestamp-dot {
-  width: .7rem;
-  height: .7rem;
+  width: 0.7rem;
+  height: 0.7rem;
+}
+.timestamp-item-active .timestamp-dot {
   border-radius: 50%;
   background-color: var(--blue-select);
 }
 
 .timestamp-thumbnail {
+  display: flex;
+  /* display: flex is used to remove 
+  bottom space when filled with an image */
   max-width: 10rem;
   margin-right: 1rem;
 }
-
 .timestamp-thumbnail-img {
+  border: 2px solid transparent;
+  background-color: transparent;
   width: 100%;
 }
+.timestamp-item-active .timestamp-thumbnail-img {
+  border: 2px solid var(--blue-select);
+  background-color: var(--blue-select);
+}
 
-.timestamp-share-btn{
-  text-align: center;
+.timestamp-segment-text {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.timestamp-time-text {
+  background-color: hsl(191, 100%, 96%);
+  color: var(--blue-select);
+  border-radius: 3px;
+  font-size: 1.2rem;
+  padding: 0.1rem 0.3rem;
+  font-weight: 500;
+}
+
+.timestamp-share {
+  padding-right: 1.5rem;
+}
+.timestamp-share-btn {
   cursor: pointer;
-  padding: .5rem;
-  margin-right: 1.5rem;
+  padding: 0.5rem;
 }
