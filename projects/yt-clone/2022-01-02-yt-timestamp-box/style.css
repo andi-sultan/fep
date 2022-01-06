@@ -64,6 +64,7 @@ a {
 .timestamp-box {
   max-width: 43rem;
   border: 1px solid var(--box-color);
+  position: relative;
 }
 
 .timestamp-head {
@@ -114,6 +115,9 @@ a {
 .timestamp-item.timestamp-item-active {
   background-color: hsla(0, 0%, 0%, 0.025);
 }
+.timestamp-item:last-of-type {
+  margin-bottom: 5rem;
+}
 
 .timestamp-link {
   display: flex;
@@ -159,7 +163,7 @@ a {
 .timestamp-segment-text {
   font-size: 1.4rem;
   font-weight: 500;
-  margin-bottom: .7rem;
+  margin-bottom: 0.7rem;
   max-height: 4rem;
 }
 
@@ -178,4 +182,28 @@ a {
 .timestamp-share-btn {
   cursor: pointer;
   padding: 0.5rem;
+}
+
+.timestamp-to-current-time {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1.5rem 0;
+  align-items: center;
+  overflow: hidden;
+}
+.timestamp-to-current-time-btn {
+  background-color: hsl(203, 98%, 40%);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.39);
+  -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.39);
 }
