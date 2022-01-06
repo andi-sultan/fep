@@ -65,6 +65,7 @@ a {
   max-width: 43rem;
   border: 1px solid var(--box-color);
   position: relative;
+  overflow-y: hidden;
 }
 
 .timestamp-head {
@@ -116,6 +117,10 @@ a {
   background-color: hsla(0, 0%, 0%, 0.025);
 }
 .timestamp-item:last-of-type {
+  margin-bottom: 0;
+  transition: 0.5s;
+}
+.timestamp-box:hover .timestamp-item:last-of-type {
   margin-bottom: 5rem;
 }
 
@@ -186,13 +191,17 @@ a {
 
 .timestamp-to-current-time {
   position: absolute;
-  bottom: 0;
+  bottom: -10rem;
   display: flex;
   justify-content: center;
   width: 100%;
   padding: 1.5rem 0;
   align-items: center;
   overflow: hidden;
+  transition: 0.5s;
+}
+.timestamp-box:hover .timestamp-to-current-time {
+  bottom: 0;
 }
 .timestamp-to-current-time-btn {
   background-color: hsl(203, 98%, 40%);
