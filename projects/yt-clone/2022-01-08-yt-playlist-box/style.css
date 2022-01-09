@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+*:focus {
+  outline: none;
+}
+
+:root {
+  --base-background: #f8f8f8;
+  --base-background-secondary: #ececec;
+  --base-background-dark: #181818;
+  --base-background-dark-secondary: #454545;
+  --base-color-primary: #3c3b37;
+  --base-color-secondary: #606060;
+  --base-color-dark-primary: #fff;
+  --base-color-dark-secondary: #aaa;
+  --box-color: hsl(0, 0%, 73%);
+  --box-color-dark: hsl(0, 0%, 33%);
+}
+
+html {
+  font-size: 62.5%; /* 10px */
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--base-color-primary);
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  background-color: var(--base-background);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.top-navbar {
+  text-align: center;
+  background-color: lightgreen;
+  height: 3rem;
+  line-height: 3rem;
+}
+.top-navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+.top-navbar a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  padding: 2rem 0 0 2rem;
+}
+
+.playlist {
+  max-width: 43rem;
+  border: 1px solid var(--box-color);
+}
+
+.playlist-header {
+  background-color: #fff;
+  border-bottom: 1px solid var(--box-color);
+  padding: 1.5rem;
+}
+
+.playlist-header-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .7rem;
+}
+
+.playlist-header-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.playlist-header-title {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.playlist-header-info {
+  display: flex;
+  font-size: 1.2rem;
+  align-items: center;
+}
+
+.playlist-header-info > *:first-of-type {
+  margin-right: 0.5rem;
+}
+.playlist-header-info > *:last-of-type {
+  margin-left: 0.5rem;
+}
+
+.playlist-type {
+  display: flex;
+  align-items: center;
+  background-color: hsl(0, 0%, 93%);
+  justify-content: space-between;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  font-weight: 500;
+}
+
+.playlist-type-logo {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.playlist-type-text {
+  margin-left: 0.5rem;
+}
+
+.playlist-channel-name {
+  color: #0d0d0d;
+}
+
+.playlist-vid-nums {
+  color: var(--base-color-secondary);
+}
+
+.playlist-collapse-btn::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f077";
+}
+.playlist-collapse-btn {
+  width: 3rem;
+  height: 3rem;
+  color: inherit;
+  border: none;
+  background-color: transparent;
+  border-radius: 3rem;
+}
+.playlist-collapse-btn:active {
+  background-color: var(--base-background-secondary);
+}
+
+.playlist-header-bottom{
+  display: flex;
+  align-items: center;
+}
+.playlist-repeat-btn{
+  width: 1.55rem;
+  height: 1.55rem;
+}
+
+.playlist-shuffle-btn{
+  width: 2rem;
+  height: 2rem;
+  margin-left: .5rem;
+}
