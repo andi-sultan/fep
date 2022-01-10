@@ -76,7 +76,7 @@ a {
 .playlist-header-top {
   display: flex;
   justify-content: space-between;
-  margin-bottom: .7rem;
+  margin-bottom: 0.2rem;
 }
 
 .playlist-header-left {
@@ -148,17 +148,46 @@ a {
   background-color: var(--base-background-secondary);
 }
 
-.playlist-header-bottom{
+.playlist-header-bottom {
   display: flex;
   align-items: center;
 }
-.playlist-repeat-btn{
+.playlist-repeat-btn {
+  width: 3rem;
+  height: 3rem;
+  margin-left: -.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  border: none;
+  background-color: transparent;
+  border-radius: 3rem;
+}
+.playlist-repeat-btn:active {
+  background-color: var(--base-background-secondary);
+}
+.playlist-repeat-btn-icon {
   width: 1.55rem;
   height: 1.55rem;
 }
 
-.playlist-shuffle-btn{
+.playlist-shuffle-btn {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  border: none;
+  background-color: transparent;
+  border-radius: 3rem;
+}
+.playlist-shuffle-btn:active {
+  background-color: var(--base-background-secondary);
+}
+.playlist-shuffle-btn-icon {
   width: 2rem;
   height: 2rem;
-  margin-left: .5rem;
 }
