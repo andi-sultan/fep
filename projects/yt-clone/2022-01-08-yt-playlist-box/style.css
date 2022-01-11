@@ -191,3 +191,37 @@ a {
   width: 2rem;
   height: 2rem;
 }
+
+.playlist-body {
+  overflow-y: auto;
+}
+
+.playlist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.playlist-thumbnail {
+  flex: 0 0 15rem;
+  position: relative;
+}
+.playlist-thumbnail-img {
+  display: block;
+  width: 100%;
+}
+.playlist-duration {
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.4rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.3rem 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 0.3rem;
+}
+
+.playlist-title {
+  flex: 1;
+}
