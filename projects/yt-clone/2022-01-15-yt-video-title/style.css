@@ -77,18 +77,24 @@ a {
 
 .vid-title {
   font-size: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
+  flex-basis: 50rem;
 }
 
 .vid-detail {
   color: var(--base-color-secondary);
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+.vid-detail > * {
+  margin-bottom: 1rem;
 }
 
 .vid-btns {
   display: flex;
   font-size: 1.4rem;
+  flex-wrap: wrap;
 }
 .vid-btn {
   background-color: transparent;
@@ -97,10 +103,13 @@ a {
   font-size: inherit;
   color: #2b2b2b;
   font-weight: 600;
-  margin: 0 1rem 0 1rem;
+  margin-right: 1rem;
   display: flex;
   align-items: center;
   text-transform: uppercase;
+}
+.vid-btn:last-of-type {
+  margin-right: 0;
 }
 
 .vid-icon {
