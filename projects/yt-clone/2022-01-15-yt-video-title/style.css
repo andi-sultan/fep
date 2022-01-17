@@ -91,6 +91,10 @@ a {
   margin-bottom: 1rem;
 }
 
+.vid-info{
+  font-size: 1.4rem;
+}
+
 .vid-btns {
   display: flex;
   font-size: 1.4rem;
@@ -102,7 +106,8 @@ a {
   cursor: pointer;
   font-size: inherit;
   color: #2b2b2b;
-  font-weight: 600;
+  font-family: inherit;
+  font-weight: 500;
   margin-right: 1rem;
   display: flex;
   align-items: center;
