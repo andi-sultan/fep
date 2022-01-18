@@ -57,14 +57,19 @@ a {
   padding: 2rem;
 }
 
-.chds-channel{
+.chds {
   background-color: #fff;
   padding: 1rem;
-  display: flex;
-  justify-content: space-between;
 }
 
-.chds-channel-left{
+.chds-channel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.chds-channel-left {
   display: flex;
 }
 
@@ -77,7 +82,7 @@ a {
   display: block;
 }
 
-.chds-channel-detail{
+.chds-channel-detail {
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
@@ -86,7 +91,7 @@ a {
 
 .chds-channel-name {
   font-weight: 500;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   font-size: 1.4rem;
 }
 
@@ -95,21 +100,18 @@ a {
   color: var(--base-color-secondary);
 }
 
-.chds-channel-right{
-
-}
-
 button[class^="chds-"] {
   font-size: 1.7rem;
   cursor: pointer;
 }
 .chds-subscribe-btn {
   border: none;
-  /* background-color: rgb(201, 15, 15); */
+  background-color: rgb(201, 15, 15);
   color: #fff;
   padding: 0.8rem 1.6rem;
   border-radius: 0.2rem;
   font-weight: 500;
+  text-transform: uppercase;
 }
 .chds-bell-btn {
   border: none;
@@ -120,4 +122,8 @@ button[class^="chds-"] {
 }
 .chds-bell-btn:active {
   background-color: rgba(0, 0, 0, 0.05);
+}
+
+.chds-description{
+  margin-left: 6rem;
 }
