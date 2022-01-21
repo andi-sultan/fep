@@ -1,0 +1,87 @@
+.comment {
+  padding: 1rem;
+  display: flex;
+}
+
+.comment-profile-pic {
+  max-width: 5rem;
+}
+.comment-profile-img {
+  width: 100%;
+  border-radius: 50%;
+  display: block;
+}
+
+.comment-info {
+  padding: 0 1rem;
+}
+
+.comment-channel-pin {
+  color: var(--base-color-secondary);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.comment-ch-and-time {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.comment-channel-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-right: 1rem;
+}
+.comment-channel-name-uploader {
+  background-color: rgba(0, 0, 0, 0.45);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2rem;
+  color: #fff;
+}
+
+.comment-time {
+  font-size: 1.2rem;
+}
+
+.comment-text {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+button[class^="comment-"] {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
+
+.comment-dislike {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.comment-reply-btn {
+  font-weight: 600;
+  color: var(--base-color-secondary);
+}
+
+.reply {
+  margin-left: 6rem;
+}
+
+.comment-reply .comment-profile-pic {
+  max-width: 3rem;
+}
+
+.reply-btns {
+  color: hsl(196, 100%, 36%);
+  font-weight: 600;
+  display: flex;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.reply-btns > * {
+  padding: 0.5rem;
+}

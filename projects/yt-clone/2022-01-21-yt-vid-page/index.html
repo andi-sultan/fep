@@ -10,6 +10,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="timestamp.css">
+    <link rel="stylesheet" href="playlist.css">
+    <link rel="stylesheet" href="sidecard.css">
+    <link rel="stylesheet" href="chds.css">
+    <link rel="stylesheet" href="comment.css">
     <link rel="stylesheet" href="modifier.css">
     <title>2022-01-21-yt-vid-page</title>
 </head>
@@ -24,8 +29,7 @@
         <header class="nav">
             <div class="nav-left">
                 <div class="nav-btn"><i class="fas fa-bars"></i></div>
-                <a href="#" class="nav-logo"><img src="../resources/yt_logo_rgb_light.png" alt="youtube"
-                        class="nav-img"></a>
+                <a href="#" class="nav-logo"><img src="../resources/yt_logo_rgb_lights.png" alt="" class="nav-img"></a>
             </div>
             <div class="nav-center hide-on-mobile">
                 <form class="search">
@@ -34,8 +38,7 @@
                     </btn>
                 </form>
                 <div class="nav-btn nav-btn-mic tooltip"><i class="fas fa-microphone"></i><span
-                        class="tooltip-text">Search
-                        with your voice</span></div>
+                        class="tooltip-text">Search with your voice</span></div>
             </div>
             <div class="nav-right">
                 <div class="nav-btn nav-btn-search show-on-mobile"><i class="fa fa-search"></i></div>
@@ -52,16 +55,663 @@
         </header>
 
         <div class="page">
-            <div class="vp">
-                <div class="vid">vid</div>
-                <div class="chds">chds</div>
+            <div class="vid">vid</div>
+            <div class="chds">
+                <div class="chds-channel">
+                    <div class="chds-channel-left">
+                        <div class="chds-profile-pic"><img class="chds-profile-img" src="../resources/profile-pic.jpeg"
+                                alt="profile"></div>
+                        <div class="chds-channel-detail">
+                            <div class="chds-channel-name"><a href="#">John Doe</a> <i class="far fa-check-circle"></i>
+                            </div>
+                            <div class="chds-channel-subs">1,23 m</div>
+                        </div>
+                    </div>
+
+                    <div class="chds-channel-right">
+                        <button class="chds-subscribe-btn">subscribe</button>
+                        <button class="chds-bell-btn"><i class="far fa-bell"></i></button>
+                    </div>
+                </div>
+
+                <div class="chds-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, iste enim saepe non laudantium
+                    cupiditate assumenda neque maiores tempore exercitationem iusto, necessitatibus culpa eveniet
+                    quia
+                    reiciendis incidunt minus repudiandae porro!
+                </div>
             </div>
-            <div class="ps">
-                <div class="timestamp">timestamp</div>
-                <div class="playlist">playlist</div>
-                <div class="sidecard">sidecard</div>
+            <div class="side">
+                <div class="timestamp">
+                    <div class="timestamp-box">
+                        <div class="timestamp-head">
+                            <div class="timestamp-title">Segments</div>
+                            <div class="timestamp-close-btn"><svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12">
+                                    </path>
+                                </svg></div>
+                        </div>
+                        <div class="timestamp-body">
+                            <div class="timestamp-item timestamp-item-active">
+                                <a href="#" class="timestamp-link">
+                                    <div class="timestamp-indicator">
+                                        <div class="timestamp-dot"></div>
+                                    </div>
+                                    <div class="timestamp-thumbnail"><img class="timestamp-thumbnail-img"
+                                            src="../resources/pic-16_9-m.jpeg" alt="thumbnail"></div>
+                                    <div class="timestamp-detail">
+                                        <div class="timestamp-segment-text">Video Segment</div>
+                                        <div class="timestamp-time"><span class="timestamp-time-text">0.00</span></div>
+                                    </div>
+                                </a>
+                                <div class="timestamp-share">
+                                    <div class="timestamp-share-btn"><i class="fas fa-share"></i></div>
+                                </div>
+                            </div>
+                            <div class="timestamp-item">
+                                <a href="#" class="timestamp-link">
+                                    <div class="timestamp-indicator">
+                                        <div class="timestamp-dot"></div>
+                                    </div>
+                                    <div class="timestamp-thumbnail"><img class="timestamp-thumbnail-img"
+                                            src="../resources/pic-16_9-m.jpeg" alt="thumbnail"></div>
+                                    <div class="timestamp-detail">
+                                        <div class="timestamp-segment-text">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit.</div>
+                                        <div class="timestamp-time"><span class="timestamp-time-text">0.00</span></div>
+                                    </div>
+                                </a>
+                                <div class="timestamp-share">
+                                    <div class="timestamp-share-btn"><i class="fas fa-share"></i></div>
+                                </div>
+                            </div>
+                            <div class="timestamp-item">
+                                <a href="#" class="timestamp-link">
+                                    <div class="timestamp-indicator">
+                                        <div class="timestamp-dot"></div>
+                                    </div>
+                                    <div class="timestamp-thumbnail"><img class="timestamp-thumbnail-img"
+                                            src="../resources/pic-16_9-m.jpeg" alt="thumbnail"></div>
+                                    <div class="timestamp-detail">
+                                        <div class="timestamp-segment-text">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit.</div>
+                                        <div class="timestamp-time"><span class="timestamp-time-text">0.00</span></div>
+                                    </div>
+                                </a>
+                                <div class="timestamp-share">
+                                    <div class="timestamp-share-btn"><i class="fas fa-share"></i></div>
+                                </div>
+                            </div>
+                            <div class="timestamp-item">
+                                <a href="#" class="timestamp-link">
+                                    <div class="timestamp-indicator">
+                                        <div class="timestamp-dot"></div>
+                                    </div>
+                                    <div class="timestamp-thumbnail"><img class="timestamp-thumbnail-img"
+                                            src="../resources/pic-16_9-m.jpeg" alt="thumbnail"></div>
+                                    <div class="timestamp-detail">
+                                        <div class="timestamp-segment-text">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit.</div>
+                                        <div class="timestamp-time"><span class="timestamp-time-text">0.00</span></div>
+                                    </div>
+                                </a>
+                                <div class="timestamp-share">
+                                    <div class="timestamp-share-btn"><i class="fas fa-share"></i></div>
+                                </div>
+                            </div>
+                            <div class="timestamp-item">
+                                <a href="#" class="timestamp-link">
+                                    <div class="timestamp-indicator">
+                                        <div class="timestamp-dot"></div>
+                                    </div>
+                                    <div class="timestamp-thumbnail"><img class="timestamp-thumbnail-img"
+                                            src="../resources/pic-16_9-m.jpeg" alt="thumbnail"></div>
+                                    <div class="timestamp-detail">
+                                        <div class="timestamp-segment-text">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit.</div>
+                                        <div class="timestamp-time"><span class="timestamp-time-text">0.00</span></div>
+                                    </div>
+                                </a>
+                                <div class="timestamp-share">
+                                    <div class="timestamp-share-btn"><i class="fas fa-share"></i></div>
+                                </div>
+                            </div>
+                            <div class="timestamp-item">
+                                <a href="#" class="timestamp-link">
+                                    <div class="timestamp-indicator">
+                                        <div class="timestamp-dot"></div>
+                                    </div>
+                                    <div class="timestamp-thumbnail"><img class="timestamp-thumbnail-img"
+                                            src="../resources/pic-16_9-m.jpeg" alt="thumbnail"></div>
+                                    <div class="timestamp-detail">
+                                        <div class="timestamp-segment-text">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit.</div>
+                                        <div class="timestamp-time"><span class="timestamp-time-text">0.00</span></div>
+                                    </div>
+                                </a>
+                                <div class="timestamp-share">
+                                    <div class="timestamp-share-btn"><i class="fas fa-share"></i></div>
+                                </div>
+                            </div>
+                            <div class="timestamp-item">
+                                <a href="#" class="timestamp-link">
+                                    <div class="timestamp-indicator">
+                                        <div class="timestamp-dot"></div>
+                                    </div>
+                                    <div class="timestamp-thumbnail"><img class="timestamp-thumbnail-img"
+                                            src="../resources/pic-16_9-m.jpeg" alt="thumbnail"></div>
+                                    <div class="timestamp-detail">
+                                        <div class="timestamp-segment-text">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit.</div>
+                                        <div class="timestamp-time"><span class="timestamp-time-text">0.00</span></div>
+                                    </div>
+                                </a>
+                                <div class="timestamp-share">
+                                    <div class="timestamp-share-btn"><i class="fas fa-share"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timestamp-to-current-time">
+                            <button class="timestamp-to-current-time-btn">Sync to current time</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="playlist">
+                    <div class="playlist-header">
+
+                        <div class="playlist-header-top">
+
+                            <div class="playlist-header-left">
+                                <div class="playlist-header-title"><a href="#">Playlist title</a></div>
+                                <div class="playlist-header-info">
+                                    <div class="playlist-type">
+                                        <svg class="w-6 h-6 playlist-type-logo" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1">
+                                            </path>
+                                        </svg>
+                                        <span class="playlist-type-text">Unlisted</span>
+                                    </div>
+                                    <div class="playlist-channel-name"><a href="#">Channel Name</a></div>
+                                    <div class="playlist-vid-nums">- 1 / 10</div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <button class="playlist-collapse-btn"></button>
+                            </div>
+
+                        </div>
+                        <!-- .playlist-header-top -->
+
+                        <div class="playlist-header-bottom">
+                            <button class="playlist-repeat-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-repeat playlist-repeat-btn-icon">
+                                    <polyline points="17 1 21 5 17 9"></polyline>
+                                    <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                                    <polyline points="7 23 3 19 7 15"></polyline>
+                                    <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                                </svg>
+                            </button>
+                            <button class="playlist-shuffle-btn">
+                                <svg class="playlist-shuffle-btn-icon" viewBox="0 0 512 512" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M402.092 77.5876C396.338 84.2968 397.115 94.3976 403.829 100.148L427.004 120H330.727C322.291 120 314.474 124.423 310.134 131.652L254.147 224.901L198.161 131.652C193.821 124.423 186.003 120 177.567 120H46.0105C37.1682 120 30 127.163 30 136C30 144.836 37.1682 152 46.0105 152H173.035L235.476 256L173.035 360H46.0105C37.1682 360 30 367.163 30 376C30 384.836 37.1682 392 46.0105 392H177.567C186.003 392 193.821 387.576 198.161 380.347L254.147 287.098L310.134 380.347C314.474 387.576 322.291 392 330.727 392H427.005L403.829 411.852C397.115 417.602 396.338 427.703 402.092 434.412C407.847 441.122 417.954 441.899 424.668 436.148L473.613 394.222C484.795 384.644 484.795 367.356 473.613 357.778L424.668 315.852C417.954 310.101 407.847 310.878 402.092 317.587C396.338 324.296 397.115 334.397 403.829 340.148L427.004 360H335.26L272.819 256L335.26 152H427.005L403.829 171.852C397.115 177.603 396.338 187.704 402.092 194.413C407.847 201.122 417.954 201.899 424.668 196.148L473.613 154.222C484.795 144.644 484.795 127.356 473.613 117.778L424.668 75.8522C417.954 70.1014 407.847 70.8784 402.092 77.5876Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="playlist-body">
+
+                        <a href="#" class="playlist-item">
+                            <div class="playlist-item-left">
+
+                                <div class="playlist-index">
+                                    <span class="playlist-index-num">1</span>
+                                    <svg class="w-6 h-6 playlist-index-sort-icon" data-darkreader-inline-stroke=""
+                                        fill="none" stroke="currentColor"
+                                        style="--darkreader-inline-stroke:currentColor;" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 8h16M4 16h16"></path>
+                                    </svg>
+                                </div>
+
+                                <div class="playlist-thumbnail">
+                                    <img class="playlist-thumbnail-img" src="../resources/pic-16_9-m.jpeg"
+                                        alt="thumbnail">
+                                    <div class="playlist-duration">2:34</div>
+                                </div>
+
+                                <div class="playlist-detail">
+                                    <div class="playlist-vid-title">Video Title</div>
+                                    <div class="playlist-vid-channel">Some Channel</div>
+                                </div>
+
+                            </div>
+
+                            <div class="playlist-item-right">
+                                <button class="playlist-more-btn"></button>
+                            </div>
+                        </a>
+
+                        <a href="#" class="playlist-item active">
+                            <div class="playlist-item-left">
+
+                                <div class="playlist-index">
+                                    <span class="playlist-index-play-icon"></span>
+                                    <svg class="w-6 h-6 playlist-index-sort-icon" data-darkreader-inline-stroke=""
+                                        fill="none" stroke="currentColor"
+                                        style="--darkreader-inline-stroke:currentColor;" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 8h16M4 16h16"></path>
+                                    </svg>
+                                </div>
+
+                                <div class="playlist-thumbnail">
+                                    <img class="playlist-thumbnail-img" src="../resources/pic-16_9-m.jpeg"
+                                        alt="thumbnail">
+                                    <div class="playlist-duration">2:34</div>
+                                </div>
+
+                                <div class="playlist-detail">
+                                    <div class="playlist-vid-title">Video Title</div>
+                                    <div class="playlist-vid-channel">Some Channel</div>
+                                </div>
+
+                            </div>
+
+                            <div class="playlist-item-right">
+                                <button class="playlist-more-btn"></button>
+                            </div>
+                        </a>
+
+                        <a href="#" class="playlist-item">
+                            <div class="playlist-item-left">
+
+                                <div class="playlist-index">
+                                    <span class="playlist-index-num">1</span>
+                                    <svg class="w-6 h-6 playlist-index-sort-icon" data-darkreader-inline-stroke=""
+                                        fill="none" stroke="currentColor"
+                                        style="--darkreader-inline-stroke:currentColor;" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 8h16M4 16h16"></path>
+                                    </svg>
+                                </div>
+
+                                <div class="playlist-thumbnail">
+                                    <img class="playlist-thumbnail-img" src="../resources/pic-16_9-m.jpeg"
+                                        alt="thumbnail">
+                                    <div class="playlist-duration">2:34</div>
+                                </div>
+
+                                <div class="playlist-detail">
+                                    <div class="playlist-vid-title">Video Title</div>
+                                    <div class="playlist-vid-channel">Some Channel</div>
+                                </div>
+
+                            </div>
+
+                            <div class="playlist-item-right">
+                                <button class="playlist-more-btn"></button>
+                            </div>
+                        </a>
+                        <a href="#" class="playlist-item">
+                            <div class="playlist-item-left">
+
+                                <div class="playlist-index">
+                                    <span class="playlist-index-num">1</span>
+                                    <svg class="w-6 h-6 playlist-index-sort-icon" data-darkreader-inline-stroke=""
+                                        fill="none" stroke="currentColor"
+                                        style="--darkreader-inline-stroke:currentColor;" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 8h16M4 16h16"></path>
+                                    </svg>
+                                </div>
+
+                                <div class="playlist-thumbnail">
+                                    <img class="playlist-thumbnail-img" src="../resources/pic-16_9-m.jpeg"
+                                        alt="thumbnail">
+                                    <div class="playlist-duration">2:34</div>
+                                </div>
+
+                                <div class="playlist-detail">
+                                    <div class="playlist-vid-title">Video Title</div>
+                                    <div class="playlist-vid-channel">Some Channel</div>
+                                </div>
+
+                            </div>
+
+                            <div class="playlist-item-right">
+                                <button class="playlist-more-btn"></button>
+                            </div>
+                        </a>
+                        <a href="#" class="playlist-item">
+                            <div class="playlist-item-left">
+
+                                <div class="playlist-index">
+                                    <span class="playlist-index-num">1</span>
+                                    <svg class="w-6 h-6 playlist-index-sort-icon" data-darkreader-inline-stroke=""
+                                        fill="none" stroke="currentColor"
+                                        style="--darkreader-inline-stroke:currentColor;" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 8h16M4 16h16"></path>
+                                    </svg>
+                                </div>
+
+                                <div class="playlist-thumbnail">
+                                    <img class="playlist-thumbnail-img" src="../resources/pic-16_9-m.jpeg"
+                                        alt="thumbnail">
+                                    <div class="playlist-duration">2:34</div>
+                                </div>
+
+                                <div class="playlist-detail">
+                                    <div class="playlist-vid-title">Video Title</div>
+                                    <div class="playlist-vid-channel">Some Channel</div>
+                                </div>
+
+                            </div>
+
+                            <div class="playlist-item-right">
+                                <button class="playlist-more-btn"></button>
+                            </div>
+                        </a>
+                        <a href="#" class="playlist-item">
+                            <div class="playlist-item-left">
+
+                                <div class="playlist-index">
+                                    <span class="playlist-index-num">1</span>
+                                    <svg class="w-6 h-6 playlist-index-sort-icon" data-darkreader-inline-stroke=""
+                                        fill="none" stroke="currentColor"
+                                        style="--darkreader-inline-stroke:currentColor;" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 8h16M4 16h16"></path>
+                                    </svg>
+                                </div>
+
+                                <div class="playlist-thumbnail">
+                                    <img class="playlist-thumbnail-img" src="../resources/pic-16_9-m.jpeg"
+                                        alt="thumbnail">
+                                    <div class="playlist-duration">2:34</div>
+                                </div>
+
+                                <div class="playlist-detail">
+                                    <div class="playlist-vid-title">Video Title</div>
+                                    <div class="playlist-vid-channel">Some Channel</div>
+                                </div>
+
+                            </div>
+
+                            <div class="playlist-item-right">
+                                <button class="playlist-more-btn"></button>
+                            </div>
+                        </a>
+                        <a href="#" class="playlist-item">
+                            <div class="playlist-item-left">
+
+                                <div class="playlist-index">
+                                    <span class="playlist-index-num">1</span>
+                                    <svg class="w-6 h-6 playlist-index-sort-icon" data-darkreader-inline-stroke=""
+                                        fill="none" stroke="currentColor"
+                                        style="--darkreader-inline-stroke:currentColor;" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 8h16M4 16h16"></path>
+                                    </svg>
+                                </div>
+
+                                <div class="playlist-thumbnail">
+                                    <img class="playlist-thumbnail-img" src="../resources/pic-16_9-m.jpeg"
+                                        alt="thumbnail">
+                                    <div class="playlist-duration">2:34</div>
+                                </div>
+
+                                <div class="playlist-detail">
+                                    <div class="playlist-vid-title">Video Title</div>
+                                    <div class="playlist-vid-channel">Some Channel</div>
+                                </div>
+
+                            </div>
+
+                            <div class="playlist-item-right">
+                                <button class="playlist-more-btn"></button>
+                            </div>
+                        </a>
+                        <a href="#" class="playlist-item">
+                            <div class="playlist-item-left">
+
+                                <div class="playlist-index">
+                                    <span class="playlist-index-num">1</span>
+                                    <svg class="w-6 h-6 playlist-index-sort-icon" data-darkreader-inline-stroke=""
+                                        fill="none" stroke="currentColor"
+                                        style="--darkreader-inline-stroke:currentColor;" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 8h16M4 16h16"></path>
+                                    </svg>
+                                </div>
+
+                                <div class="playlist-thumbnail">
+                                    <img class="playlist-thumbnail-img" src="../resources/pic-16_9-m.jpeg"
+                                        alt="thumbnail">
+                                    <div class="playlist-duration">2:34</div>
+                                </div>
+
+                                <div class="playlist-detail">
+                                    <div class="playlist-vid-title">Video Title</div>
+                                    <div class="playlist-vid-channel">Some Channel</div>
+                                </div>
+
+                            </div>
+
+                            <div class="playlist-item-right">
+                                <button class="playlist-more-btn"></button>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="sidecard">
+                    <div class="sidecard-item">
+                        <div class="sidecard-thumbnail">
+                            <a href="#"><img src="../resources/pic-16_9-m.jpeg" class="sidecard-thumbnail-img"
+                                    alt="thumbnail"></a>
+                            <div class="sidecard-add">
+                                <div class="sidecard-add-text">watch later</div>
+                                <div class="sidecard-add-btn"><i class="fas fa-clock"></i></div>
+                            </div>
+                            <div class="sidecard-add sidecard-add-to-playlist">
+                                <div class="sidecard-add-text">add to queue</div>
+                                <div class="sidecard-add-btn"><i class="fas fa-stream"></i></div>
+                            </div>
+                            <div class="sidecard-duration">5:12</div>
+                        </div>
+                        <div class="sidecard-title">
+                            <div class="sidecard-detail">
+                                <div class="sidecard-vid-title"><a href="#">Video Title Lorem ipsum dolor sit amet
+                                        consectetur,
+                                        adipisicing?</a></div>
+                                <div class="sidecard-channel"><a href="#" class="tooltip">Some Channel<span
+                                            class="tooltip-text">Some Channel</span></a></div>
+                                <div class="sidecard-view"><a href="#">123 views <b>·</b> 1 year ago</a></div>
+                                <div class="sidecard-label"><span class="sidecard-label-new">New</span></div>
+                            </div>
+                            <div class="sidecard-btn"><span class="sidecard-btn-icon"><i
+                                        class="fas fa-ellipsis-v"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidecard-item">
+                        <div class="sidecard-thumbnail">
+                            <a href="#"><img src="../resources/pic-16_9-m.jpeg" class="sidecard-thumbnail-img"
+                                    alt="thumbnail"></a>
+                            <div class="sidecard-mix-bottom"><i class="far fa-play-circle"></i></div>
+                            <div class="sidecard-mix-overlay"><i class="fas fa-play sidecard-mix-overlay-icon"></i> play
+                                all
+                            </div>
+                        </div>
+                        <div class="sidecard-title">
+                            <div class="sidecard-detail">
+                                <div class="sidecard-vid-title"><a href="#">Video Title Lorem ipsum dolor sit</a></div>
+                                <div class="sidecard-channel"><a href="#" class="tooltip">Some Channel<span
+                                            class="tooltip-text">Some Channel</span></a></div>
+                            </div>
+                            <div class="sidecard-btn"><span class="sidecard-btn-icon"><i
+                                        class="fas fa-ellipsis-v"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidecard-item">
+                        <div class="sidecard-thumbnail">
+                            <a href="#"><img src="../resources/pic-16_9-m.jpeg" class="sidecard-thumbnail-img"
+                                    alt="thumbnail"></a>
+                            <div class="sidecard-add">
+                                <div class="sidecard-add-text">watch later</div>
+                                <div class="sidecard-add-btn"><i class="fas fa-clock"></i></div>
+                            </div>
+                            <div class="sidecard-add sidecard-add-to-playlist">
+                                <div class="sidecard-add-text">add to queue</div>
+                                <div class="sidecard-add-btn"><i class="fas fa-stream"></i></div>
+                            </div>
+                        </div>
+                        <div class="sidecard-title">
+                            <div class="sidecard-detail">
+                                <div class="sidecard-vid-title"><a href="#">Video Title Lorem ipsum dolor sit amet
+                                        consectetur,
+                                        adipisicing?</a></div>
+                                <div class="sidecard-channel"><a href="#" class="tooltip">Some Channel<span
+                                            class="tooltip-text">Some Channel</span></a></div>
+                                <div class="sidecard-view"><a href="#">123 watching</div>
+                                <div class="sidecard-label"><span class="sidecard-label-live">live now</span></div>
+                            </div>
+                            <div class="sidecard-btn"><span class="sidecard-btn-icon"><i
+                                        class="fas fa-ellipsis-v"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="comment">comment</div>
+            <div class="comment-and-reply">
+                <div class="comment">
+                    <div class="comment-profile-pic"><img class="comment-profile-img"
+                            src="../resources/profile-pic.jpeg" alt="profile"></div>
+                    <div class="comment-info">
+                        <div class="comment-channel-pin"><i class="fas fa-thumbtack"></i> pinned by Channel Name</div>
+                        <div class="comment-ch-and-time">
+                            <div class="comment-channel-name comment-channel-name-uploader"><a href="#">John Doe</a> <i
+                                    class="far fa-check-circle"></i></div>
+                            <div class="comment-time">1 month ago</div>
+                        </div>
+                        <div class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas minima
+                            totam, accusantium velit aut deleniti sit similique sunt dignissimos pariatur aspernatur,
+                            commodi quo magnam cupiditate. Alias molestias pariatur perspiciatis quasi?</div>
+                        <div class="comment-btns">
+                            <button class="comment-like"><i class="fas fa-thumbs-up"></i> 123</button>
+                            <button class="comment-dislike"><i class="far fa-thumbs-down"></i></button>
+                            <button class="comment-reply-btn">reply</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="reply">
+                    <div class="reply-btns">
+                        <div class="reply-arrow-btn"><i class="fas fa-caret-up"></i></div>
+                        <div class="reply-count">Hide 123 replies</div>
+                    </div>
+                    <div class="comment comment-reply">
+                        <div class="comment-profile-pic"><img class="comment-profile-img"
+                                src="../resources/profile-pic.jpeg" alt="profile"></div>
+                        <div class="comment-info">
+                            <div class="comment-ch-and-time">
+                                <div class="comment-channel-name"><a href="#">John Doe</a></div>
+                                <div class="comment-time">1 month ago</div>
+                            </div>
+                            <div class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas
+                                minima
+                                totam, accusantium velit aut deleniti sit similique sunt dignissimos pariatur
+                                aspernatur,
+                                commodi quo magnam cupiditate. Alias molestias pariatur perspiciatis quasi?</div>
+                            <div class="comment-btns">
+                                <button class="comment-like"><i class="fas fa-thumbs-up"></i> 123</button>
+                                <button class="comment-dislike"><i class="far fa-thumbs-down"></i></button>
+                                <button class="comment-reply-btn">reply</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment comment-reply">
+                        <div class="comment-profile-pic"><img class="comment-profile-img"
+                                src="../resources/profile-pic.jpeg" alt="profile"></div>
+                        <div class="comment-info">
+                            <div class="comment-ch-and-time">
+                                <div class="comment-channel-name"><a href="#">John Doe</a></div>
+                                <div class="comment-time">1 month ago</div>
+                            </div>
+                            <div class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas
+                                minima
+                                totam, accusantium velit aut deleniti sit similique sunt dignissimos pariatur
+                                aspernatur,
+                                commodi quo magnam cupiditate. Alias molestias pariatur perspiciatis quasi?</div>
+                            <div class="comment-btns">
+                                <button class="comment-like"><i class="fas fa-thumbs-up"></i> 123</button>
+                                <button class="comment-dislike"><i class="far fa-thumbs-down"></i></button>
+                                <button class="comment-reply-btn">reply</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment comment-reply">
+                        <div class="comment-profile-pic"><img class="comment-profile-img"
+                                src="../resources/profile-pic.jpeg" alt="profile"></div>
+                        <div class="comment-info">
+                            <div class="comment-ch-and-time">
+                                <div class="comment-channel-name"><a href="#">John Doe</a></div>
+                                <div class="comment-time">1 month ago</div>
+                            </div>
+                            <div class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas
+                                minima
+                                totam, accusantium velit aut deleniti sit similique sunt dignissimos pariatur
+                                aspernatur,
+                                commodi quo magnam cupiditate. Alias molestias pariatur perspiciatis quasi?</div>
+                            <div class="comment-btns">
+                                <button class="comment-like"><i class="fas fa-thumbs-up"></i> 123</button>
+                                <button class="comment-dislike"><i class="far fa-thumbs-down"></i></button>
+                                <button class="comment-reply-btn">reply</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment comment-reply">
+                        <div class="comment-profile-pic"><img class="comment-profile-img"
+                                src="../resources/profile-pic.jpeg" alt="profile"></div>
+                        <div class="comment-info">
+                            <div class="comment-ch-and-time">
+                                <div class="comment-channel-name"><a href="#">John Doe</a></div>
+                                <div class="comment-time">1 month ago</div>
+                            </div>
+                            <div class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas
+                                minima
+                                totam, accusantium velit aut deleniti sit similique sunt dignissimos pariatur
+                                aspernatur,
+                                commodi quo magnam cupiditate. Alias molestias pariatur perspiciatis quasi?</div>
+                            <div class="comment-btns">
+                                <button class="comment-like"><i class="fas fa-thumbs-up"></i> 123</button>
+                                <button class="comment-dislike"><i class="far fa-thumbs-down"></i></button>
+                                <button class="comment-reply-btn">reply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

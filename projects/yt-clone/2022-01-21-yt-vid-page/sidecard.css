@@ -1,0 +1,224 @@
+.sidecard {
+  max-width: 43rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin: 0 auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.4rem;
+}
+.sidecard-dark {
+  color: var(--base-color-dark-primary);
+}
+
+.sidecard-item {
+  display: flex;
+  margin-bottom: 0.8rem;
+}
+
+.sidecard-thumbnail {
+  flex-basis: 18rem;
+  flex-shrink: 0;
+  position: relative;
+  margin-right: 0.8rem;
+}
+
+.sidecard-thumbnail-img {
+  width: 100%;
+  height: 100%;
+}
+
+.sidecard-add {
+  top: 0.4rem;
+  right: 0.4rem;
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  color: #fff;
+  cursor: pointer;
+  visibility: hidden;
+}
+.sidecard-item:hover .sidecard-add {
+  visibility: visible;
+}
+
+.sidecard-add-text {
+  padding: 0.5rem 0;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.4rem 0 0 0.4rem;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.2s ease-out, padding 0.2s ease-out;
+}
+.sidecard-add:hover .sidecard-add-text {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--base-background-dark);
+  transition: width 0.2s ease-out 0.5s, padding 0.2s ease-out 0.5s;
+}
+
+.sidecard-add-btn {
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.4rem;
+}
+.sidecard-add:hover .sidecard-add-btn {
+  background-color: var(--base-background-dark);
+  border-radius: 0 0.4rem 0.4rem 0;
+  transition: 0s 0.5s;
+}
+
+.sidecard-add.sidecard-add-to-playlist {
+  top: 3.5rem;
+}
+
+.sidecard-duration {
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.3rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.4rem;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.sidecard-mix-bottom {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  top: 70%;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+.sidecard-dark .sidecard-mix-bottom {
+  background-color: hsla(87, 10%, 40%, 0.7);
+}
+.sidecard-dark .sidecard-item:hover .sidecard-mix-bottom {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sidecard-mix-overlay {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  text-transform: uppercase;
+  visibility: hidden;
+  cursor: pointer;
+}
+.sidecard-item:hover .sidecard-mix-overlay {
+  visibility: visible;
+}
+.sidecard-mix-overlay-icon {
+  margin-right: 1rem;
+}
+
+.sidecard-title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.sidecard-detail {
+  width: 100%;
+}
+
+.sidecard-vid-title {
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+
+.sidecard-channel,
+.sidecard-view {
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+.sidecard-channel {
+  margin-bottom: 0.2rem;
+}
+.sidecard-view {
+  margin-bottom: 1rem;
+}
+
+.sidecard-label {
+  cursor: pointer;
+}
+.sidecard-label-new {
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: var(--base-background-secondary);
+  color: var(--base-color-primary);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.4rem;
+}
+.sidecard-dark .sidecard-label-new {
+  background-color: var(--base-background-dark-secondary);
+  color: var(--base-color-dark-secondary);
+}
+.sidecard-label-live {
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 0.1rem solid hsl(0, 75%, 50%);
+  color: hsl(0, 75%, 50%);
+  text-transform: uppercase;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.2rem;
+}
+.sidecard-dark .sidecard-label-live {
+  border: 0.1rem solid hsl(0, 100%, 65%);
+  color: hsl(0, 100%, 65%);
+}
+
+.sidecard-btn {
+  visibility: hidden;
+}
+.sidecard-btn-icon {
+  cursor: pointer;
+  padding: 0.4rem 0.7rem;
+  color: hsl(49, 4%, 55%);
+}
+.sidecard-btn-icon:hover {
+  color: hsl(43, 5%, 40%);
+}
+.sidecard-dark .sidecard-btn-icon:hover {
+  color: #fff;
+}
+.sidecard-title:hover .sidecard-btn {
+  visibility: visible;
+}
+
+.tooltip {
+  position: relative;
+}
+.tooltip-text {
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  position: absolute;
+  bottom: 3.5rem;
+  left: -0.7rem;
+  background-color: rgba(100, 100, 100, 0.9);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+.tooltip:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+}

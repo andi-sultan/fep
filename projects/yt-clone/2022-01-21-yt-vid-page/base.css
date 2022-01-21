@@ -23,6 +23,11 @@
   /* nav */
   --border: #ccc;
   --border-dark: #303030;
+  /* timestamp */
+  --box-color: hsl(0, 0%, 73%);
+  --box-color-dark: hsl(0, 0%, 33%);
+  --blue-select: hsl(206, 100%, 33%);
+  --blue-select-dark: hsl(209, 100%, 50%);
 }
 
 html {
@@ -30,7 +35,7 @@ html {
 }
 
 body {
-  font-family: "Rooboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: var(--base-color-primary);
   box-sizing: border-box;
   font-size: 1.6rem;
@@ -85,20 +90,32 @@ a {
 
 .page {
   margin-top: 9rem;
-}
-
-.page {
   display: grid;
-  grid-template-columns: 1fr 24rem;
-  grid-template-rows: minmax(100px, auto) 1fr;
-}
-
-.ps {
-  grid-column: 2/3;
-  grid-row: 1/3;
+  grid-template-columns: 1fr 40rem;
+  grid-template-rows: minmax(auto, 60rem) auto auto;
+  grid-gap: 1rem;
+  max-width: 170rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 2rem;
 }
 
 .vid {
-  height: calc(100vh - 400px);
-  background-color: #35f;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.chds {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.comment-and-reply {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+.side {
+  grid-column: 2/3;
+  grid-row: 1/5;
+}
+.side > * {
+  margin-bottom: 1rem;
 }
