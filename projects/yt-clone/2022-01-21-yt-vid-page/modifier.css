@@ -1,3 +1,14 @@
+.bottom-border {
+  position: relative;
+}
+.bottom-border::after {
+  content: "";
+  position: absolute;
+  border-bottom: 1px solid var(--border);
+  left: 1rem;
+  right: 1rem;
+}
+
 .show-on-mobile {
   display: none;
 }
@@ -15,20 +26,16 @@
     grid-template-columns: 1fr;
   }
 
-  .vid {
+  .vc {
     grid-column: 1/2;
     grid-row: 1/2;
   }
-  .chds {
+  .comments {
     grid-column: 1/2;
-    grid-row: 2/3;
-  }
-  .comment-and-reply {
-    grid-column: 1/2;
-    grid-row: 4/5;
+    grid-row: 3/4;
   }
   .side {
     grid-column: 1/2;
-    grid-row: 3/4;
+    grid-row: 2/3;
   }
 }

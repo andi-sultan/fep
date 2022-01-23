@@ -1,0 +1,65 @@
+.vid {
+  padding: 0 1rem;
+}
+
+.vid-tag-container {
+  margin-bottom: 0.1rem;
+}
+.vid-tag {
+  color: rgb(0, 129, 228);
+  font-size: 1.2rem;
+}
+.vid-tag::before {
+  content: "#";
+}
+.vid-tag:hover {
+  text-decoration: underline;
+}
+
+.vid-title {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  flex-basis: 50rem;
+}
+
+.vid-detail {
+  color: var(--base-color-secondary);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.vid-detail > * {
+  margin-bottom: 1rem;
+}
+
+.vid-info {
+  font-size: 1.4rem;
+}
+
+.vid-btns {
+  display: flex;
+  font-size: 1.4rem;
+  flex-wrap: wrap;
+}
+.vid-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  color: #2b2b2b;
+  font-family: inherit;
+  font-weight: 500;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+.vid-btn:last-of-type {
+  margin-right: 0;
+}
+
+.vid-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+}

@@ -25,7 +25,7 @@
   overflow-y: auto;
   /* for firefox scrollbar */
   scrollbar-width: thin;
-  scrollbar-color: hsl(0, 0%, 35%) transparent;
+  scrollbar-color: hsl(0, 0%, 40%) transparent;
 }
 
 /* for chrome scrollbar */
@@ -34,7 +34,7 @@
   border-radius: 1rem;
 }
 .timestamp-body::-webkit-scrollbar-thumb {
-  background-color: hsl(0, 0%, 35%);
+  background-color: hsl(0, 0%, 40%);
   border: 0.4rem solid hsl(0, 0%, 100%);
   border-radius: 2rem;
 }

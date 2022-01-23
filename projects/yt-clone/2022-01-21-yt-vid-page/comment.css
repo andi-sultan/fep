@@ -1,9 +1,41 @@
 .comment {
   padding: 1rem;
+  padding-bottom: 2rem;
   display: flex;
 }
 
+.comment-input {
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.comment-sort {
+  padding: 0 1rem;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+.comment-num {
+  margin-right: 1rem;
+}
+.comment-sort-btn {
+  font-size: 1.6rem;
+}
+
+.comment-user-reply {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.comment-reply-box {
+  margin-left: 2rem;
+  border: none;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  flex: 1;
+}
+
 .comment-profile-pic {
+  min-width: 4rem;
   max-width: 5rem;
 }
 .comment-profile-img {

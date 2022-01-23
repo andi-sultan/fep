@@ -1,7 +1,5 @@
 .sidecard {
-  max-width: 43rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding: 3rem 1rem;
   margin: 0 auto 0;
   display: flex;
   flex-wrap: wrap;
