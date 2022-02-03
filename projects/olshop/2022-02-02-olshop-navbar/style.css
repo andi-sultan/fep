@@ -63,22 +63,52 @@ a {
 }
 
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 6rem;
+  display: block;
+  height: 7rem;
   background-color: var(--blue);
   color: var(--white-text);
 }
 .navbar-inner {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   width: 100%;
-  max-width: 136rem;
-  height: 4rem;
+  max-width: 90rem;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+.navbar-search-bar {
+  /* this element's height 
+  follows parent height (100%)
+  because this element and it's
+  parent have flex display
+  similar to "align-items: strech"
+  property in flexbox */
+  /* display: flex; */
+  position: relative;
+  /* align-items: center; */
+  flex: 1;
+}
+
+.navbar-search-text {
+  border: 1px solid var(--white);
+  border-radius: 1rem;
+  padding: 0.3rem 1rem;
+  height: 100%;
+  width: 100%;
+}
+
+.navbar-search-btn {
+  background-color: var(--blue);
+  border-radius: 1rem;
+  border: 1px solid var(--blue);
+  position: absolute;
+  right: 1rem;
+  top: 0.3rem;
+  height: 90%;
+  width: 5rem;
+  color: var(--white-text);
 }
 
 .navbar-logo {
