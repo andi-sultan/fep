@@ -63,7 +63,8 @@ a {
 }
 
 .navbar {
-  display: block;
+  display: flex;
+  align-items: center;
   height: 7rem;
   background-color: var(--blue);
   color: var(--white-text);
@@ -71,23 +72,21 @@ a {
 .navbar-inner {
   display: flex;
   justify-content: space-between;
+  /* align-items: stretch (default) */
   margin: 0 auto;
   width: 100%;
-  max-width: 90rem;
-  height: 100%;
-  padding: 1.5rem;
+  max-width: 130rem;
+  height: 4rem;
+  padding: 0 1.5rem;
+}
+
+.navbar-logo {
+  padding-top: 0.2rem;
+  padding-right: 1rem;
 }
 
 .navbar-search-bar {
-  /* this element's height 
-  follows parent height (100%)
-  because this element and it's
-  parent have flex display
-  similar to "align-items: strech"
-  property in flexbox */
-  /* display: flex; */
   position: relative;
-  /* align-items: center; */
   flex: 1;
 }
 
@@ -95,8 +94,9 @@ a {
   border: 1px solid var(--white);
   border-radius: 1rem;
   padding: 0.3rem 1rem;
-  height: 100%;
   width: 100%;
+  height: 100%;
+  font-size: 1.4rem;
 }
 
 .navbar-search-btn {
@@ -104,18 +104,63 @@ a {
   border-radius: 1rem;
   border: 1px solid var(--blue);
   position: absolute;
-  right: 1rem;
-  top: 0.3rem;
-  height: 90%;
+  right: 0.5rem;
+  top: 0.5rem;
   width: 5rem;
+  height: calc(100% - 1rem);
   color: var(--white-text);
+  font-size: 1.6rem;
 }
 
 .navbar-logo {
   font-size: 2.4rem;
   font-weight: bold;
+  padding-right: 3rem;
 }
 
-.navbar-btns {
-  display: flex;
+.navbar-cart-btn {
+  background-color: var(--blue);
+  border: 1px solid var(--blue);
+  font-size: 2rem;
+  border-radius: 1rem;
+  color: var(--white-text);
+  position: relative;
+  margin: 0 1.8rem;
+}
+
+.navbar-cart-label {
+  padding: 0.3rem 0.4rem;
+  font-size: 1rem;
+  background-color: var(--red);
+  border-radius: 1rem;
+  position: absolute;
+  top: 0;
+  right: -1rem;
+}
+
+.navbar-separator {
+  border-left: 1px solid var(--white);
+  /* to make rounded line ends */
+  border-radius: 1rem;
+  margin-right: 2rem;
+  margin-left: 0.5rem;
+}
+
+.navbar-login-btn {
+  flex: 0 0 7rem;
+  background-color: var(--blue);
+  border: 1px solid var(--white);
+  border-radius: 1rem;
+  color: var(--white-text);
+  margin-right: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.navbar-signup-btn {
+  flex: 0 0 7rem;
+  background-color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 1rem;
+  color: var(--blue);
+  font-size: 1.4rem;
 }
