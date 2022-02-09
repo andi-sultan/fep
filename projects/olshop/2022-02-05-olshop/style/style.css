@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+*:focus {
+  outline: none;
+}
+
+:root {
+  --blue: #0095da;
+  --green: #00b35e;
+  --red: #ed1c24;
+  --orange: #f37021;
+  --yellow: #fdbe28;
+  --red-label-background: #ffdee0;
+  --red-text: #d90000;
+  --white-text: #f8f8f8;
+  --white: #fff;
+  --grey-btn-background: #f1f1f1;
+  --grey-border: #cfcfcf;
+  --grey-text: #9e9e9e;
+  --black-text: #212121;
+  --base-background: #f8f8f8;
+}
+
+html {
+  font-size: 62.5%;
+  /* 10px */
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: var(--black-text);
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  background-color: var(--base-background);
+  /* for firefox scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #595959 transparent;
+}
+
+body::-webkit-scrollbar {
+  width: 1.4rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+  border: 0.3rem solid #fff;
+  background-color: #666666;
+  border-radius: 1rem;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: gray;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.top-navbar {
+  text-align: center;
+  background-color: lightgreen;
+  height: 3rem;
+  line-height: 3rem;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+.top-navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.top-navbar a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=style.css.map */
