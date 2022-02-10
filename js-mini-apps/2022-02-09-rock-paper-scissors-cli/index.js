@@ -6,8 +6,16 @@ const winresults = [
   ["scissors", "paper"],
 ];
 
-function concludeWinner(){
-  
+function concludeWinner(playerSelection, computerSelection) {
+  if (playerSelection == computerSelection) {
+    return "same";
+  }
+  console.log(`p=${playerSelection}`);
+  console.log(`c=${computerSelection}`);
+  const playerWin = winresults.find((result) => {
+    return playerSelection == result[0] && computerSelection == result[1];
+  });
+  return playerWin ? "win" : "lose";
 }
 
 function isInputValid(input) {
@@ -18,9 +26,13 @@ function isInputValid(input) {
 }
 
 function playRound(playerSelection, computerSelection) {
-  if (isInputValid(playerSelection)){
-
+  if (isInputValid(playerSelection)) {
+    return concludeWinner(
+      playerSelection.toLowerCase(),
+      computerSelection.toLowerCase()
+    );
   }
+  return 'invalid input'
 }
 
 // function game() {
