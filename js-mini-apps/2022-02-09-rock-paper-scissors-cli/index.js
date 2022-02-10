@@ -10,8 +10,6 @@ function concludeWinner(playerSelection, computerSelection) {
   if (playerSelection == computerSelection) {
     return "same";
   }
-  console.log(`p=${playerSelection}`);
-  console.log(`c=${computerSelection}`);
   const playerWin = winresults.find((result) => {
     return playerSelection == result[0] && computerSelection == result[1];
   });
@@ -26,25 +24,30 @@ function isInputValid(input) {
 }
 
 function playRound(playerSelection, computerSelection) {
+  console.log(`player   choose = ${playerSelection.toLowerCase()}`);
+  console.log(`computer choose = ${computerSelection.toLowerCase()}`);
   if (isInputValid(playerSelection)) {
     return concludeWinner(
       playerSelection.toLowerCase(),
       computerSelection.toLowerCase()
     );
   }
-  return 'invalid input'
+  return "invalid input";
 }
-
-// function game() {
-//   for (let i = 0; i < 5; i++) {
-//     playRound();
-//   }
-// }
 
 function computerPlay() {
   return selections[Math.floor(Math.random() * selections.length)];
 }
 
-const playerSelection = "PAper";
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+  for (let i = 0; i < 5; i++) {
+    console.log(`iteration #${i + 1}`);
+    const playerInput = prompt(
+      "input your selection between rock, paper and scissors:"
+    );
+    const computerInput = computerPlay();
+    console.log(playRound(playerInput, computerInput));
+  }
+}
+
+game();
