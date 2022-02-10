@@ -6,17 +6,21 @@ const winresults = [
   ["scissors", "paper"],
 ];
 
-function isInputValid(i) {
-  return selections.find((s) => {
-    console.log(`s=${s}`);
-    console.log(`i=${i}`);
-    console.log(`i == s=${i == s}`);
-    return i == s;
+function concludeWinner(){
+  
+}
+
+function isInputValid(input) {
+  const valid = selections.find((selection) => {
+    return input.toLowerCase() == selection.toLowerCase();
   });
+  return valid ? true : false;
 }
 
 function playRound(playerSelection, computerSelection) {
-  return isInputValid(computerSelection);
+  if (isInputValid(playerSelection)){
+
+  }
 }
 
 // function game() {
@@ -29,6 +33,6 @@ function computerPlay() {
   return selections[Math.floor(Math.random() * selections.length)];
 }
 
-const playerSelection = "scissorsd";
+const playerSelection = "PAper";
 const computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
