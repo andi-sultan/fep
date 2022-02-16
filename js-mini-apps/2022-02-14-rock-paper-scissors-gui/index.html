@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2022-02-14-rock-paper-scissors-gui</title>
 </head>
+
 <body>
     <div class="container">
         <div class="top">
-            <h3>player choose: <span id="plyr"></span></h3>
-            <h3>compt choose: <span id="comp"></span></h3>
+            <h2>player choose: <span id="plyr"></span></h2>
+            <h2>compt choose: <span id="comp"></span></h2>
         </div>
         <div class="middle">
-            <h3>player score: <span id="plyr-score"></span></h3>
-            <h3>compt score: <span id="comp-score"></span></h3>
+            <h3>player score: <span id="plyr-score">0</span></h3>
+            <h3>compt score: <span id="comp-score">0</span></h3>
             <h3>winner is <span id="winner"></span></h3>
         </div>
         <div class="bottom">
@@ -23,7 +25,11 @@
             <button class="btn" value="paper">paper</button>
             <button class="btn" value="scissors">scissors</button>
         </div>
+        <div style="margin-top: 1em;">
+            <button id="reset">reset</button>
+        </div>
     </div>
     <script src="index.js"></script>
 </body>
+
 </html>

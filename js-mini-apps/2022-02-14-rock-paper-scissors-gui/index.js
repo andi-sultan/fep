@@ -16,23 +16,6 @@ function concludeWinner(playerSelection, computerSelection) {
   return playerWin;
 }
 
-function isInputValid(input) {
-  const valid = selections.find((selection) => {
-    return input.toLowerCase() == selection.toLowerCase();
-  });
-  return valid ? true : false;
-}
-
-function playRound(playerSelection, computerSelection) {
-  if (isInputValid(playerSelection)) {
-    return concludeWinner(
-      playerSelection.toLowerCase(),
-      computerSelection.toLowerCase()
-    );
-  }
-  return "invalid input";
-}
-
 function computerPlay() {
   return selections[Math.floor(Math.random() * selections.length)];
 }
@@ -46,8 +29,7 @@ let plyrScore = 0;
 let compScore = 0;
 function game(playerInput, computerInput) {
   const checkWinner = concludeWinner(playerInput, computerInput);
-  if (plyrScore == 5 || compScore == 5) {
-  } else {
+  if (!(plyrScore == 5 || compScore == 5)) {
     if (checkWinner && checkWinner !== "same") {
       plyrScore += 1;
       plyrScoreLabel.textContent = plyrScore;
@@ -59,11 +41,7 @@ function game(playerInput, computerInput) {
     plyr.textContent = playerInput;
     comp.textContent = computerInput;
     if (plyrScore == 5 || compScore == 5) {
-      if (plyrScore > compScore) {
-        winner.textContent = "player";
-      } else {
-        winner.textContent = "computer";
-      }
+      winner.textContent = plyrScore > compScore ? "player" : "computer";
     }
   }
 }
@@ -73,4 +51,15 @@ btn.forEach((b) => {
   b.addEventListener("click", (e) => {
     game(e.target.value, computerPlay());
   });
+});
+
+const reset = document.querySelector("#reset");
+reset.addEventListener("click", () => {
+  plyrScore = 0;
+  compScore = 0;
+  plyr.textContent = "";
+  comp.textContent = "";
+  plyrScoreLabel.textContent = "0";
+  compScoreLabel.textContent = "0";
+  winner.textContent = "";
 });
