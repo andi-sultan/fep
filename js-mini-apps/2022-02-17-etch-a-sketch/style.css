@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+html {
+  font-size: 62.5%; /* 10px */
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: var(--black-text);
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  background-color: var(--base-background);
+  /* for firefox scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: hsl(0, 0%, 35%) transparent;
+}
+body::-webkit-scrollbar {
+  width: 1.4rem;
+}
+body::-webkit-scrollbar-track {
+  background: #fff;
+}
+body::-webkit-scrollbar-thumb {
+  border: 0.3rem solid #fff;
+  background-color: hsl(0, 0%, 40%);
+  border-radius: 1rem;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 50%);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.top-navbar {
+  text-align: center;
+  background-color: lightgreen;
+  height: 3rem;
+  line-height: 3rem;
+  width: 100%;
+}
+.top-navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+.top-navbar a:hover {
+  text-decoration: underline;
+}
+
+.btns {
+  padding: 2rem;
+}
+.btn {
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.3rem;
+  border: 1px solid rgb(28, 28, 28);
+  background-color: transparent;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 60rem;
+}
+.cell {
+  flex: 0 0 25%;
+  border: 1px solid rgb(28, 28, 28);
+  background-color: aquamarine;
+  width: 25%;
+}
+/* to set same height with cell's width */
+.cell::before {
+  content: "";
+  display: table;
+  padding-top: 100%;
+}
+.cell:hover{
+  background-color: antiquewhite;
+}
