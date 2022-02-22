@@ -63,6 +63,10 @@ button {
   text-decoration: underline;
 }
 
+.container{
+  margin-left: 3rem;
+}
+
 .btns {
   padding: 2rem;
 }
@@ -91,7 +95,4 @@ button {
   content: "";
   display: table;
   padding-top: 100%;
-}
-.cell:hover{
-  background-color: antiquewhite;
 }

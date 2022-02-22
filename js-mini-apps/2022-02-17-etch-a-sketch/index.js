@@ -7,3 +7,18 @@ cell.className = "cell";
 for (let i = 0; i < 16; i++) {
   grid.appendChild(cell.cloneNode(true));
 }
+
+// todo:
+// vars&elems:
+// btn clear
+// btn rgb
+// btn darker
+
+// elem grid
+// grid size
+// elem cell
+// cell fill color
+
+
+// functions:
+// set cell fill color
