@@ -65,6 +65,7 @@ button {
 
 .container{
   margin-left: 3rem;
+  margin-right: 1rem;
 }
 
 .btns {
@@ -86,7 +87,6 @@ button {
 }
 .cell {
   flex: 0 0 25%;
-  border: 1px solid rgb(28, 28, 28);
   background-color: aquamarine;
   width: 25%;
 }
