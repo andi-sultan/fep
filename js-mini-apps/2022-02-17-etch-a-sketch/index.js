@@ -30,8 +30,16 @@ function setCellFillColor(c) {
 
 // clear event
 btnClear.addEventListener("click", () => {
-  gridnum = prompt("gridSize?");
-  gridSize = 20;
+  gridNum = null;
+  gridNum = prompt("gridSize?");
+  while (isNaN(gridNum) || gridNum > 100) {
+    if (gridNum > 100) {
+      gridNum = prompt("please enter a number no more than 100! gridSize?");
+    } else {
+      gridNum = prompt("please enter a number! gridSize?");
+    }
+  }
+  gridSize = !isNaN(gridNum) ? gridNum : 4;
   createCells(gridSize);
 });
 // // rgb event
