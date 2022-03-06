@@ -32,9 +32,11 @@ function setCellFillColor(c) {
 btnClear.addEventListener("click", () => {
   gridNum = null;
   gridNum = prompt("gridSize?");
-  while (isNaN(gridNum) || gridNum > 100) {
+  while (isNaN(gridNum) || gridNum > 100 || gridNum < 1) {
     if (gridNum > 100) {
       gridNum = prompt("please enter a number no more than 100! gridSize?");
+    } else if (gridNum < 1) {
+      gridNum = prompt("please enter a number more than 0! gridSize?");
     } else {
       gridNum = prompt("please enter a number! gridSize?");
     }
@@ -42,9 +44,9 @@ btnClear.addEventListener("click", () => {
   gridSize = !isNaN(gridNum) ? gridNum : 4;
   createCells(gridSize);
 });
-// // rgb event
+// todo: rgb event
 // btnRgb.addEventListener();
-// // darker event
+// todo: darker event
 // btnDarker.addEventListener();
 
 createCells(gridSize);
