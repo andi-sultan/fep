@@ -1,28 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap");
 
-* {
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 10px */
 }
 
 body {
   font-family: "Muli", sans-serif;
-  margin: 0;
-}
-
-.outer-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 30px);
-  overflow: hidden;
-  margin: 0;
+  font-size: 1.6rem;
 }
 
 .top-navbar {
   text-align: center;
   background-color: lightgreen;
-  height: 30px;
-  line-height: 30px;
+  height: 3rem;
+  line-height: 3rem;
 }
 .top-navbar a {
   text-decoration: none;
@@ -32,19 +31,26 @@ body {
   text-decoration: underline;
 }
 
-.container {
+.expc {
   display: flex;
-  width: 90vw;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 3rem);
+  overflow: hidden;
+  margin: 0;
+}
+
+.expc-container {
+  display: flex;
+  width: 90%;
   height: 100%;
   align-items: center;
 }
 
-.panel {
-  /* background-size: auto 100%; */
+.expc-panel {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* height: calc(80vh - 30px); */
   height: 80%;
   border-radius: 50px;
   color: #fff;
@@ -55,7 +61,7 @@ body {
   transition: flex 1s ease-in-out;
 }
 
-.panel h3 {
+.expc-panel-text {
   font-size: 25px;
   position: absolute;
   bottom: 20px;
@@ -65,22 +71,22 @@ body {
   transition: opacity 0.7s;
 }
 
-.panel.active {
+.expc-panel.active {
   flex: 5;
 }
 
-.panel.active h3 {
+.expc-panel.active .expc-panel-text {
   opacity: 1;
-  transition: opacity 0.5s 1s;
+  transition: opacity 0.7s 0.7s;
 }
 
 @media (max-width: 480px) {
-  .container {
+  .expc {
     width: 100vw;
   }
 
-  .panel:nth-of-type(4),
-  .panel:nth-of-type(5) {
+  .expc-panel:nth-of-type(4),
+  .expc-panel:nth-of-type(5) {
     display: none;
   }
 }
