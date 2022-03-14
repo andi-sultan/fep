@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>02-progress-steps</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="progress-container">
-        <div class="progress" id="progress"></div>
-        <div class="circle active">1</div>
-        <div class="circle">2</div>
-        <div class="circle">3</div>
-        <div class="circle">4</div>
-      </div>
 
-      <button class="btn" id="prev" disabled>Prev</button>
-      <button class="btn" id="next">Next</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>02-progress-steps</title>
+</head>
+
+<body>
+  <div class="top-navbar">
+    <a href="/index.html">Home</a> |
+    <a href="https://github.com/bradtraversy/50projects50days">Inspiration</a>
+  </div>
+  <div class="container">
+    <div class="progress">
+      <div class="progress-outer">
+        <div class="progress-container">
+          <div class="progress-line" id="progress-line"></div>
+          <div class="progress-circle active">1</div>
+          <div class="progress-circle">2</div>
+          <div class="progress-circle">3</div>
+          <div class="progress-circle">4</div>
+        </div>
+
+        <button class="progress-btn" id="progress-prev" disabled>Prev</button>
+        <button class="progress-btn" id="progress-next">Next</button>
+      </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>

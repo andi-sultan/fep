@@ -1,7 +1,7 @@
-const progress = document.getElementById("progress");
-const prev = document.getElementById("prev");
-const next = document.getElementById("next");
-const circles = document.querySelectorAll(".circle");
+const progress = document.getElementById("progress-line");
+const prev = document.getElementById("progress-prev");
+const next = document.getElementById("progress-next");
+const circles = document.querySelectorAll(".progress-circle");
 
 let currentActive = 1;
 

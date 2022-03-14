@@ -7,19 +7,48 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 62.5%;
 }
 
 body {
   font-family: "Muli", sans-serif;
+  font-size: 1.6rem;
+}
+
+.top-navbar {
+  text-align: center;
+  background-color: lightgreen;
+  height: 3rem;
+  line-height: 3rem;
+}
+.top-navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+.top-navbar a:hover {
+  text-decoration: underline;
+}
+
+.container{
+  height: calc(100vh - 3rem);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
 }
 
-.container {
+.progress {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-outer{
   text-align: center;
 }
 
@@ -27,9 +56,9 @@ body {
   display: flex;
   justify-content: space-between;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
   max-width: 100%;
-  width: 350px;
+  width: 35rem;
 }
 
 .progress-container::before {
@@ -39,61 +68,65 @@ body {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  height: 4px;
+  height: .4rem;
   width: 100%;
   z-index: -1;
 }
 
-.progress {
+.progress-line {
   background-color: var(--line-border-fill);
   position: absolute;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  height: 4px;
+  height: .4rem;
   width: 0%;
   z-index: -1;
   transition: 0.5s ease;
 }
 
-.circle {
+.progress-circle {
   background-color: #fff;
   color: #999;
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 3rem;
+  width: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid var(--line-border-empty);
+  border: .3rem solid var(--line-border-empty);
   transition: 0.5s ease;
 }
 
-.circle.active {
+.progress-circle.active {
   border-color: var(--line-border-fill);
 }
 
-.btn {
+.progress-btns{
+  text-align: center;
+}
+
+.progress-btn {
   background-color: var(--line-border-fill);
   color: #fff;
   border: 0;
-  border-radius: 6px;
+  border-radius: .6rem;
   cursor: pointer;
   font-family: inherit;
-  padding: 8px 30px;
-  margin: 5px;
-  font-size: 14px;
+  padding: .8rem 3rem;
+  margin: .5rem;
+  font-size: 1.4rem;
 }
 
-.btn:active {
+.progress-btn:active {
   transform: scale(0.98);
 }
 
-.btn:focus {
+.progress-btn:focus {
   outline: 0;
 }
 
-.btn:disabled{
+.progress-btn:disabled{
   background-color: var(--line-border-empty);
   cursor: not-allowed;
 }
