@@ -48,50 +48,53 @@ button {
   cursor: pointer;
 }
 
-.calc{
+.calc {
   max-width: 40rem;
   border: 2px solid #79f;
 }
 
-.calc-display{
+.calc-display {
   padding: 1rem;
   background-color: aquamarine;
 }
 
-.calc-temp, .calc-hasil{
+.calc-temp,
+.calc-hasil {
   background-color: rgb(243, 250, 255);
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   padding: 1rem;
   text-align: right;
   font-size: 1.8rem;
   color: #777;
+  min-height: 3rem;
 }
-.calc-hasil{
+.calc-hasil {
   color: #333;
   font-size: 3.2rem;
   font-weight: 600;
+  min-height: 6rem;
 }
 
-.calc-btns{
+.calc-btns {
   padding: 1rem;
   background-color: #79f;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  grid-template-rows: repeat(4,6rem);
-  row-gap: .5rem;
-  column-gap: .5rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 6rem);
+  row-gap: 0.5rem;
+  column-gap: 0.5rem;
 }
 
-.calc-btn{
+.calc-btn {
   background-color: hsl(206, 100%, 98%);
   font-size: 2.4rem;
   border: transparent;
 }
-.calc-btn:hover{
+.calc-btn:hover {
   background-color: hsl(206, 100%, 95%);
   font-weight: 600;
 }
-.calc-btn:active{
+.calc-btn:active {
   background-color: hsl(206, 100%, 90%);
   font-size: 1.8rem;
 }

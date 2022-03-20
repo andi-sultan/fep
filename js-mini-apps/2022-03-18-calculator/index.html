@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content=, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>2022-03-18-calculator</title>
 </head>
+
 <body>
     <div class="container">
         <div class="calc">
             <div class="calc-display">
-                <div class="calc-temp" id="calc-temp">0</div>
-                <div class="calc-hasil" id="calc-hasil">0</div>
+                <div data-previous-operand class="calc-temp" id="previousOperand"></div>
+                <div data-current-operand class="calc-hasil" id="currentOperand"></div>
             </div>
             <div class="calc-btns">
-                <button class="calc-btn" id="calc-btn1">1</button>
-                <button class="calc-btn" id="calc-btn2">2</button>
-                <button class="calc-btn" id="calc-btn3">3</button>
-                <button class="calc-btn" id="calc-btn9">+</button>
-                <button class="calc-btn" id="calc-btn4">4</button>
-                <button class="calc-btn" id="calc-btn5">5</button>
-                <button class="calc-btn" id="calc-btn6">6</button>
-                <button class="calc-btn" id="calc-btn9">-</button>
-                <button class="calc-btn" id="calc-btn7">7</button>
-                <button class="calc-btn" id="calc-btn8">8</button>
-                <button class="calc-btn" id="calc-btn9">9</button>
-                <button class="calc-btn" id="calc-btn9">*</button>
-                <button class="calc-btn" id="calc-btn9">.</button>
-                <button class="calc-btn" id="calc-btn9">0</button>
-                <button class="calc-btn" id="calc-btn9">=</button>
-                <button class="calc-btn" id="calc-btn9">/</button>
+                <button class="calc-btn" disabled></button>
+                <button data-all-clear class="calc-btn">AC</button>
+                <button data-delete class="calc-btn">DEL</button>
+                <button data-operation class="calc-btn">/</button>
+                <button data-number class="calc-btn">7</button>
+                <button data-number class="calc-btn">8</button>
+                <button data-number class="calc-btn">9</button>
+                <button data-operation class="calc-btn">*</button>
+                <button data-number class="calc-btn">4</button>
+                <button data-number class="calc-btn">5</button>
+                <button data-number class="calc-btn">6</button>
+                <button data-operation class="calc-btn">-</button>
+                <button data-number class="calc-btn">1</button>
+                <button data-number class="calc-btn">2</button>
+                <button data-number class="calc-btn">3</button>
+                <button data-operation class="calc-btn">+</button>
+                <button data-number class="calc-btn" disabled></button>
+                <button data-number class="calc-btn">0</button>
+                <button data-number class="calc-btn">.</button>
+                <button data-equals class="calc-btn">=</button>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
