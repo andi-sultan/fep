@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+html {
+  font-size: 62.5%; /* 10px */
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: var(--black-text);
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  background-color: var(--base-background);
+  /* for firefox scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: hsl(0, 0%, 35%) transparent;
+}
+body::-webkit-scrollbar {
+  width: 1.4rem;
+}
+body::-webkit-scrollbar-track {
+  background: #fff;
+}
+body::-webkit-scrollbar-thumb {
+  border: 0.3rem solid #fff;
+  background-color: hsl(0, 0%, 40%);
+  border-radius: 1rem;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 50%);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.calc{
+  max-width: 40rem;
+  border: 2px solid #79f;
+}
+
+.calc-display{
+  padding: 1rem;
+  background-color: aquamarine;
+}
+
+.calc-temp, .calc-hasil{
+  background-color: rgb(243, 250, 255);
+  margin-bottom: .5rem;
+  padding: 1rem;
+  text-align: right;
+  font-size: 1.8rem;
+  color: #777;
+}
+.calc-hasil{
+  color: #333;
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+
+.calc-btns{
+  padding: 1rem;
+  background-color: #79f;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(4,6rem);
+  row-gap: .5rem;
+  column-gap: .5rem;
+}
+
+.calc-btn{
+  background-color: hsl(206, 100%, 98%);
+  font-size: 2.4rem;
+  border: transparent;
+}
+.calc-btn:hover{
+  background-color: hsl(206, 100%, 95%);
+  font-weight: 600;
+}
+.calc-btn:active{
+  background-color: hsl(206, 100%, 90%);
+  font-size: 1.8rem;
+}
