@@ -21,8 +21,10 @@ class Calculator {
   }
 
   chooseOperation(operation) {
-    if (this.currentOperand === "") return;
-    // todo: find a way to get user can change oprator befor enter next currentOperand
+    if (this.currentOperand === "") {
+      this.operation = operation;
+      return;
+    }
     if (this.previousOperand !== "") {
       this.compute();
     }
