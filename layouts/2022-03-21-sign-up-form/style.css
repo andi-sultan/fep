@@ -69,6 +69,11 @@ a:hover {
   min-height: 12rem;
 }
 
+.logo-img {
+  width: 5rem;
+  margin-right: 1.2rem;
+}
+
 .logo-text {
   color: #fff;
   font-size: 5rem;
@@ -124,7 +129,10 @@ a:hover {
 .input-text.input-text-error {
   border-color: #b00020;
 }
-/* todo: create error text */
+.input-error-message {
+  color: #b00020;
+  font-size: 1.2rem;
+}
 
 .bottom {
   padding: 3rem 1rem 5rem;
