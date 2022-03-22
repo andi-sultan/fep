@@ -54,12 +54,13 @@ a:hover {
   background-size: cover;
   min-height: 30rem;
   height: 30vh;
-  display: flex;
-  align-items: flex-start;
+  position: relative;
 }
 
 .logo-container {
-  margin-top: calc(10vh - 3rem);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,6 +134,7 @@ a:hover {
 .btn-sign-up {
   font-size: 2rem;
   font-family: inherit;
+  font-weight: 600;
   padding: 1.4rem 4.5rem;
   background-color: hsl(48, 63%, 40%);
   color: #fff;
@@ -165,11 +167,14 @@ a:hover {
     overflow: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+  }
+  .side-form-container {
+    margin: auto;
   }
 
   .logo-container {
-    margin-top: calc(20vh - 3rem);
+    top: 20%;
+    transform: translateY(0%);
   }
 
   .top,
