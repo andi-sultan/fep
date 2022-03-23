@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --blue: #087fda;
+  --black: #3c3b37;
+}
+
+html {
+  font-size: 62.5%; /* 10px */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #3c3b37;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  background-color: #eee;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.top-navbar {
+  text-align: center;
+  background-color: lightgreen;
+  height: 3rem;
+  line-height: 3rem;
+}
+.top-navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+.top-navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Grid setup */
+.container {
+  max-width: 144rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.header {
+  grid-column: 2/3;
+}
+
+.side {
+  grid-row: 1/3;
+}
+
+.content {
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 15px;
+}
+
+.content-container.pj {
+  grid-row: 1/3;
+}
+
+.content-container.tr {
+  grid-column: 2/3;
+}
+
+/* Element props */
+.header {
+  background-color: #fff;
+  margin-bottom: 2.5rem;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.side {
+  background-color: var(--blue);
+  color: #fff;
+}
+
+.side-group {
+  margin-bottom: 5rem;
+  margin-left: 2rem;
+}
+.side-group:first-of-type {
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.side-item {
+  padding: 0.5rem 0.5rem;
+  display: block;
+}
+.side-item:hover {
+  text-decoration: none;
+}
+
+.side-icon {
+  margin-right: 1rem;
+}
+
+.content {
+  padding: 0 2.5rem;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+}
+
+.card {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid hsl(0, 0%, 95%);
+  border-radius: 5px;
+  box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.1);
+  height: 20rem;
+}
