@@ -59,9 +59,15 @@ button {
 }
 
 .card-container {
-  background-color: #fff;
-  max-width: 25rem;
   padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 2rem;
+  background-color: #fff;
 }
 
 .modal {
