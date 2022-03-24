@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --blue: #087fda;
+  --black: #3c3b37;
+}
+
+html {
+  font-size: 62.5%; /* 10px */
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #3c3b37;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  background-color: #eee;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+input,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.top-navbar {
+  text-align: center;
+  background-color: lightgreen;
+  height: 3rem;
+  line-height: 3rem;
+}
+.top-navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+.top-navbar a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.card-container {
+  background-color: #fff;
+  max-width: 25rem;
+  padding: 2rem;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: hsla(0, 0%, 0%, 0.3);
+  display: none;
+  z-index: 1;
+}
+.modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  padding: 2rem;
+  background-color: #fff;
+}
