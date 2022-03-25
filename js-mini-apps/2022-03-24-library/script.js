@@ -64,7 +64,6 @@ function renderCard(a) {
 
   const cardDel = document.createElement("button");
   cardDel.classList.add("card-status");
-  cardDel.dataset.id = a.id;
   cardDel.textContent = "Remove";
   cardDel.addEventListener("click", () => remove(a.id));
 
