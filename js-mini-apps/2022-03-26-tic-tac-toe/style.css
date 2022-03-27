@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; /* 10px */
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #3c3b37;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  background-color: #eee;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+input,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+.top-navbar {
+  text-align: center;
+  background-color: lightgreen;
+  height: 3rem;
+  line-height: 3rem;
+}
+.top-navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+.top-navbar a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.ttt-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.ttt-modal.hide {
+  display: none;
+}
+
+.ttt-modal-container {
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ttt-modal-body {
+  margin-bottom: 2rem;
+}
+
+.ttt-row {
+  margin-bottom: 1rem;
+}
+.ttt-row:last-of-type {
+  margin-bottom: 0;
+}
+
+.ttt-col-label {
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+  font-weight: 500;
+}
+
+.ttt-input {
+  border-radius: 0.3rem;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+}
+
+.ttt-btn {
+  border-radius: 0.3rem;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  font-weight: 500;
+}
+
+.ttt-display {
+  display: none;
+}
+.ttt-display.show {
+  display: block;
+}
+
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 5rem);
+  grid-template-rows: repeat(3, 5rem);
+  grid-gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.ttt-score {
+  margin-bottom: 2rem;
+}
+
+.ttt-box {
+  border-radius: 0.3rem;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  font-weight: 500;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.ttt-winner{
+  display: none;
+}
+.ttt-winner.show{
+  display: initial;
+}

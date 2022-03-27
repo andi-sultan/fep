@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>2022-03-26-tic-tac-toe</title>
+</head>
+
+<body>
+    <div class="top-navbar">
+        <a href="/index.html">Home</a> | <a
+            href="https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/tic-tac-toe">Source</a>
+    </div>
+
+    <div class="container">
+        <div class="ttt-display" id="ttt-display">
+            <div class="ttt-row ttt-winner">
+                Winner is: <span id="ttt-winner"></span>
+            </div>
+
+            <div class="ttt-row">
+                <span id="ttt-plyr-turn"></span>ply's Turn
+            </div>
+
+            <div class="ttt-board">
+                <div class="ttt-box">X</div>
+                <div class="ttt-box">O</div>
+                <div class="ttt-box"></div>
+                <div class="ttt-box"></div>
+                <div class="ttt-box"></div>
+                <div class="ttt-box"></div>
+                <div class="ttt-box"></div>
+                <div class="ttt-box"></div>
+                <div class="ttt-box"></div>
+            </div>
+
+            <div class="ttt-row">
+                <button class="ttt-btn" id="ttt-reset">Reset</button>
+            </div>
+        </div>
+
+
+        <div class="ttt-modal" id="ttt-gameModal">
+            <div class="ttt-modal-container">
+                <div class="ttt-modal-body">
+                    <div class="ttt-row">
+                        <div class="ttt-col-label">Player 1 name:</div>
+                        <div class="ttt-col-input">
+                            <input type="text" id="ttt-input-player1" class="ttt-input">
+                        </div>
+                    </div>
+                    <div class="ttt-row">
+                        <div class="ttt-col-label">Player 2 name:</div>
+                        <div class="ttt-col-input">
+                            <input type="text" id="ttt-input-player2" class="ttt-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="ttt-modal-footer">
+                    <button class="ttt-btn" id="ttt-start">Start</button>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+</body>
+
+</html>
