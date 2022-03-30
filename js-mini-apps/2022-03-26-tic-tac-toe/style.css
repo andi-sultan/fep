@@ -67,7 +67,7 @@ button {
   z-index: 1;
 }
 
-.ttt-modal.hide {
+.hide {
   display: none;
 }
 
@@ -115,7 +115,7 @@ button {
 .ttt-display {
   display: none;
 }
-.ttt-display.show {
+.show {
   display: block;
 }
 
