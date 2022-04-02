@@ -1,5 +1,3 @@
-const gameTiles = Array.from(document.querySelectorAll(".ttt-box"));
-
 const Game = (() => {
   let player = "X";
   let isGameActive = false;
@@ -20,8 +18,7 @@ const Game = (() => {
     [2, 4, 6],
   ];
 
-  const startGame = (tiles) => {
-    Board.setTiles(tiles);
+  const startGame = () => {
     isGameActive = true;
   };
 
@@ -74,6 +71,9 @@ const Game = (() => {
 
 const Board = (() => {
   let board = ["", "", "", "", "", "", "", "", ""];
+  const tiles = Array.from(document.querySelectorAll(".ttt-box"));
+  const winnerLabel = document.querySelector("#ttt-winner");
+
   const updateBoard = (board, tile, index) => {
     const playerName = Game.getPlayerName();
 
@@ -95,17 +95,15 @@ const Board = (() => {
     tile.innerText = playerName;
   };
 
-  const setTiles = (tiles) => {
-    tiles.forEach((tile, index) => {
-      tile.addEventListener("click", () => updateBoard(board, tile, index));
-    });
-  };
+  tiles.forEach((tile, index) => {
+    tile.addEventListener("click", () => updateBoard(board, tile, index));
+  });
 
   const announceWinner = (winner) => {
-    alert(`The winner is ${winner}`);
+    winnerLabel.textContent = `The winner is ${winner}`;
   };
 
-  return { setTiles, announceWinner };
+  return { announceWinner };
 })();
 
-Game.startGame(gameTiles);
+Game.startGame();
