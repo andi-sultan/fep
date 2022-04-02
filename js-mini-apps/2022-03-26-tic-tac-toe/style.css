@@ -145,9 +145,7 @@ button {
   cursor: pointer;
 }
 
-.ttt-winner{
-  display: none;
-}
-.ttt-winner.show{
-  display: initial;
+.ttt-top-label {
+  min-height: 2rem;
+  margin-bottom: 1rem;
 }
