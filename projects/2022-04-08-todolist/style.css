@@ -36,6 +36,10 @@ button {
   color: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
 .top-navbar {
   text-align: center;
   background-color: lightgreen;
@@ -59,7 +63,7 @@ button {
 }
 
 .column {
-  background-color: hsl(210, 6%, 93%);
+  background-color: #ededed;
   padding: 1.2rem 1.5rem 1.5rem 1.5rem;
   margin-bottom: 1.5rem;
   border-radius: 0.5rem;
@@ -71,8 +75,18 @@ button {
 
 .column-title {
   font-size: 1.8rem;
-  font-weight: bold;
+  font-weight: 600;
   color: #3c3b37;
+  padding-left: 0.8rem;
+}
+
+.column-body {
+  margin-bottom: 1rem;
+}
+
+.column-footer {
+  display: flex;
+  justify-content: end;
 }
 
 .card {
@@ -80,10 +94,30 @@ button {
   padding: 1rem;
   margin-bottom: 0.5rem;
   border-radius: 0.3rem;
+  cursor: pointer;
 }
 
-.card-title{
-  font-size: 1.6rem;
-  font-weight: bold;
+.card-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-btn {
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  border: transparent;
+  border-radius: 0.3rem;
+  background-color: #ededed;
+}
+.card-btn:hover {
+  background-color: hsl(0, 0%, 90%);
+}
+.card-btn:active {
+  background-color: hsl(0, 0%, 80%);
+}
+
+.card-title {
+  flex: 1;
   color: #3c3b37;
 }
