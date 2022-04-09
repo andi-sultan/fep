@@ -111,13 +111,14 @@ button {
   background-color: #ededed;
 }
 .card-btn:hover {
-  background-color: hsl(0, 0%, 90%);
+  background-color: hsl(0, 0%, 85%);
 }
 .card-btn:active {
-  background-color: hsl(0, 0%, 80%);
+  background-color: hsl(0, 0%, 75%);
 }
 
 .card-title {
   flex: 1;
   color: #3c3b37;
 }
+
