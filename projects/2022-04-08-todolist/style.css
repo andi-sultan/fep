@@ -139,6 +139,8 @@ button {
   background-color: #fff;
   padding: 2rem;
   border-radius: 0.5rem;
+  min-width: 40rem;
+  width: 90%;
 }
 
 .modal-header {
@@ -154,8 +156,11 @@ button {
 .modal-body {
   margin-bottom: 1rem;
 }
+.modal-body-center {
+  text-align: center;
+}
 
-.modal-input-group{
+.modal-input-group {
   margin-bottom: 1rem;
 }
 
@@ -163,10 +168,14 @@ button {
   font-size: 1.4rem;
   font-weight: 600;
   color: #3c3b37;
+  margin-bottom: 0.3rem;
 }
 
 .modal-footer {
   display: flex;
+  justify-content: center;
+}
+.modal-footer-right {
   justify-content: end;
 }
 

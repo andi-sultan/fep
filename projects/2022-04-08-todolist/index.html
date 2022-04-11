@@ -35,22 +35,22 @@
                     <div class="card">
                         <div class="card-item">
                             <span class="card-title">Title</span>
-                            <button class="card-btn"><i class="fas fa-edit"></i></button>
-                            <button class="card-btn"><i class="fas fa-trash-alt"></i></button>
+                            <button class="card-btn card-btn-edit"><i class="fas fa-edit"></i></button>
+                            <button class="card-btn card-btn-delete"><i class="fas fa-trash-alt"></i></button>
                         </div>
                     </div>
 
                     <div class="card">
                         <div class="card-item">
                             <span class="card-title">Title</span>
-                            <button class="card-btn"><i class="fas fa-edit"></i></button>
-                            <button class="card-btn"><i class="fas fa-trash-alt"></i></button>
+                            <button class="card-btn card-btn-edit"><i class="fas fa-edit"></i></button>
+                            <button class="card-btn card-btn-delete"><i class="fas fa-trash-alt"></i></button>
                         </div>
                     </div>
 
                 </div>
                 <div class="column-footer">
-                    <button class="card-btn"><i class="fas fa-plus"></i></button>
+                    <button class="card-btn card-btn-edit"><i class="fas fa-plus"></i></button>
                 </div>
             </div>
 
@@ -63,38 +63,70 @@
                     <div class="card">
                         <div class="card-item">
                             <span class="card-title">Title</span>
-                            <button class="card-btn"><i class="fas fa-edit"></i></button>
-                            <button class="card-btn"><i class="fas fa-trash-alt"></i></button>
+                            <button class="card-btn card-btn-edit"><i class="fas fa-edit"></i></button>
+                            <button class="card-btn card-btn-delete"><i class="fas fa-trash-alt"></i></button>
                         </div>
                     </div>
 
                     <div class="card">
                         <div class="card-item">
                             <span class="card-title">Title</span>
-                            <button class="card-btn"><i class="fas fa-edit"></i></button>
-                            <button class="card-btn"><i class="fas fa-trash-alt"></i></button>
+                            <button class="card-btn card-btn-edit"><i class="fas fa-edit"></i></button>
+                            <button class="card-btn card-btn-delete"><i class="fas fa-trash-alt"></i></button>
                         </div>
                     </div>
 
                 </div>
                 <div class="column-footer">
-                    <button class="card-btn"><i class="fas fa-plus"></i></button>
+                    <button class="card-btn card-btn-edit"><i class="fas fa-plus"></i></button>
                 </div>
             </div>
 
-            <div class="modal">
+            <div class="modal hide" id="modal-edit">
                 <div class="modal-container">
                     <div class="modal-header">
                         <span class="modal-title">Project Name</span>
                     </div>
                     <div class="modal-body">
                         <div class="modal-input-group">
-                            <label class="modal-input-title">Title</label>
+                            <div class="modal-input-title">Title</div>
                             <input type="text" class="text-input">
                         </div>
+                        <div class="modal-input-group">
+                            <div class="modal-input-title">Description</div>
+                            <input type="text" class="text-input">
+                        </div>
+                        <div class="modal-input-group">
+                            <div class="modal-input-title">Due Date</div>
+                            <input type="date" class="text-input">
+                        </div>
+                        <div class="modal-input-group">
+                            <div class="modal-input-title">Priority</div>
+                            <select name="" id="" class="text-input">
+                                <option value="">-</option>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer modal-footer-right">
+                        <button class="modal-btn"><i class="fas fa-save"></i> Save</button>
+                        <button class="modal-btn"><i class="fas fa-times"></i> Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal hide" id="modal-delete">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <span class="modal-title">Delete Item</span>
+                    </div>
+                    <div class="modal-body modal-body-center">
+                        Delete this item?
                     </div>
                     <div class="modal-footer">
-                        <button class="modal-btn"><i class="fas fa-save"></i> Save</button>
+                        <button class="modal-btn"><i class="fas fa-trash-alt"></i> Delete</button>
                         <button class="modal-btn"><i class="fas fa-times"></i> Cancel</button>
                     </div>
                 </div>
