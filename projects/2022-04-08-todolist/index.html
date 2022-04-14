@@ -24,115 +24,113 @@
             <h1>Todo List</h1>
         </div>
 
-        <div class="main">
-
-            <div class="column">
-                <div class="column-header">
-                    <div class="column-title">Projects</div>
-                </div>
-                <div class="column-body">
-
-                    <div class="card">
-                        <div class="card-item">
-                            <span class="card-title">Title</span>
-                            <button class="card-btn card-btn-edit"><i class="fas fa-edit"></i></button>
-                            <button class="card-btn card-btn-delete"><i class="fas fa-trash-alt"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-item">
-                            <span class="card-title">Title</span>
-                            <button class="card-btn card-btn-edit"><i class="fas fa-edit"></i></button>
-                            <button class="card-btn card-btn-delete"><i class="fas fa-trash-alt"></i></button>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="column-footer">
-                    <button class="card-btn card-btn-edit"><i class="fas fa-plus"></i></button>
-                </div>
+        <div class="column">
+            <div class="column-header">
+                <div class="column-title">Projects</div>
             </div>
+            <div class="column-body" id="project-list">
 
-            <div class="column">
-                <div class="column-header">
-                    <div class="column-title">Todos</div>
+                <div class="card">
+                    <span class="card-title">Title</span>
+                    <button class="card-btn card-btn-edit edit-project"><i class="fas fa-edit"></i></button>
+                    <button class="card-btn card-btn-delete delete-project"><i class="fas fa-trash-alt"></i></button>
                 </div>
-                <div class="column-body">
 
-                    <div class="card">
-                        <div class="card-item">
-                            <span class="card-title">Title</span>
-                            <button class="card-btn card-btn-edit"><i class="fas fa-edit"></i></button>
-                            <button class="card-btn card-btn-delete"><i class="fas fa-trash-alt"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-item">
-                            <span class="card-title">Title</span>
-                            <button class="card-btn card-btn-edit"><i class="fas fa-edit"></i></button>
-                            <button class="card-btn card-btn-delete"><i class="fas fa-trash-alt"></i></button>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="column-footer">
-                    <button class="card-btn card-btn-edit"><i class="fas fa-plus"></i></button>
-                </div>
             </div>
-
-            <div class="modal hide" id="modal-edit">
-                <div class="modal-container">
-                    <div class="modal-header">
-                        <span class="modal-title">Project Name</span>
-                    </div>
-                    <div class="modal-body">
-                        <div class="modal-input-group">
-                            <div class="modal-input-title">Title</div>
-                            <input type="text" class="text-input">
-                        </div>
-                        <div class="modal-input-group">
-                            <div class="modal-input-title">Description</div>
-                            <input type="text" class="text-input">
-                        </div>
-                        <div class="modal-input-group">
-                            <div class="modal-input-title">Due Date</div>
-                            <input type="date" class="text-input">
-                        </div>
-                        <div class="modal-input-group">
-                            <div class="modal-input-title">Priority</div>
-                            <select name="" id="" class="text-input">
-                                <option value="">-</option>
-                                <option value="low">Low</option>
-                                <option value="medium">Medium</option>
-                                <option value="high">High</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="modal-footer modal-footer-right">
-                        <button class="modal-btn"><i class="fas fa-save"></i> Save</button>
-                        <button class="modal-btn"><i class="fas fa-times"></i> Cancel</button>
-                    </div>
-                </div>
+            <div class="column-footer">
+                <button class="card-btn card-btn-edit" id="add-project"><i class="fas fa-plus"></i></button>
             </div>
-
-            <div class="modal hide" id="modal-delete">
-                <div class="modal-container">
-                    <div class="modal-header">
-                        <span class="modal-title">Delete Item</span>
-                    </div>
-                    <div class="modal-body modal-body-center">
-                        Delete this item?
-                    </div>
-                    <div class="modal-footer">
-                        <button class="modal-btn"><i class="fas fa-trash-alt"></i> Delete</button>
-                        <button class="modal-btn"><i class="fas fa-times"></i> Cancel</button>
-                    </div>
-                </div>
-            </div>
-
         </div>
+
+        <div class="column">
+            <div class="column-header">
+                <div class="column-title">Todos</div>
+            </div>
+            <div class="column-body" id="todos">
+
+                <div class="card">
+                    <span class="card-title">Title</span>
+                    <button class="card-btn card-btn-edit edit-todo"><i class="fas fa-edit"></i></button>
+                    <button class="card-btn card-btn-delete delete-todo"><i class="fas fa-trash-alt"></i></button>
+                </div>
+
+            </div>
+            <div class="column-footer">
+                <button class="card-btn card-btn-edit" id="add-todo"><i class="fas fa-plus"></i></button>
+            </div>
+        </div>
+
+        <div class="modal hide" id="modal-project">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <span class="modal-title">Add/Edit Project</span>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="p-id">
+                    <div class="modal-input-group">
+                        <div class="modal-input-title">Name</div>
+                        <input type="text" class="text-input" id="p-name">
+                    </div>
+                </div>
+                <div class="modal-footer modal-footer-right">
+                    <button class="modal-btn" id="save-project"><i class="fas fa-save"></i> Save</button>
+                    <button class="modal-btn"><i class="fas fa-times"></i> Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal hide" id="modal-todo">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <span class="modal-title">Add/Edit Todo</span>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="t-id">
+                    <div class="modal-input-group">
+                        <div class="modal-input-title">Title</div>
+                        <input type="text" class="text-input" id="t-title">
+                    </div>
+                    <div class="modal-input-group">
+                        <div class="modal-input-title">Description</div>
+                        <input type="text" class="text-input" id="t-description">
+                    </div>
+                    <div class="modal-input-group">
+                        <div class="modal-input-title">Due Date</div>
+                        <input type="date" class="text-input" id="t-due-date">
+                    </div>
+                    <div class="modal-input-group">
+                        <div class="modal-input-title">Priority</div>
+                        <select id="t-priority" class="text-input">
+                            <option value="">-</option>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer modal-footer-right">
+                    <button class="modal-btn" id="save-todo"><i class="fas fa-save"></i> Save</button>
+                    <button class="modal-btn"><i class="fas fa-times"></i> Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal hide" id="modal-delete">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <span class="modal-title">Delete Item</span>
+                </div>
+                <div class="modal-body modal-body-center">
+                    <input type="hidden" id="id-delete">
+                    Delete this item?
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-btn" id="delete"><i class="fas fa-trash-alt"></i> Delete</button>
+                    <button class="modal-btn"><i class="fas fa-times"></i> Cancel</button>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
 

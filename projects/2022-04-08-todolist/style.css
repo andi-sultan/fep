@@ -95,9 +95,6 @@ button {
   margin-bottom: 0.5rem;
   border-radius: 0.3rem;
   cursor: pointer;
-}
-
-.card-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
