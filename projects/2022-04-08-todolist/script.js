@@ -41,39 +41,39 @@ const renderProject = () => {
     `;
     div.querySelector(".edit-project").addEventListener("click", () => {
       modalProject.classList.remove("hide");
+      projectId.value = project.id;
       projectName.value = project.name;
     });
-    div.querySelector(".delete-project").addEventListener("click", (e) => {
+    div.querySelector(".delete-project").addEventListener("click", () => {
       modalDelete.classList.remove("hide");
       deleteId.value = project.id;
     });
 
     projectList.appendChild(div);
-    console.table(data_project);
   });
+  console.table(data_project);
 };
 
 saveProject.addEventListener("click", () => {
-  let pId;
   if (projectName.value === "") {
     alert("Please enter a project name");
     projectName.focus();
     return;
   }
   if (projectId.value) {
-    pId = projectId.value;
+    const project = data_project.find((project) => project.id == projectId.value);
+    project.name = projectName.value;
   } else {
     projectIdNum++;
-    pId = projectIdNum;
+    const project = {
+      id: projectIdNum,
+      name: projectName.value,
+    };
+    data_project.push(project);
+    projectId.value = "";
+    projectName.value = "";
   }
-  const project = {
-    id: pId,
-    name: projectName.value,
-  };
-  data_project.push(project);
   modalProject.classList.add("hide");
-  projectId.value = "";
-  projectName.value = "";
   renderProject();
 });
 
