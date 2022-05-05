@@ -99,6 +99,13 @@ button {
   justify-content: space-between;
   align-items: center;
 }
+.card.selected {
+  background-color: rgb(142, 189, 225);
+}
+.card.card-todo.selected {
+  background-color: rgb(142, 225, 159);
+  text-decoration: line-through;
+}
 
 .card-btn {
   padding: 0.5rem;
