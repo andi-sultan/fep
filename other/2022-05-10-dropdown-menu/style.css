@@ -47,21 +47,44 @@ a:hover {
 }
 
 .d {
-  display: inline-block;
-  margin: auto;
+  max-width: 20rem;
+  position: relative;
 }
 
-.d-container {
-  display: flex;
+.d-btn {
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  color: #3c3b37;
+  cursor: pointer;
+}
+.d-btn:hover {
+  background-color: #fefefe;
+}
+.d-btn:active {
+  background-color: #f1f1f1;
+}
+
+.d-sub {
+  opacity: 0;
+  position: absolute;
+  top: 4rem;
+  box-shadow: 0 14px 35px 0 rgba(9, 9, 12, 0.4);
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  width: 100%;
+  transform: translateY(1rem);
+  transition: all 200ms linear;
+}
+.d-btn.active + .d-sub {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .d-item {
-  background-color: #fff;
-  list-style-type: none;
+  padding: 0.5rem 1rem;
 }
-
-.d-link {
-  padding: 1rem;
-  display: block;
-  width: 100%;
+.d-item:hover {
+  background-color: #f1f1f1;
 }
