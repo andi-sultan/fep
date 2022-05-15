@@ -89,3 +89,30 @@ a:hover {
 .d-item:hover {
   background-color: #f1f1f1;
 }
+
+.d2 {
+  display: flex;
+}
+
+.d2-item {
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+}
+
+.d2-drop-btn {
+  background-color: #fff;
+}
+
+.d2-dropdown {
+  position: relative;
+}
+
+.d2-dropdown-content {
+  visibility: hidden;
+  position: absolute;
+  top: 3rem;
+}
+
+.d2-dropdown:hover .d2-dropdown-content {
+  visibility: visible;
+}
