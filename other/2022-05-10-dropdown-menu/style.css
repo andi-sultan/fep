@@ -66,18 +66,19 @@ a:hover {
 }
 
 .d-sub {
+  visibility: hidden;
   opacity: 0;
   position: absolute;
   top: 4rem;
   box-shadow: 0 14px 35px 0 rgba(9, 9, 12, 0.4);
   background-color: #fff;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  z-index: 1;
   width: 100%;
   transform: translateY(1rem);
   transition: all 200ms linear;
 }
 .d-btn.active + .d-sub {
+  visibility: visible;
   transform: translateY(0);
   opacity: 1;
 }
