@@ -215,7 +215,7 @@ button {
 
 .notification {
   position: fixed;
-  top: 1rem;
+  top: -999rem;
   right: 1rem;
   z-index: 10;
   max-width: 35rem;
@@ -228,10 +228,20 @@ button {
   font-size: 1.2rem;
   font-weight: 500;
   text-align: center;
-  opacity: 80%;
-  transition: 0.3s;
+  opacity: 0%;
+  transition: opacity 0.3s;
 }
 .notification:hover {
+  opacity: 90%;
+}
+.notification.reveal {
+  top: 1rem;
+}
+.notification.show {
+  opacity: 80%;
+  transition: opacity 0.3s;
+}
+.notification.show:hover {
   opacity: 90%;
 }
 .notification-header {
