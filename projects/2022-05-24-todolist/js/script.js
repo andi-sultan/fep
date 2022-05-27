@@ -1,87 +1,41 @@
-let projectIdNum = 0;
-let todoId = 0;
-let data_project = [];
-let data_todo = [];
-
-const modalProject = document.querySelector("#modal-project");
-const modalTodo = document.querySelector("#modal-todo");
-const modalDelete = document.querySelector("#modal-delete");
-
-const addProject = document.querySelector("#add-project");
 const addTodo = document.querySelector("#add-todo");
 
-const projectId = document.querySelector("#p-id");
-const projectName = document.querySelector("#p-name");
-const todoTitle = document.querySelector("#t-title");
-const todoDescription = document.querySelector("#t-description");
-const todoDueDate = document.querySelector("#t-due-date");
-const todoPriority = document.querySelector("#t-priority");
+addTodo.addEventListener("click", () => {
+  function save() {
+    const loading = document.querySelector(".column-loading");
+    setTimeout(() => {
+      setTimeout(() => {
+        loading.textContent = "All Changes Saved";
+      }, 3000);
+      loading.textContent = "Saving...";
+    }, 100);
+  }
 
-const saveProject = document.querySelector("#save-project");
-const saveTodo = document.querySelector("#save-todo");
-
-const deleteId = document.querySelector("#id-delete");
-const deleteBtn = document.querySelector("#delete");
-
-addProject.addEventListener("click", () => {
-  modalProject.classList.remove("hide");
-});
-
-const renderProject = () => {
-  const projectList = document.querySelector("#project-list");
-  projectList.innerHTML = "";
-  data_project.forEach((project) => {
-    const div = document.createElement("div");
-    div.innerHTML = `
-      <div class="card">
-        <span class="card-title">${project.name}</span>
-        <button class="card-btn card-btn-edit edit-project" data-id="${project.id}"><i class="fas fa-edit"></i></button>
-        <button class="card-btn card-btn-delete delete-project" data-id="${project.id}"><i class="fas fa-trash-alt"></i></button>
-      </div>
+  const todoList = document.querySelector("#todos");
+  const div = document.createElement("div");
+  div.classList.add("todo");
+  div.innerHTML = `
+        <input type="checkbox" class="todo-chk">
+        <input type="text" class="todo-title" value="Title">
+        <button class="todo-btn todo-btn-delete delete-todo" data-id="1"><i class="fas fa-trash-alt"></i></button>
     `;
-    div.querySelector(".edit-project").addEventListener("click", () => {
-      modalProject.classList.remove("hide");
-      projectId.value = project.id;
-      projectName.value = project.name;
-    });
-    div.querySelector(".delete-project").addEventListener("click", () => {
-      modalDelete.classList.remove("hide");
-      deleteId.value = project.id;
-    });
-
-    projectList.appendChild(div);
+  div.querySelector(".todo-chk").addEventListener("change", (e) => {
+    if (e.target.checked) {
+      e.target.parentNode.classList.add("selected");
+    } else {
+      e.target.parentNode.classList.remove("selected");
+    }
+    save();
   });
-  console.table(data_project);
-};
 
-saveProject.addEventListener("click", () => {
-  if (projectName.value === "") {
-    alert("Please enter a project name");
-    projectName.focus();
-    return;
-  }
-  if (projectId.value) {
-    const project = data_project.find((project) => project.id == projectId.value);
-    project.name = projectName.value;
-  } else {
-    projectIdNum++;
-    const project = {
-      id: projectIdNum,
-      name: projectName.value,
-    };
-    data_project.push(project);
-    projectId.value = "";
-    projectName.value = "";
-  }
-  modalProject.classList.add("hide");
-  renderProject();
-});
+  div.querySelector(".todo-title").addEventListener("input", () => {
+    save();
+  });
 
-deleteBtn.addEventListener("click", () => {
-  const id = deleteId.value;
-  const project = data_project.find((project) => project.id == id);
-  const index = data_project.indexOf(project);
-  data_project.splice(index, 1);
-  modalDelete.classList.add("hide");
-  renderProject();
+  div.querySelector(".delete-todo").addEventListener("click", (e) => {
+    e.target.parentNode.remove();
+    save();
+  });
+
+  todoList.appendChild(div);
 });
