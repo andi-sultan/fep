@@ -3,12 +3,10 @@ const addTodo = document.querySelector("#add-todo");
 addTodo.addEventListener("click", () => {
   function save() {
     const loading = document.querySelector(".column-loading");
+    loading.textContent = "Saving...";
     setTimeout(() => {
-      setTimeout(() => {
-        loading.textContent = "All Changes Saved";
-      }, 3000);
-      loading.textContent = "Saving...";
-    }, 100);
+      loading.textContent = "All Changes Saved";
+    }, 1500);
   }
 
   const todoList = document.querySelector("#todos");
