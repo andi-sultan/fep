@@ -238,12 +238,18 @@ button {
 .del-notif {
   background-color: #eee;
   position: fixed;
+  transform: translateY(calc(100% + 1rem));
   bottom: 1rem;
   left: 1rem;
   padding: 1rem;
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
+  transition: 0.7s;
+}
+.del-notif.active {
+  transition: 0.7s;
+  transform: translateY(0);
 }
 .del-notif .del-btn {
   margin-left: 0.8rem;

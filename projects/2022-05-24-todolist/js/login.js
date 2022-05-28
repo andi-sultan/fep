@@ -8,7 +8,7 @@ login.addEventListener("click", () => {
   setTimeout(() => {
     setTimeout(() => {
       notification.classList.remove("reveal");
-    }, 1000);
+    }, 300);
     notification.classList.remove("show");
   }, 2000);
 });

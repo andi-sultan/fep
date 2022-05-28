@@ -9,6 +9,14 @@ addTodo.addEventListener("click", () => {
     }, 1500);
   }
 
+  function deleteTodo(dataId) {
+    const delNotif = document.querySelector(".del-notif");
+    delNotif.classList.add("active");
+    setTimeout(() => {
+      delNotif.classList.remove("active");
+    }, 1500);
+  }
+
   const todoList = document.querySelector("#todos");
   const div = document.createElement("div");
   div.classList.add("todo");
@@ -33,6 +41,7 @@ addTodo.addEventListener("click", () => {
   div.querySelector(".delete-todo").addEventListener("click", (e) => {
     e.target.parentNode.remove();
     save();
+    deleteTodo(e.target.dataset.id);
   });
 
   todoList.appendChild(div);
