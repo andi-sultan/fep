@@ -46,11 +46,13 @@ button {
 
 .container {
     position: relative;
+    height: calc(100vh - 3rem);
+    overflow: hidden;
 }
 
 .side {
+    position: fixed;
     min-height: calc(100vh - 3rem);
-    position: absolute;
     padding: 2rem;
     flex-shrink: 0;
     width: 30rem;
@@ -58,7 +60,7 @@ button {
     overflow-x: hidden;
     transition: 0.5s ease-in-out;
     color: #fff;
-    top: 0;
+    top: 3rem;
     right: 0;
     bottom: 0;
     left: 0;
@@ -103,6 +105,8 @@ button {
 }
 
 .content {
+    overflow-y: scroll;
+    height: 78vh;
     margin: 2rem;
     padding: 2rem;
     background-color: #fff;
