@@ -1,23 +1,22 @@
 document.querySelectorAll(".action-menu").forEach((actionMenu) => {
   const actionMenuBtn = actionMenu.querySelector(".action-menu__btn");
+  const menuOption = actionMenu.querySelector(".action-menu__option");
 
-  actionMenuBtn.addEventListener("click", (e) => {
-    const optWidth = 200;
-    const optHeight = 96;
-    const menuOption = actionMenu.querySelector(".action-menu__option");
+  menuOption.classList.add("active");
+  const optWidth = menuOption.offsetWidth;
+  const optHeight = menuOption.offsetHeight;
+  menuOption.classList.remove("active");
 
-    const isOverX =
-      actionMenu.getBoundingClientRect().left + optWidth > window.innerWidth;
-    const isOverY =
-      actionMenu.getBoundingClientRect().bottom + optHeight >
-      window.innerHeight;
+  actionMenuBtn.addEventListener("click", () => {
+    const actionMenuProp = actionMenu.getBoundingClientRect();
+    const isOverX = actionMenuProp.left + optWidth > window.innerWidth;
+    const isOverY = actionMenuProp.bottom + optHeight > window.innerHeight;
 
     if (isOverX) {
       menuOption.style.right = 0;
     }
     if (isOverY) {
-      menuOption.style.bottom =
-        actionMenuBtn.getBoundingClientRect().height + `px`;
+      menuOption.style.bottom = actionMenuBtn.offsetHeight + `px`;
     }
 
     menuOption.classList.toggle("active");
