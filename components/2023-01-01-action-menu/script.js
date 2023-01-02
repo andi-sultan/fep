@@ -22,3 +22,16 @@ document.querySelectorAll(".action-menu").forEach((actionMenu) => {
     menuOption.classList.toggle("active");
   });
 });
+
+document.body.addEventListener("click", (e) => {
+  const actionMenus = document.querySelectorAll(".action-menu");
+
+  actionMenus.forEach((actionMenu) => {
+    const actionMenuBtn = actionMenu.querySelector(".action-menu__btn");
+    const menuOption = actionMenu.querySelector(".action-menu__option");
+
+    if (e.target != actionMenuBtn) {
+      menuOption.classList.remove("active");
+    }
+  });
+});
