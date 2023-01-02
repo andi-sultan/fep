@@ -16,7 +16,7 @@ body {
   color: #3c3b37;
   box-sizing: border-box;
   font-size: 1.6rem;
-  background-color: #eee;
+  background-color: #fafafa;
 }
 
 a {
@@ -46,16 +46,43 @@ a:hover {
 }
 
 .action-menu__btn {
+  border: 1px solid #63615c;
+  border-radius: 0.5rem;
+  background-color: #fafafa;
+  font-size: 1.6rem;
 }
 
 .action-menu__option {
   display: none;
+  list-style-type: none;
+  padding: 0;
   position: absolute;
-  min-width: 20rem;
   z-index: 10;
   background-color: #fefefe;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 0.5rem;
 }
 
 .action-menu__option.active {
   display: block;
+}
+
+.action-menu__option-item {
+  cursor: pointer;
+  padding: 0 1rem;
+  white-space: nowrap;
+  font-size: 1.2rem;
+  height: 2em;
+  display: flex;
+  align-items: center;
+}
+.action-menu__option-item:first-of-type {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.action-menu__option-item:last-of-type {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.action-menu__option-item:hover {
+  background-color: #efefef;
 }
