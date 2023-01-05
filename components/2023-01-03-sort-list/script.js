@@ -5,6 +5,18 @@ let current = null;
 list.forEach((item) => {
   item.draggable = true;
 
+  item.addEventListener("drag", function (e) {
+    const top = e.clientY;
+    const bottom = top + item.offsetHeight;
+    const scrollThreshold = window.innerHeight * 0.1;
+
+    if (top < scrollThreshold && window.scrollY > 0) {
+      window.scrollBy(0, -10);
+    } else if (bottom > window.innerHeight) {
+      window.scrollBy(0, 10);
+    }
+  });
+
   item.addEventListener("dragstart", () => {
     // console.log("drag enter");
     current = item;
@@ -51,10 +63,7 @@ list.forEach((item) => {
   });
 
   item.addEventListener("drop", (e) => {
-    // console.log("drag drop");
+    console.log("drag drop");
     // e.preventDefault();
-    document.querySelectorAll(".list-item").forEach((l) => {
-      console.log(l);
-    });
   });
 });
