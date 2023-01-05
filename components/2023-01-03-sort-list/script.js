@@ -1,29 +1,60 @@
 "use strict";
 const list = document.querySelectorAll(".list-item");
 
+let current = null;
+let item_count = 0;
 list.forEach((item) => {
   item.draggable = true;
-  console.log(this);
+  item.dataset.position = 0;
+  item_count += 1;
 
   item.addEventListener("dragstart", () => {
-    console.log(this);
+    // console.log("drag enter");
+    current = item;
+    list.forEach((it) => {
+      if (it != current) it.classList.add("hint");
+    });
   });
 
-  item.ondragenter = () => {
+  item.addEventListener("dragenter", () => {
     // console.log("drag enter");
-  };
+    if (item != current) item.classList.add("active");
+  });
 
-  item.ondragleave = () => {
+  item.addEventListener("dragleave", () => {
     // console.log("drag leave");
-  };
+    item.classList.remove("active");
+  });
 
-  item.ondragover = (e) => {
-    e.preventDefault();
+  item.addEventListener("dragend", () => {
+    // console.log("drag end");
+    list.forEach((it) => {
+      it.classList.remove("hint");
+      it.classList.remove("active");
+    });
+  });
+
+  item.addEventListener("dragover", (e) => {
     // console.log("drag over");
-  };
+    e.preventDefault(); // to make drop possible
+  });
 
-  item.ondrop = (e) => {
-    // e.preventDefault();
+  item.addEventListener("drop", (e) => {
     // console.log("drag drop");
-  };
+    // e.preventDefault();
+    if (item != current) {
+      let currentpos = 0,
+        droppedpos = 0;
+      document.querySelectorAll(".list-item").forEach((l, i) => {
+        if (current == l) currentpos = i;
+        if (item == l) droppedpos = i;
+      });
+
+      if (currentpos < droppedpos) {
+        item.parentElement.insertBefore(current, item.nextSibling);
+      } else {
+        item.parentElement.insertBefore(current, item);
+      }
+    }
+  });
 });
