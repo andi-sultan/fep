@@ -2,11 +2,8 @@
 const list = document.querySelectorAll(".list-item");
 
 let current = null;
-let item_count = 0;
 list.forEach((item) => {
   item.draggable = true;
-  item.dataset.position = 0;
-  item_count += 1;
 
   item.addEventListener("dragstart", () => {
     // console.log("drag enter");
@@ -18,7 +15,21 @@ list.forEach((item) => {
 
   item.addEventListener("dragenter", () => {
     // console.log("drag enter");
-    if (item != current) item.classList.add("active");
+    item.classList.add("active");
+    if (item != current) {
+      let currentpos = 0,
+        droppedpos = 0;
+      document.querySelectorAll(".list-item").forEach((l, i) => {
+        if (current == l) currentpos = i;
+        if (item == l) droppedpos = i;
+      });
+
+      if (currentpos < droppedpos) {
+        item.parentElement.insertBefore(current, item.nextSibling);
+      } else {
+        item.parentElement.insertBefore(current, item);
+      }
+    }
   });
 
   item.addEventListener("dragleave", () => {
@@ -42,19 +53,8 @@ list.forEach((item) => {
   item.addEventListener("drop", (e) => {
     // console.log("drag drop");
     // e.preventDefault();
-    if (item != current) {
-      let currentpos = 0,
-        droppedpos = 0;
-      document.querySelectorAll(".list-item").forEach((l, i) => {
-        if (current == l) currentpos = i;
-        if (item == l) droppedpos = i;
-      });
-
-      if (currentpos < droppedpos) {
-        item.parentElement.insertBefore(current, item.nextSibling);
-      } else {
-        item.parentElement.insertBefore(current, item);
-      }
-    }
+    document.querySelectorAll(".list-item").forEach((l) => {
+      console.log(l);
+    });
   });
 });
