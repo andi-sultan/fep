@@ -28,6 +28,20 @@ a:hover {
   text-decoration: underline;
 }
 
+.top-navbar {
+  text-align: center;
+  background-color: lightgreen;
+  min-height: 3rem;
+  line-height: 3rem;
+}
+.top-navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+.top-navbar a:hover {
+  text-decoration: underline;
+}
+
 .container {
   display: flex;
   flex-direction: column;
