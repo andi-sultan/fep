@@ -15,31 +15,31 @@
             href="https://www.theodinproject.com/lessons/node-path-javascript-dynamic-user-interface-interactions#drop-down-menus">Inspiration</a>
     </div>
 
-    <nav>
-        <div class="logo"><a href="#">MyWebsite</a></div>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Features</a>
-                <ul>
-                    <li><a href="#">Pages</a></li>
-                    <li><a href="#">Elements</a></li>
-                    <li><a href="#">Icons</a></li>
+    <nav class="nav">
+        <div class="nav__logo"><a href="#">MyWebsite</a></div>
+        <ul class="nav__menu">
+            <li class="nav__menu-item"><a href="#">Home</a></li>
+            <li class="nav__menu-item"><a href="#">Features</a>
+                <ul class="nav__menu nav__menu--submenu">
+                    <li class="nav__menu-item nav__menu-item--submenu"><a href="#">Pages</a></li>
+                    <li class="nav__menu-item nav__menu-item--submenu"><a href="#">Elements</a></li>
+                    <li class="nav__menu-item nav__menu-item--submenu"><a href="#">Icons</a></li>
                 </ul>
             </li>
-            <li><a href="#">Services</a>
-                <ul>
-                    <li><a href="#">Web Design</a></li>
-                    <li><a href="#">App Design</a></li>
-                    <li><a href="#">More</a>
-                        <ul>
-                            <li><a href="#">Design 1</a></li>
-                            <li><a href="#">Design 2</a></li>
+            <li class="nav__menu-item"><a href="#">Services</a>
+                <ul class="nav__menu nav__menu--submenu">
+                    <li class="nav__menu-item nav__menu-item--submenu"><a href="#">Web Design</a></li>
+                    <li class="nav__menu-item nav__menu-item--submenu"><a href="#">App Design</a></li>
+                    <li class="nav__menu-item nav__menu-item--submenu"><a href="#">More</a>
+                        <ul class="nav__menu nav__menu--submenu-lv2">
+                            <li class="nav__menu-item nav__menu-item--submenu-lv2"><a href="#">Design 1</a></li>
+                            <li class="nav__menu-item nav__menu-item--submenu-lv2"><a href="#">Design 2</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
+            <!-- <li class="nav__menu-item"><a href="#">Portfolio</a></li>
+            <li class="nav__menu-item"><a href="#">Contact</a></li> -->
         </ul>
     </nav>
 </body>
