@@ -58,11 +58,6 @@ a:hover {
   display: flex;
 }
 
-.nav__menu-item {
-  padding: 0.5rem 1rem;
-  position: relative;
-}
-
 .nav__menu.nav__menu--submenu {
   list-style-type: none;
   display: none;
@@ -72,11 +67,29 @@ a:hover {
   background-color: #1e1e1e;
 }
 
+.nav__menu.nav__menu--submenu-lv2 {
+  list-style-type: none;
+  display: none;
+  position: absolute;
+  top: 3.5rem;
+  left: 0;
+  background-color: #1e1e1e;
+}
+
+.nav__menu-item {
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
 .nav__menu-item:hover > .nav__menu--submenu {
   display: block;
 }
 
-.nav__menu-item--submenu-lv2 {
+.nav__menu-item.nav__menu-item--submenu {
+  color: #1b9;
+}
+
+.nav__menu-item.nav__menu-item--submenu-lv2 {
   display: none;
   position: absolute;
   top: 15.5rem;
