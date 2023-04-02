@@ -58,6 +58,10 @@ a:hover {
   display: flex;
 }
 
+.nav__menu.nav__menu--mobile {
+  display: none;
+}
+
 .nav__menu.nav__menu--submenu {
   display: none;
   position: absolute;
@@ -96,4 +100,13 @@ a:hover {
 .nav__menu-item.nav__menu-item--submenu-lv2 {
   background-color: #1e1e1e;
   color: violet;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    display: none;
+  }
+  .nav__menu.nav__menu--mobile {
+    display: block;
+  }
 }
