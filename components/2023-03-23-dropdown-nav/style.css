@@ -63,7 +63,7 @@ a:hover {
 }
 
 .nav__menu.nav__menu--submenu {
-  /* display: none; */
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -72,7 +72,7 @@ a:hover {
 }
 
 .nav__menu.nav__menu--submenu-lv2 {
-  /* display: none; */
+  display: none;
   position: absolute;
   top: 0;
   left: 100%;
@@ -108,6 +108,10 @@ a:hover {
 .nav__menu-item.nav__menu-item--submenu-lv2 {
   background-color: #1e1e1e;
   color: violet;
+}
+
+.nav__menu-item.nav__menu-item--mobile {
+  min-width: 0;
 }
 
 @media screen and (max-width: 768px) {
