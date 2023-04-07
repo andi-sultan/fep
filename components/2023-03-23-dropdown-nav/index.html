@@ -14,41 +14,29 @@
         <a href="/index.html">Home</a> | <a
             href="https://www.theodinproject.com/lessons/node-path-javascript-dynamic-user-interface-interactions#drop-down-menus">Inspiration</a>
     </div>
+    <!-- from https://blog.logrocket.com/making-dropdown-menus-css/ -->
 
-    <div class="nav">
-        <nav class="nav__container">
-            <div class="nav__logo"><a class="nav__link nav__link--logo" href="#">MyWebsite</a></div>
-            <ul class="nav__menu">
-                <li class="nav__item"><a class="nav__link" href="#">Home</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">Features</a>
-                    <ul class="nav__submenu">
-                        <li class="nav__submenu-item"><a class="nav__link" href="#">Pages</a></li>
-                        <li class="nav__submenu-item"><a class="nav__link" href="#">Elements</a></li>
-                        <li class="nav__submenu-item"><a class="nav__link" href="#">Icons</a></li>
-                    </ul>
-                </li>
-                <!-- <li class="nav__item"><a class="nav__link" href="#">Services</a>
-                    <ul class="nav__submenu">
-                        <li class="nav__submenu-item"><a class="nav__link" href="#">Web Design</a></li>
-                        <li class="nav__submenu-item"><a class="nav__link" href="#">App Design</a></li>
-                        <li class="nav__submenu-item"><a class="nav__link" href="#">More</a>
-                            <ul class="nav__submenu-lv2">
-                                <li class="nav__submenu-item-lv2"><a class="nav__link" href="#">Design
-                                        1</a></li>
-                                <li class="nav__submenu-item-lv2"><a class="nav__link" href="#">Design
-                                        2</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li> -->
-                <!-- <li class="nav__item"><a class="nav__link" href="#">Portfolio</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">Contact</a></li> -->
-            </ul>
-            <ul class="nav__mobile">
-                <li class="nav__item nav__item--mobile"><a class="nav__link" href="#">&#9776;</a></li>
-            </ul>
-        </nav>
-    </div>
+    <header class="header">
+        <div class="header__content">
+            <a class="header__logo" href="#">MyWebsite</a>
+
+            <nav class="nav">
+                <ul class="nav__menu">
+                    <li class="nav__item"><a class="nav__link" href="#">Home</a></li>
+                    <li class="nav__item">
+                        <button class="nav__drop">Features</button>
+                        <ul class="nav__submenu">
+                            <li class="nav__submenu-item"><a class="nav__link" href="#">Pages</a></li>
+                            <li class="nav__submenu-item"><a class="nav__link" href="#">Elements</a></li>
+                            <li class="nav__submenu-item"><a class="nav__link" href="#">Icons</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- menu icon: &#9776; -->
+            </nav>
+        </div>
+    </header>
+
 </body>
 
 </html>
