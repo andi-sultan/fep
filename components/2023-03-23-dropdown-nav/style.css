@@ -16,16 +16,11 @@ body {
   color: #3c3b37;
   box-sizing: border-box;
   font-size: 1.6rem;
-  background-color: #555;
 }
 
 a {
   text-decoration: none;
   color: inherit;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 .top-navbar {
@@ -40,4 +35,82 @@ a:hover {
 }
 .top-navbar a:hover {
   text-decoration: underline;
+}
+
+.header {
+  position: relative;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.header__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.header__logo {
+  font-size: 2.5rem;
+  margin-right: 2rem;
+}
+
+.header__label {
+  height: 5rem;
+  width: 5rem;
+  font-size: 3rem;
+  line-height: 5rem;
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  top: 0;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.header__checkbox {
+  opacity: 0.1;
+  position: absolute;
+  right: 0;
+}
+
+.nav__menu {
+  list-style-type: none;
+  background: #f2f2f2;
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+}
+
+.nav__submenu {
+  list-style-type: none;
+  padding-left: 2rem;
+}
+
+.nav__link,
+.nav__drop {
+  padding: 1rem 2rem;
+  text-align: left;
+}
+.nav__link {
+  display: block;
+  text-decoration: none;
+}
+.nav__drop {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 2px 2rem;
+  width: 100%;
+}
+
+.nav__item {
+  font-size: 2rem;
+}
+
+.header__checkbox:checked ~ .nav > .nav__menu {
+  visibility: visible;
 }

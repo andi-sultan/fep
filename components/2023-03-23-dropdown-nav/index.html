@@ -11,14 +11,16 @@
 
 <body>
     <div class="top-navbar">
-        <a href="/index.html">Home</a> | <a
-            href="https://www.theodinproject.com/lessons/node-path-javascript-dynamic-user-interface-interactions#drop-down-menus">Inspiration</a>
+        <a href="/index.html">Home</a> | <a href="https://blog.logrocket.com/making-dropdown-menus-css/">Inspiration</a>
     </div>
-    <!-- from https://blog.logrocket.com/making-dropdown-menus-css/ -->
+    <!-- from  -->
 
     <header class="header">
         <div class="header__content">
             <a class="header__logo" href="#">MyWebsite</a>
+
+            <input class="header__checkbox" type="checkbox" id="header-hamburger">
+            <label class="header__label" for="header-hamburger">&#9776;</label>
 
             <nav class="nav">
                 <ul class="nav__menu">
@@ -26,13 +28,12 @@
                     <li class="nav__item">
                         <button class="nav__drop">Features</button>
                         <ul class="nav__submenu">
-                            <li class="nav__submenu-item"><a class="nav__link" href="#">Pages</a></li>
-                            <li class="nav__submenu-item"><a class="nav__link" href="#">Elements</a></li>
-                            <li class="nav__submenu-item"><a class="nav__link" href="#">Icons</a></li>
+                            <li class="nav__item"><a class="nav__link" href="#">Pages</a></li>
+                            <li class="nav__item"><a class="nav__link" href="#">Elements</a></li>
+                            <li class="nav__item"><a class="nav__link" href="#">Icons</a></li>
                         </ul>
                     </li>
                 </ul>
-                <!-- menu icon: &#9776; -->
             </nav>
         </div>
     </header>
