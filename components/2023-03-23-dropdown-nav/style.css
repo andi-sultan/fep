@@ -92,7 +92,7 @@ a {
   padding: 2px 2rem;
   height: 0;
   overflow: hidden;
-  transition: height ease .2s;
+  transition: height ease 0.2s;
 }
 
 .nav__link,
