@@ -45,6 +45,7 @@ button {
 
 .menu {
   display: flex;
+  flex-direction: column;
   list-style-type: none;
   border: 1px solid #8c8a82;
 }
@@ -56,10 +57,10 @@ button {
 .menu-submenu {
   display: none;
   list-style-type: none;
-  position: absolute;
-  left: 0;
-  top: 100%;
   background-color: hsla(48, 4%, 53%, 0.2);
+}
+.menu-submenu > .menu-item > .menu-link {
+  padding-left: 3rem;
 }
 
 .menu-submenu.show {
@@ -79,9 +80,24 @@ button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  width: 100%;
+  text-align: left;
 }
 
 .menu-link:hover,
 .menu-btn-drop:hover {
   background-color: #8c8a82;
+}
+
+@media (min-width: 720px) {
+  .menu {
+    flex-direction: row;
+  }
+
+  .menu-submenu {
+    position: absolute;
+  }
+  .menu-submenu > .menu-item > .menu-link {
+    padding-left: 1rem;
+  }
 }
