@@ -16,6 +16,7 @@ body {
   color: #3c3b37;
   box-sizing: border-box;
   font-size: 1.6rem;
+  min-height: 100vh;
 }
 
 a {
