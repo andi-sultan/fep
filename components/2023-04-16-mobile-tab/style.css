@@ -43,12 +43,16 @@ button {
   text-decoration: underline;
 }
 
+.page {
+  margin-bottom: 6rem;
+}
+
 .tab {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   background-color: aquamarine;
   width: 100%;
-  height: 5rem;
+  height: 6rem;
 }
 
 .tab-menu {
@@ -56,7 +60,50 @@ button {
   list-style-type: none;
   align-items: center;
   height: 100%;
-  justify-content: space-between;
-  max-width: 50rem;
+  justify-content: center;
   margin: 0 auto;
+}
+
+.tab-item {
+  height: 100%;
+}
+
+.tab-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 2rem;
+}
+.tab-link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* desktop */
+@media (min-width: 720px) {
+  .page {
+    margin-left: 7rem;
+    margin-bottom: 0;
+  }
+
+  .tab {
+    background-color: aquamarine;
+    height: 100%;
+    top: 3rem;
+    width: 7rem;
+  }
+
+  .tab-menu {
+    flex-direction: column;
+  }
+
+  .tab-item {
+    height: revert;
+    width: 100%;
+  }
+
+  .tab-link {
+    padding: 2rem 0;
+  }
 }
