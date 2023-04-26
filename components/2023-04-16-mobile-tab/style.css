@@ -47,6 +47,13 @@ button {
   margin-bottom: 6rem;
 }
 
+.page-item {
+  display: none;
+}
+.page-item.show {
+  display: block;
+}
+
 .tab {
   position: fixed;
   bottom: 0;
