@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; /* 10px */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #3c3b37;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.top-navbar {
+  text-align: center;
+  background-color: lightgreen;
+  min-height: 3rem;
+  line-height: 3rem;
+}
+.top-navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+.top-navbar a:hover {
+  text-decoration: underline;
+}
+
+.slider {
+  max-width: 100rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 1rem auto;
+}
+
+.slider-view {
+  height: 60rem;
+  display: flex;
+  /* overflow: hidden; */
+  transform: translateX(-100%);
+}
+
+.slider-img {
+  width: 100%;
+}
+
+.slider-control {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.slider-btn {
+  font-size: 6rem;
+  width: 50%;
+  height: 9rem;
+}
