@@ -1,4 +1,6 @@
-const imgc = (() => {
+const slider = (() => {
+  let imgs = null;
+  let currentSlide = 0;
   const start = (elemId) => {
     const elem = document.getElementById(elemId);
   };
@@ -6,4 +8,4 @@ const imgc = (() => {
   return { start };
 })();
 
-imgc.start("imgc");
+slider.start("slider");

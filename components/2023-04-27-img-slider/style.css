@@ -63,7 +63,29 @@ button {
 .slider-control {
   display: flex;
   justify-content: center;
+  position: relative;
   width: 100%;
+}
+
+.slider-dots {
+  position: absolute;
+  top: -5rem;
+  z-index: 1;
+}
+
+.slider-dot {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.2rem solid #9fa8ac;
+  border-radius: 1.5rem;
+  margin-right: 1rem;
+}
+.slider-dot:last-of-type {
+  margin-right: 0;
+}
+.slider-dot.current {
+  background-color: rgb(64, 96, 199);
 }
 
 .slider-btn {
