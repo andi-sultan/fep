@@ -1,24 +1,24 @@
 const slider = (() => {
   let imgs = null;
   let currentSlide = 0;
-  let numOfSlides = 0;
   const start = (data) => {
     const elem = document.getElementById(data.elementId);
     imgs = data.images;
     numOfSlides = imgs.length;
 
-    const view = elem.querySelector('.slider-view')
-    imgs.forEach(img => {
-      const slide = document.createElement('img')
-      slide.setAttribute('src', img.src)
-      slide.setAttribute('alt', img.alt)
-      slide.classList.add('slider-img')
-      // todo
+    const view = elem.querySelector(".slider-view");
+    imgs.forEach((img) => {
+      const slide = document.createElement("a");
+      slide.style.backgroundImage = `url("${img.src}")`;
+      slide.classList.add("slider-img");
+      slide.setAttribute("href", "#");
+      view.appendChild(slide);
     });
 
     const dots = elem.querySelector(".slider-dots");
     for (let i = 0; i < imgs.length; i++) {
       const dot = document.createElement("span");
+      if (i == currentSlide) dot.classList.add("current");
       dot.classList.add("slider-dot");
       dots.appendChild(dot);
     }
