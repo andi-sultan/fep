@@ -82,17 +82,18 @@ button {
 
 .slider-dot {
   display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 0.2rem solid #9fa8ac;
-  border-radius: 1.5rem;
-  margin-right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border: 0.2rem solid rgba(159, 168, 172, 0.8);
+  border-radius: 2rem;
+  margin-right: 2rem;
+  cursor: pointer;
 }
 .slider-dot:last-of-type {
   margin-right: 0;
 }
 .slider-dot.current {
-  background-color: rgb(64, 96, 199);
+  background-color: rgba(64, 96, 199, 0.5);
 }
 
 .slider-btn {
