@@ -1,8 +1,27 @@
 const slider = (() => {
   let imgs = null;
   let currentSlide = 0;
-  const start = (elemId) => {
-    const elem = document.getElementById(elemId);
+  let numOfSlides = 0;
+  const start = (data) => {
+    const elem = document.getElementById(data.elementId);
+    imgs = data.images;
+    numOfSlides = imgs.length;
+
+    const view = elem.querySelector('.slider-view')
+    imgs.forEach(img => {
+      const slide = document.createElement('img')
+      slide.setAttribute('src', img.src)
+      slide.setAttribute('alt', img.alt)
+      slide.classList.add('slider-img')
+      // todo
+    });
+
+    const dots = elem.querySelector(".slider-dots");
+    for (let i = 0; i < imgs.length; i++) {
+      const dot = document.createElement("span");
+      dot.classList.add("slider-dot");
+      dots.appendChild(dot);
+    }
   };
 
   return { start };
@@ -27,4 +46,4 @@ const imgs = [
   },
 ];
 
-slider.start("slider");
+slider.start({ elementId: "slider", images: imgs });
