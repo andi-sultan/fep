@@ -1,12 +1,42 @@
 const slider = (() => {
+  let elem = null;
+  let view = null;
   let imgs = null;
+  let dots = null;
   let currentSlide = 0;
+
+  const runAutoSlide = () => {
+    currentSlide++;
+    changeImg();
+  };
+  let interval = setInterval(runAutoSlide, 2000);
+
+  const resetInterval = () => {
+    clearInterval(interval);
+    interval = setInterval(runAutoSlide, 2000);
+  };
+
+  const changeImg = () => {
+    if (currentSlide > imgs.length - 1) currentSlide = 0;
+    else if (currentSlide < 0) currentSlide = imgs.length - 1;
+    view.style.transform = `translateX(${-currentSlide * 100}%)`;
+
+    for (let i = 0; i < imgs.length; i++) {
+      if (dots != null) {
+        const d = dots.querySelectorAll(".slider-dot");
+        d.forEach((dot) => {
+          dot.classList.remove("current");
+        });
+      }
+    }
+  };
+
   const start = (data) => {
-    const elem = document.getElementById(data.elementId);
+    elem = document.getElementById(data.elementId);
     imgs = data.images;
     numOfSlides = imgs.length;
 
-    const view = elem.querySelector(".slider-view");
+    view = elem.querySelector(".slider-view");
     imgs.forEach((img) => {
       const slide = document.createElement("a");
       slide.style.backgroundImage = `url("${img.src}")`;
@@ -15,13 +45,26 @@ const slider = (() => {
       view.appendChild(slide);
     });
 
-    const dots = elem.querySelector(".slider-dots");
+    dots = elem.querySelector(".slider-dots");
     for (let i = 0; i < imgs.length; i++) {
       const dot = document.createElement("span");
       if (i == currentSlide) dot.classList.add("current");
       dot.classList.add("slider-dot");
       dots.appendChild(dot);
     }
+
+    const leftBtn = elem.querySelector(".slider-btn-left");
+    leftBtn.addEventListener("click", () => {
+      currentSlide--;
+      changeImg();
+      resetInterval();
+    });
+    const rightBtn = elem.querySelector(".slider-btn-right");
+    rightBtn.addEventListener("click", () => {
+      currentSlide++;
+      changeImg();
+      resetInterval();
+    });
   };
 
   return { start };

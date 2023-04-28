@@ -49,11 +49,13 @@ button {
   margin: 1rem auto;
 }
 
+.slider-container {
+  overflow: hidden;
+}
+
 .slider-view {
   height: 60rem;
   display: flex;
-  /* overflow: hidden; */
-  /* transform: translateX(-100%); */
   transition: transform 0.5s ease-in-out;
 }
 
