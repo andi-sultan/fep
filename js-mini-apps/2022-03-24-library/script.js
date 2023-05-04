@@ -1,11 +1,11 @@
 let libId = 0;
 let myLibrary = [];
 
+const form = document.getElementById("form");
 const cardContainer = document.getElementById("cardContainer");
 const add = document.getElementById("add");
 const modal = document.getElementById("modal");
 const cancel = document.getElementById("cancel");
-const save = document.getElementById("save");
 
 const modalTitle = document.getElementById("modalTitle");
 const modalAuthor = document.getElementById("modalAuthor");
@@ -115,7 +115,8 @@ cancel.addEventListener("click", () => {
   modal.classList.remove("active");
 });
 
-save.addEventListener("click", () => {
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
   library.addBookToLibrary();
   console.table(myLibrary);
   modal.classList.remove("active");

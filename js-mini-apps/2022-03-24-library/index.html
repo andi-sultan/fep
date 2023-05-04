@@ -22,11 +22,13 @@
 
     <div class="modal" id="modal">
         <div class="modal-content">
-            <div>Title: <input type="text" id="modalTitle" class="modal-input"></div>
-            <div>Author: <input type="text" id="modalAuthor" class="modal-input"></div>
-            <div>Num of Pages: <input type="number" id="modalNumOfPages" class="modal-input"></div>
-            <button id="save">save</button>
-            <button id="cancel">cancel</button>
+            <form id="form">
+                <div>Title: <input type="text" id="modalTitle" class="modal-input" required></div>
+                <div>Author: <input type="text" id="modalAuthor" class="modal-input" required></div>
+                <div>Num of Pages: <input type="number" id="modalNumOfPages" class="modal-input" required></div>
+                <button type="submit">save</button>
+                <button id="cancel">cancel</button>
+            </form>
         </div>
     </div>
 
