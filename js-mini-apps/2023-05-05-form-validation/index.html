@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>2023-05-05-form-validation</title>
+</head>
+
+<body>
+    <div class="top-navbar">
+        <a href="/index.html">Home</a> | <a
+            href="https://www.theodinproject.com/lessons/node-path-javascript-form-validation-with-javascript#practice">Source</a>
+    </div>
+
+    <form class="form" id="form">
+        <div class="form-container">
+            <div class="form-header">
+                <h2 class="form-title">Please fill this form</h2>
+            </div>
+            <div class="input-row">
+                <div class="input-item">
+                    <label for="first-name" class="input-label">First Name</label>
+                    <input name="first-name" id="first-name" type="text" class="input-text" required>
+                </div>
+                <div class="input-item">
+                    <label class="input-label">Last Name</label>
+                    <input name="last-name" type="text" class="input-text" required>
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-item">
+                    <label class="input-label">Email</label>
+                    <input name="email" type="email" class="input-text">
+                </div>
+                <div class="input-item">
+                    <label class="input-label">Phone Number</label>
+                    <input type="numeric" class="input-text">
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-item">
+                    <label class="input-label">Country</label>
+                    <select name="country" id="country">
+                        <option value="">- Select Country -</option>
+                        <option value="id">Indonesia</option>
+                        <option value="us">United States</option>
+                    </select>
+                </div>
+                <div class="input-item">
+                    <label class="input-label">Zip Code</label>
+                    <input type="text" class="input-text">
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-item">
+                    <label class="input-label">Password</label>
+                    <input type="text" class="input-text input-text-error">
+                    <div class="input-error-message">* Passwords do not match</div>
+                </div>
+                <div class="input-item">
+                    <label class="input-label">Confirm Password</label>
+                    <input type="text" class="input-text input-text-error">
+                </div>
+            </div>
+        </div>
+        <div class="form-footer">
+            <button type="submit" class="btn-sign-up">Submit</button>
+        </div>
+    </form>
+</body>
+
+</html>
