@@ -58,6 +58,9 @@ select {
   border-radius: 1rem;
   padding: 2rem;
 }
+.form *:focus {
+  outline: 1px solid rgba(0, 0, 0, 0.5);
+}
 
 .form-title {
   text-align: center;
@@ -103,6 +106,10 @@ select {
   font-size: 0.8em;
   margin-top: 0.2rem;
   color: rgb(191, 18, 18);
+  display: none;
+}
+.input-error-message.show {
+  display: block;
 }
 
 .form-footer {

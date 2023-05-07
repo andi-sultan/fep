@@ -26,13 +26,14 @@
                     <label for="first-name" class="input-label">First Name</label>
                     <div class="input-group">
                         <input name="first-name" id="first-name" type="text" class="input-text" required>
+                        <div class="input-error-message">* Input Required</div>
                     </div>
                 </div>
                 <div class="input-item">
                     <label for="last-name" class="input-label">Last Name</label>
                     <div class="input-group">
-                        <input name="last-name" id="last-name" type="text" class="input-text" required>
-                        <!-- <div class="input-error-message">* Input Required</div> -->
+                        <input name="last-name" id="last-name" type="text" class="input-text">
+                        <div class="input-error-message">* Input Required</div>
                     </div>
                 </div>
             </div>
@@ -41,13 +42,15 @@
                     <label for="email" class="input-label">Email</label>
                     <div class="input-group">
                         <input name="email" id="email" type="email" class="input-text">
+                        <div class="input-error-message">* Input Required</div>
                     </div>
                 </div>
                 <div class="input-item">
                     <label for="phone" class="input-label">Phone Number</label>
                     <div class="input-group">
                         <input type="tel" name="phone" id="phone" class="input-text" pattern="[0-9]+" minlength="12"
-                            maxlength="15" required />
+                            maxlength="15" />
+                        <div class="input-error-message">* Input Required</div>
                     </div>
                 </div>
             </div>
@@ -55,17 +58,18 @@
                 <div class="input-item">
                     <label for="country" class="input-label">Country</label>
                     <div class="input-group">
-                        <select name="country" id="country" class="input-text" required>
+                        <select name="country" id="country" class="input-text">
                             <option value="">- Select Country -</option>
                             <option value="id">Indonesia</option>
                             <option value="us">United States</option>
                         </select>
+                        <div class="input-error-message">* Input Required</div>
                     </div>
                 </div>
                 <div class="input-item">
                     <label for="zip-code" class="input-label">Zip Code</label>
                     <div class="input-group">
-                        <input type="text" name="zip-code" id="zip-code" class="input-text" required>
+                        <input type="text" name="zip-code" id="zip-code" class="input-text">
                     </div>
                 </div>
             </div>
@@ -73,15 +77,15 @@
                 <div class="input-item">
                     <label for="password" class="input-label">Password</label>
                     <div class="input-group">
-                        <input type="text" name="password" id="password" class="input-text input-text-error" required>
-                        <!-- <div class="input-error-message">* Passwords do not match</div> -->
+                        <input type="text" name="password" id="password" class="input-text">
+                        <div class="input-error-message">* Passwords do not match</div>
                     </div>
                 </div>
                 <div class="input-item">
                     <label for="repeat-password" class="input-label">Confirm Password</label>
                     <div class="input-group">
-                        <input type="text" name="repeat-password" id="repeat-password"
-                            class="input-text input-text-error" required>
+                        <input type="text" name="repeat-password" id="repeat-password" class="input-text">
+                        <div class="input-error-message">* Input Required</div>
                     </div>
                 </div>
             </div>
