@@ -5,15 +5,26 @@ const form = (() => {
   const start = (elemId) => {
     elem = document.getElementById(elemId);
 
-    const submitBtn = elem.querySelector(".btn-submit");
-    submitBtn.addEventListener("click", () => {
-      const name = elem.querySelector("#first-name");
-      name.classList.remove("input-text-error");
+    const name = elem.querySelector("#first-name");
+    const errMsg = name.nextElementSibling;
+
+    name.addEventListener("input", () => {
+      name.classList.add("input-text-validate");
       if (name.validity.valueMissing) {
-        name.setCustomValidity("Field Required");
-        name.classList.add("input-text-error");
+        errMsg.classList.add("show");
       } else {
-        name.setCustomValidity("");
+        errMsg.classList.remove("show");
+      }
+    });
+    
+    elem.addEventListener("submit", (e) => {
+      name.classList.add("input-text-validate");
+      e.preventDefault();
+
+      if (name.validity.valueMissing) {
+        errMsg.classList.add("show");
+      } else {
+        errMsg.classList.remove("show");
       }
     });
   };
