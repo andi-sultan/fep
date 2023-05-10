@@ -19,6 +19,9 @@ const form = (() => {
       } else if (input.type == "password" && !input.validity.valueMissing) {
         errMsg.textContent =
           "* Password is at least 8 characters with numbers and one of special character: [@$!%?&]";
+      } else if (input.dataset.type == "zip" && !input.validity.valueMissing) {
+        errMsg.textContent =
+          "* Please input valid ZIP code (XXXXX or XXXXX-XXXX)";
       } else {
         errMsg.textContent = "* Input Required";
       }
