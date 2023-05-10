@@ -3,6 +3,7 @@ const form = (() => {
   let elem = null;
 
   const checkInputs = (input) => {
+    let valid = false;
     const errMsg = input.nextElementSibling;
     input.classList.add("input-text-validate");
     if (
@@ -26,8 +27,10 @@ const form = (() => {
         errMsg.textContent = "* Input Required";
       }
     } else {
+      valid = true;
       errMsg.classList.remove("show");
     }
+    return valid;
   };
 
   const start = (elemId) => {
@@ -61,10 +64,15 @@ const form = (() => {
 
     elem.addEventListener("submit", (e) => {
       e.preventDefault();
+      let inputValidated = true;
 
       inputs.forEach((input) => {
-        checkInputs(input);
+        if (!checkInputs(input) && inputValidated) {
+          inputValidated = false;
+          input.focus();
+        }
       });
+      if (inputValidated) alert("✋!");
     });
   };
 
