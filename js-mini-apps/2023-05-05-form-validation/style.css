@@ -98,10 +98,12 @@ select {
   border-radius: 0.3rem;
   padding: 0.5rem;
 }
-.input-text-validate:invalid, .input-text-invalid {
+.input-text-validate:invalid,
+.input-text.input-text-validate.input-text-invalid {
   border-color: rgb(191, 18, 18);
 }
-.input-text-validate:valid, .input-text-valid {
+.input-text-validate:valid,
+.input-text.input-text-validate.input-text-valid {
   border-color: rgb(18, 191, 35);
 }
 

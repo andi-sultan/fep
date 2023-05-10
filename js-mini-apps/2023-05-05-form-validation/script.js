@@ -30,6 +30,16 @@ const form = (() => {
             errMsg.textContent = "* Input Required";
           }
         } else {
+          const password = elem.querySelector("#password");
+          if (
+            input.getAttribute("data-type") == "repeat-password" &&
+            input.value != password.value
+          ) {
+            // todo
+            const errMsg = input.nextElementSibling;
+            errMsg.classList.add("show");
+            errMsg.textContent = "* Password not match";
+          }
           errMsg.classList.remove("show");
         }
       });
