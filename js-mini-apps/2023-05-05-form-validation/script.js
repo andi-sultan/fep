@@ -2,60 +2,65 @@
 const form = (() => {
   let elem = null;
 
+  const checkInputs = (input) => {
+    const errMsg = input.nextElementSibling;
+    input.classList.add("input-text-validate");
+    if (
+      input.validity.valueMissing ||
+      input.validity.patternMismatch ||
+      input.validity.tooShort
+    ) {
+      errMsg.classList.add("show");
+      if (input.type == "email") {
+        errMsg.textContent = "* Please input valid email format";
+      } else if (input.type == "tel") {
+        errMsg.textContent =
+          "* Please input valid phone number (min. 12 of length)";
+      } else if (input.type == "password" && !input.validity.valueMissing) {
+        errMsg.textContent =
+          "* Password is at least 8 characters with numbers and one of special character: [@$!%?&]";
+      } else {
+        errMsg.textContent = "* Input Required";
+      }
+    } else {
+      errMsg.classList.remove("show");
+    }
+  };
+
   const start = (elemId) => {
     elem = document.getElementById(elemId);
 
     const inputs = elem.querySelectorAll(".input-text");
     inputs.forEach((input) => {
-      const errMsg = input.nextElementSibling;
-      // console.log(input.type);
-      input.addEventListener("input", () => {
-        input.classList.add("input-text-validate");
-        if (input.validity.valueMissing || input.validity.patternMismatch) {
-          errMsg.classList.add("show");
-          if (input.type == "email") {
-            errMsg.textContent = "* Please input valid email format";
-          } else if (input.type == "tel") {
-            errMsg.textContent = "* Please input valid phone number";
-          } else if (input.type == "password") {
-            errMsg.textContent =
-              "* Password is at least 8 characters with numbers and one of special character: [@$!%?&]";
-            const repeatPassword = elem.querySelector(
-              '[data-type="repeat-password"]'
-            );
-            if (input.value != repeatPassword.value) {
-            }
-          } else if (input.getAttribute("data-type") == "repeat-password") {
-          } else {
-            errMsg.textContent = "* Input Required";
-          }
-        } else {
-          const password = elem.querySelector("#password");
-          if (
-            input.getAttribute("data-type") == "repeat-password" &&
-            input.value != password.value
-          ) {
-            // todo
-            const errMsg = input.nextElementSibling;
-            errMsg.classList.add("show");
-            errMsg.textContent = "* Password not match";
-          }
-          errMsg.classList.remove("show");
-        }
+      input.addEventListener("input", (e) => {
+        checkInputs(e.target);
       });
+    });
+
+    const pass = elem.querySelector("#password");
+    const repass = elem.querySelector("#repeat-password");
+    repass.addEventListener("input", () => {
+      const errMsg = repass.nextElementSibling;
+
+      repass.classList.add("input-text-validate");
+      if (
+        (repass.validity.valueMissing || repass.validity.patternMismatch) &&
+        pass.value != repass.value
+      ) {
+        errMsg.textContent = "* Passwords did not match";
+      } else if (pass.value == repass.value) {
+        errMsg.textContent =
+          "* Password is at least 8 characters with numbers and one of special character: [@$!%?&]";
+      } else {
+        errMsg.classList.remove("show");
+      }
     });
 
     elem.addEventListener("submit", (e) => {
       e.preventDefault();
 
       inputs.forEach((input) => {
-        const errMsg = input.nextElementSibling;
-        input.classList.add("input-text-validate");
-        if (input.validity.valueMissing) {
-          errMsg.classList.add("show");
-        } else {
-          errMsg.classList.remove("show");
-        }
+        checkInputs(input);
       });
     });
   };
