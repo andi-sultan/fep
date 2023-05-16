@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>2023-05-11-get-random-image</title>
+</head>
+
+<body>
+    <div class="top-navbar">
+        <a href="/index.html">Home</a> | <a
+            href="https://www.theodinproject.com/lessons/node-path-javascript-form-validation-with-javascript#practice">Source</a>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <input type="text" id="search" placeholder="cats">
+            <button id="change">Get Random Image</button>
+        </div>
+        <div class="row">
+            <div class="not-found">Image not found!</div>
+            <img src="#">
+        </div>
+    </div>
+
+    <script>
+        const api_key = '';
+        const img = document.querySelector('img');
+        const search = document.getElementById('search')
+        search.addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                changeImg();
+            }
+        });
+        const notfound = document.querySelector('.not-found')
+        function changeImg() {
+            let keyword = search.value ? search.value : search.getAttribute('placeholder')
+            fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${api_key}&s=${keyword}`, { mode: 'cors' })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (response) {
+                    notfound.style.display = 'none'
+                    console.log(response.data.slug)
+                    img.src = response.data.images.original.url;
+                    img.style.display = 'initial'
+                })
+                .catch(response => {
+                    notfound.style.display = 'initial'
+                    img.style.display = 'none'
+                });
+        }
+        const changeBtn = document.getElementById('change')
+        changeBtn.addEventListener('click', () => {
+            img.src = '#';
+            changeImg()
+        })
+        changeImg()
+    </script>
+</body>
+
+</html>
