@@ -36,22 +36,20 @@
             }
         });
         const notfound = document.querySelector('.not-found')
-        function changeImg() {
-            let keyword = search.value ? search.value : search.getAttribute('placeholder')
-            fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${api_key}&s=${keyword}`, { mode: 'cors' })
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (response) {
-                    notfound.style.display = 'none'
-                    console.log(response.data.slug)
-                    img.src = response.data.images.original.url;
-                    img.style.display = 'initial'
-                })
-                .catch(response => {
-                    notfound.style.display = 'initial'
-                    img.style.display = 'none'
-                });
+        async function changeImg() {
+            try {
+                let keyword = search.value ? search.value : search.getAttribute('placeholder')
+                const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${api_key}&s=${keyword}`, { mode: 'cors' })
+                const resultData = await response.json()
+                notfound.style.display = 'none'
+                console.log(resultData.data.slug)
+                img.src = resultData.data.images.original.url;
+                img.style.display = 'initial'
+            } catch (error) {
+                throw error
+                notfound.style.display = 'initial'
+                img.style.display = 'none'
+            }
         }
         const changeBtn = document.getElementById('change')
         changeBtn.addEventListener('click', () => {
