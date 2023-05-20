@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>2023-05-19-weather-app | search</title>
+</head>
+
+<body>
+    <div class="top-navbar">
+        <a href="../index.html">Top</a> |
+        <a href="/index.html">Home</a> |
+        <a href="https://www.theodinproject.com/lessons/node-path-javascript-weather-app">Source</a>
+    </div>
+
+    <div class="search-container">
+        <div class="suggestions-container">
+            <input type="text" id="search-input" class="search-input" placeholder="Search...">
+            <ul id="suggestions-list" class="suggestions-list"></ul>
+        </div>
+    </div>
+
+
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const suggestionsList = document.getElementById('suggestions-list');
+        let timeoutId;
+        let selectedSuggestionIndex = -1;
+
+        searchInput.addEventListener('input', handleInput);
+        searchInput.addEventListener('keydown', handleKeyDown);
+
+        function handleInput() {
+            clearTimeout(timeoutId);
+            const query = searchInput.value;
+            if (query) {
+                timeoutId = setTimeout(() => {
+                    // Replace with your logic to fetch all suggestions
+                    const allSuggestions = ['Apple 1', 'Banana 2', 'Suggestion 3'];
+
+                    const filteredSuggestions = allSuggestions.filter(suggestion => {
+                        return suggestion.toLowerCase().includes(query.toLowerCase());
+                    });
+
+                    displaySuggestions(filteredSuggestions);
+                }, 300);
+            } else {
+                clearSuggestions();
+            }
+        }
+
+        function handleKeyDown(event) {
+            const suggestions = suggestionsList.querySelectorAll('.suggestion-item');
+            const numSuggestions = suggestions.length;
+
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                if (selectedSuggestionIndex >= 0 && selectedSuggestionIndex < numSuggestions) {
+                    const selectedSuggestion = suggestions[selectedSuggestionIndex];
+                    fillInputWithSuggestion(selectedSuggestion);
+                } else {
+                    performSearch();
+                }
+            } else if (event.key === 'ArrowUp') {
+                event.preventDefault();
+                if (numSuggestions > 0) {
+                    selectPreviousSuggestion(suggestions);
+                }
+            } else if (event.key === 'ArrowDown') {
+                event.preventDefault();
+                if (numSuggestions > 0) {
+                    selectNextSuggestion(suggestions);
+                }
+            }
+        }
+
+        function performSearch() {
+            const query = searchInput.value;
+            console.log('Performing search for:', query);
+            searchInput.value = '';
+            clearSuggestions();
+        }
+
+        function displaySuggestions(suggestions) {
+            clearSuggestions();
+            suggestions.forEach((suggestion, index) => {
+                const li = document.createElement('li');
+                li.textContent = suggestion;
+                li.classList.add('suggestion-item');
+                li.addEventListener('click', () => {
+                    fillInputWithSuggestion(li);
+                });
+                suggestionsList.appendChild(li);
+
+                if (index === selectedSuggestionIndex) {
+                    li.classList.add('selected');
+                }
+            });
+        }
+
+        function fillInputWithSuggestion(suggestionElement) {
+            const suggestionText = suggestionElement.textContent;
+            searchInput.value = suggestionText;
+            clearSuggestions();
+            searchInput.focus();
+        }
+
+        function selectNextSuggestion(suggestions) {
+            const numSuggestions = suggestions.length;
+            selectedSuggestionIndex = (selectedSuggestionIndex + 1) % numSuggestions;
+            updateSelectedSuggestionStyle(suggestions);
+        }
+
+        function selectPreviousSuggestion(suggestions) {
+            const numSuggestions = suggestions.length;
+            selectedSuggestionIndex = (selectedSuggestionIndex - 1 + numSuggestions) % numSuggestions;
+            updateSelectedSuggestionStyle(suggestions);
+        }
+
+        function updateSelectedSuggestionStyle(suggestions) {
+            suggestions.forEach((suggestion, index) => {
+                if (index === selectedSuggestionIndex) {
+                    suggestion.classList.add('selected');
+                } else {
+                    suggestion.classList.remove('selected');
+                }
+            });
+        }
+
+        function clearSuggestions() {
+            while (suggestionsList.firstChild) {
+                suggestionsList.removeChild(suggestionsList.firstChild);
+            }
+            selectedSuggestionIndex = -1;
+        }
+    </script>
+
+</body>
+
+</html>
