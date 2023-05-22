@@ -23,9 +23,34 @@
         <div class="clock">
             <h2>Local Time</h2>
             <div class="clock-time">08:30</div>
-            <h3>Fri May 19 2023</h3>
+            <h3 class="clock-date">Fri May 19 2023</h3>
         </div>
     </div>
+
+    <script>
+        function getDateTime() {
+            const currentDate = new Date()
+
+            const hours = currentDate.getHours()
+            const minutes = currentDate.getMinutes()
+            const seconds = currentDate.getSeconds() < 10 ? '0' + currentDate.getSeconds() : currentDate.getSeconds()
+            const formattedTime = `${hours}:${minutes}:${seconds}`
+
+            const dayOfWeek = currentDate.toLocaleDateString('en-US', { weekday: 'short' });
+            const month = currentDate.toLocaleDateString('en-US', { month: 'short' });
+            const dayOfMonth = currentDate.getDate();
+            const year = currentDate.getFullYear();
+            const formattedDate = dayOfWeek + " " + month + " " + dayOfMonth + " " + year;
+
+            const clockTime = document.querySelector('.clock-time')
+            clockTime.textContent = formattedTime
+
+            const clockDate = document.querySelector('.clock-date')
+            clockDate.textContent = formattedDate
+        }
+
+        setInterval(getDateTime, 1000)
+    </script>
 </body>
 
 </html>
