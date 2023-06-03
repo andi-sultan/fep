@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <title>2023-05-19-weather-app</title>
+</head>
+
+<body>
+  <div class="top-navbar">
+    <a href="/index.html">Home</a> |
+    <a href="https://www.theodinproject.com/lessons/node-path-javascript-weather-app">Source</a>
+  </div>
+
+  <div class="container">
+
+    <h1>Check Weather</h1>
+
+    <div class="search">
+      <div class="search-suggestions">
+        <input type="text" id="search-input" class="search-input" placeholder="Search City...">
+        <ul id="search-suggestions-list" class="search-suggestions-list"></ul>
+      </div>
+    </div>
+
+    <div class="clock">
+      <h2>Local Time</h2>
+      <div class="clock-time">08:30</div>
+      <h3 class="clock-date">Fri May 19 2023</h3>
+    </div>
+
+    <div class="toggle">
+      <input type="checkbox" id="toggle-switch" class="toggle-switch">
+      <label for="toggle-switch" class="toggle-label"></label>
+      <span class="toggle-text toggle-celcius">°C</span>
+      <span class="toggle-text toggle-fahrenheit">°F</span>
+    </div>
+
+    <div class="weather">
+      <h2>Jakarta, Indonesia</h2>
+      <div class="weather-img">
+        <img src="https://source.unsplash.com/random/150x150?sun" alt="weather-img" class="weather-img">
+      </div>
+      <h3 class="weather-condition">Sunny</h3>
+    </div>
+
+  </div>
+</body>
+
+</html>
