@@ -77,6 +77,9 @@ select {
 
 .toggle {
   position: relative;
+  --border: 0.2rem;
+  --width: 6rem;
+  --height: 3rem;
 }
 
 .toggle-switch {
@@ -85,23 +88,29 @@ select {
 
 .toggle-label {
   display: block;
-  opacity: 1;
   content: "";
   position: absolute;
-  width: 20rem;
-  height: 3.4rem;
+  width: var(--width);
+  height: calc(var(--height));
   background-color: aquamarine;
+  border: var(--border) solid salmon;
+  bottom: 0;
+  left: var(--width);
+  border-radius: calc(var(--height));
 }
 .toggle-label::before {
   content: "";
-  width: 3rem;
-  height: 3rem;
+  width: calc(var(--height));
+  height: calc(var(--height));
   background-color: #37393c;
+  border: var(--border) solid slateblue;
   border-radius: 50%;
   position: absolute;
-  left: -2rem;
-  z-index: 1;
+  bottom: calc(-1 * var(--border));
+  left: calc(-1 * var(--border));
+  transition: 0.5s;
 }
-.toggle-label::before .active {
+.toggle-switch:checked + .toggle-label::before {
   background-color: #4caf50;
+  transform: translateX(calc(var(--width) - var(--height)));
 }
