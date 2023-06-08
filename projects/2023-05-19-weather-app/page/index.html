@@ -20,12 +20,12 @@
 
   <div class="container">
     <div class="overlay"></div>
-    <h1>Check Weather</h1>
+    <h1 class="title">Check Weather</h1>
 
     <input type="text" id="search-input" class="search-input" placeholder="Search City...">
 
     <div class="clock">
-      <h2>Local Time</h2>
+      <h2 class="clock-title">Local Time</h2>
       <div class="clock-time">08:30</div>
       <h3 class="clock-date">Fri May 19 2023</h3>
     </div>
@@ -40,19 +40,18 @@
     </div>
 
     <div class="weather">
-      <h2>Jakarta, Indonesia</h2>
-      <div class="weather-img">
-        <img src="https://source.unsplash.com/random/150x150?sun" alt="weather-img" class="weather-img">
-      </div>
-      <h3 class="weather-condition">Sunny</h3>
+      <h2 class="weather-city">Jakarta, Indonesia</h2>
+      <p class="weather-temperature">25°C</p>
+      <img src="https://source.unsplash.com/random/150x150?sun" alt="weather-img" class="weather-img">
+      <p class="weather-condition">Sunny</p>
     </div>
 
     <button onclick="changeBackground()">Change Background</button>
   </div>
 
   <script>
-    function changeBackground() {
-      fetch('https://api.unsplash.com/photos/random/?client_id=API_KEY')
+    function changeBackground(keyword = '') {
+      fetch(`https://api.unsplash.com/photos/random/?client_id=API_KEY&query=${keyword}`)
         .then(response => response.json())
         .then(data => {
           const imageUrl = data.urls.regular;
@@ -65,7 +64,7 @@
           console.error('Error fetching image:', error);
         });
     }
-    changeBackground()
+    changeBackground('nature')
   </script>
 </body>
 
