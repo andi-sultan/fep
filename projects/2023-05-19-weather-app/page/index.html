@@ -19,7 +19,7 @@
   </div>
 
   <div class="container">
-
+    <div class="overlay"></div>
     <h1>Check Weather</h1>
 
     <input type="text" id="search-input" class="search-input" placeholder="Search City...">
@@ -47,7 +47,26 @@
       <h3 class="weather-condition">Sunny</h3>
     </div>
 
+    <button onclick="changeBackground()">Change Background</button>
   </div>
+
+  <script>
+    function changeBackground() {
+      fetch('https://api.unsplash.com/photos/random/?client_id=API_KEY')
+        .then(response => response.json())
+        .then(data => {
+          const imageUrl = data.urls.regular;
+          document.body.style.backgroundImage = `url(${imageUrl})`;
+          document.body.style.backgroundPosition = "center";
+          document.body.style.backgroundSize = "cover";
+          document.body.style.backgroundRepeat = "no-repeat";
+        })
+        .catch(error => {
+          console.error('Error fetching image:', error);
+        });
+    }
+    changeBackground()
+  </script>
 </body>
 
 </html>
