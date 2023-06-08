@@ -76,13 +76,26 @@ select {
 }
 
 .toggle {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-container {
+  display: inline-block;
   position: relative;
   --border: 0rem;
-  --padding: 0.2rem;
+  --padding: 0.3rem;
   --width: 6rem;
   --height: 3rem;
   height: var(--height);
   width: var(--width);
+}
+
+.toggle-deg:first-of-type {
+  margin-right: 0.5rem;
+}
+.toggle-deg:last-of-type {
+  margin-left: 0.5rem;
 }
 
 .toggle-switch {
