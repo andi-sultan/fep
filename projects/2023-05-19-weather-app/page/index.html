@@ -18,8 +18,8 @@
     <a href="https://www.theodinproject.com/lessons/node-path-javascript-weather-app">Source</a>
   </div>
 
+  <div class="overlay"></div>
   <div class="container">
-    <div class="overlay"></div>
     <h1 class="title">Check Weather</h1>
 
     <input type="text" id="search-input" class="search-input" placeholder="Search City...">
@@ -46,7 +46,7 @@
       <p class="weather-condition">Sunny</p>
     </div>
 
-    <button onclick="changeBackground()">Change Background</button>
+    <!-- <button onclick="changeBackground()">Change Background</button> -->
   </div>
 
   <script>
@@ -64,7 +64,7 @@
           console.error('Error fetching image:', error);
         });
     }
-    changeBackground('nature')
+    // changeBackground('nature')
   </script>
 </body>
 

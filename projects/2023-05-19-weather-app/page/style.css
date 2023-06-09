@@ -69,12 +69,27 @@ select {
   text-align: center;
   min-height: calc(100vh - 3rem);
   color: #fff;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-rows: repeat(5, min-content);
+  grid-template-areas:
+    "title"
+    "search-input"
+    "clock"
+    "toggle"
+    "weather";
+  align-items: center;
+  justify-items: center;
+  max-width: 120rem;
+  margin: 0 auto;
 }
 
 .title {
-  margin-bottom: 2.5rem;
+  margin: 3rem auto;
   font-size: 4.2rem;
+  line-height: 4.2rem;
   font-weight: 400;
+  grid-area: title;
 }
 
 .search-input {
@@ -82,11 +97,15 @@ select {
   padding: 5px;
   border: none;
   border-bottom: 1px solid #ccc;
-  margin-bottom: 2.5rem;
-  margin-right: 5px;
+  margin: 0 auto 3rem;
   width: 30rem;
   background-color: transparent;
   transition: border-color 0.3s ease;
+  grid-area: search-input;
+  text-align: center;
+}
+.search-input::placeholder {
+  text-align: center;
 }
 
 .search-input:focus {
@@ -97,6 +116,7 @@ select {
 .clock {
   margin-bottom: 4.5rem;
   font-weight: 400;
+  grid-area: clock;
 }
 
 .clock-title {
@@ -116,6 +136,7 @@ select {
   align-items: center;
   justify-content: center;
   margin-bottom: 2.5rem;
+  grid-area: toggle;
 }
 
 .toggle-container {
@@ -131,7 +152,6 @@ select {
 
 .toggle-deg {
   font-size: 3.2rem;
-  font-weight: 300;
 }
 .toggle-deg:first-of-type {
   margin-right: 0.5rem;
@@ -172,16 +192,20 @@ select {
   transform: translateX(calc(var(--width) - var(--height)));
 }
 
+.weather {
+  grid-area: weather;
+}
+
 .weather-city {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   font-weight: 400;
   font-size: 2.8rem;
 }
 
 .weather-temperature {
-  font-size: 2.4rem;
+  font-size: 4.4rem;
   margin-bottom: 1rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .weather-img {
@@ -193,4 +217,50 @@ select {
 .weather-condition {
   font-size: 2.8rem;
   font-weight: 400;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    grid-template-areas:
+      "title title title"
+      "search-input search-input search-input"
+      "clock toggle weather";
+    grid-template-rows: 100px, 200px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .toggle-container {
+    --border: 0rem;
+    --padding: 0.6rem;
+    --width: 12rem;
+    --height: 6rem;
+  }
+
+  .toggle-deg {
+    font-size: 5.2rem;
+  }
+  .toggle-deg:first-of-type {
+    margin-right: 0.5rem;
+  }
+  .toggle-deg:last-of-type {
+    margin-left: 0.5rem;
+  }
+
+  .weather-city {
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    font-size: 2.8rem;
+  }
+
+  .weather-temperature {
+    font-size: 4.4rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .weather-img {
+    border: 0.3rem solid #fff;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
 }
