@@ -74,7 +74,7 @@ select {
   grid-template-rows: repeat(5, min-content);
   grid-template-areas:
     "title"
-    "search-input"
+    "search"
     "clock"
     "toggle"
     "weather";
@@ -92,16 +92,21 @@ select {
   grid-area: title;
 }
 
+.search {
+  position: relative;
+  grid-area: search;
+  margin: 0 auto 3rem;
+}
+
 .search-input {
   font-size: 2.8rem;
   padding: 5px;
   border: none;
   border-bottom: 1px solid #ccc;
-  margin: 0 auto 3rem;
+  margin: 0 auto 1rem;
   width: 30rem;
   background-color: transparent;
   transition: border-color 0.3s ease;
-  grid-area: search-input;
   text-align: center;
 }
 .search-input::placeholder {
@@ -111,6 +116,20 @@ select {
 .search-input:focus {
   outline: none;
   border-color: #4caf50;
+}
+
+.search-input.error {
+  border-color: #e65858;
+}
+
+.search-input.error:focus {
+  border-color: #e65858;
+}
+.error-message {
+  color: #e65858;
+  font-size: 1.4rem;
+  grid-area: error-message;
+  text-align: center;
 }
 
 .clock {
@@ -223,7 +242,7 @@ select {
   .container {
     grid-template-areas:
       "title title title"
-      "search-input search-input search-input"
+      "search search search"
       "clock toggle weather";
     grid-template-rows: 100px, 200px;
     grid-template-columns: repeat(3, 1fr);

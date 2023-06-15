@@ -22,7 +22,10 @@
   <div class="container">
     <h1 class="title">Check Weather</h1>
 
-    <input type="text" id="search-input" class="search-input" placeholder="Search City...">
+    <div class="search">
+      <input type="text" id="search-input" class="search-input" placeholder="Search City...">
+      <div id="error-message" class="error-message"></div>
+    </div>
 
     <div class="clock">
       <h2 class="clock-title">Local Time</h2>
@@ -65,6 +68,25 @@
         });
     }
     // changeBackground('nature')
+
+    const searchInput = document.getElementById('search-input');
+    const errorMessage = document.getElementById('error-message');
+
+    // Example function to validate the input
+    function validateInput() {
+      const inputValue = searchInput.value.trim();
+      if (inputValue === '') {
+        searchInput.classList.add('error');
+        errorMessage.textContent = 'Please enter a city.';
+      } else {
+        searchInput.classList.remove('error');
+        errorMessage.textContent = '';
+      }
+    }
+
+    // Add an event listener to validate the input on keyup
+    searchInput.addEventListener('keyup', validateInput);
+
   </script>
 </body>
 
