@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap");
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+    }
+
+    html {
+      font-size: 62.5%;
+      /* 10px */
+    }
+
+    body {
+      font-family: "Roboto", sans-serif;
+      color: #37393c;
+      box-sizing: border-box;
+      font-size: 1.6rem;
+      /* background-color: #333; */
+      background-color: #eee;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    input,
+    button,
+    select {
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit;
+      background-color: inherit;
+    }
+
+    .top-navbar {
+      text-align: center;
+      background-color: lightgreen;
+      height: 3rem;
+      line-height: 3rem;
+    }
+
+    .top-navbar a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .top-navbar a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <title>2023-07-01-recursion</title>
+</head>
+
+<body>
+  <div class="top-navbar">
+    <a href="/index.html">Home</a> |
+    <a href="https://www.codingame.com/playgrounds/5422/js-interview-prep-recursion">Source</a>
+  </div>
+
+  <script>
+    // 1: Sum all numbers
+    function sumRange(n) {
+      if (n === 1) return n
+      else return n + sumRange(n - 1)
+    }
+
+    // 2: Power function
+    function power(base, exponent) {
+      // if (exponent === 1) return exponent
+      // else return base * power(base, exponent - 1)
+    }
+  </script>
+</body>
+
+</html>
