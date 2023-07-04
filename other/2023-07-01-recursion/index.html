@@ -94,10 +94,27 @@
 
     // 4: Check all values in an array
     function all(arr, callback) {
-      // remove first arr elem
-      // if arr.length==0
+      let status_all = true
+      // if (arr.length > 0) {
       // callback(first arr elem)
+      if (arr.length > 0) {
+        if (callback(arr[0])) {
+          arr.shift()
+          all(arr, callback)
+        }
+        // remove first arr elem
+      } else {
+        return 2
+      }
+      // } else {
+      //   all(arr.shift(), callback)
+      // }
+      // if status_find==true
     }
+
+    const moreThan1 = all([1, 2, 7], (n) => {
+      return n > 1
+    })
   </script>
 </body>
 
