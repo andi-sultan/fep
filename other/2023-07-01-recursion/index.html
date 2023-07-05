@@ -107,6 +107,44 @@
       return num < 7;
     });
     // console.log(allAreLessThanSeven)
+
+    // 5: Product of an array
+    function productOfArray(arr) {
+      if (arr.length > 0) {
+        n = arr[0]
+        arr.shift()
+        return n * productOfArray(arr)
+      }
+      return 1
+    }
+
+    var six = productOfArray([1, 2, 3]) // 6
+    var sixty = productOfArray([1, 2, 3, 10]) // 60
+    // console.log(sixty)
+
+    // 6: Search JS object
+    var nestedObject = {
+      data: {
+        info: {
+          stuff: {
+            thing: {
+              moreStuff: {
+                magicNumber: 44,
+                something: 'foo2'
+              }
+            }
+          }
+        }
+      }
+    }
+
+    function contains(obj, x){
+      // if first element has object key:
+      //   contains()
+    }
+
+    let hasIt = contains(nestedObject, 44); // true
+    let doesntHaveIt = contains(nestedObject, "foo"); // false
   </script>
 </body>
 
