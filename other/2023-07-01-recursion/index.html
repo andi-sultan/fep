@@ -138,9 +138,14 @@
       }
     }
 
-    function contains(obj, x){
+    function contains(obj, x) {
       // if first element has object key:
       //   contains()
+      if (typeof obj === 'object') {
+        // contains(o, x)
+        // if (o === x) return true
+        // return false
+      }
     }
 
     let hasIt = contains(nestedObject, 44); // true
