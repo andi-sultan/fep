@@ -139,17 +139,22 @@
     }
 
     function contains(obj, x) {
-      // if first element has object key:
-      //   contains()
-      if (typeof obj === 'object') {
-        // contains(o, x)
-        // if (o === x) return true
-        // return false
+      for (const prop in obj) {
+        // console.log(prop)
+        if (typeof obj[prop] === 'object') {
+          return contains(obj[prop], x)
+        }
+        // console.log(obj[prop])
+        // console.log(obj[prop] == x)
+        if (obj[prop] === x) return true
       }
+      return false
     }
 
     let hasIt = contains(nestedObject, 44); // true
+    // console.log('hasIt', hasIt)
     let doesntHaveIt = contains(nestedObject, "foo"); // false
+    // console.log('doesntHaveIt', doesntHaveIt)
   </script>
 </body>
 
