@@ -180,6 +180,37 @@
 
     var seven = totalIntegers([[[5], 3], 0, 2, ['foo'], [], [4, [5, 6]]]); // 7
     // console.log(seven)
+
+    // 8
+    function SumSquares(arr) {
+      let totalInt = 0
+      arr.forEach((ar) => {
+        if (Number.isInteger(ar)) {
+          // console.log('ar int(', ar, '*', ar, ') =', ar * ar)
+          totalInt += ar * ar
+        }
+      })
+      // console.log('totalint', totalInt)
+      arr.forEach(ar => {
+        if (Array.isArray(ar)) {
+          // console.log('ar2', ar)
+          totalInt = totalInt + SumSquares(ar)
+        }
+      })
+      return totalInt
+    }
+
+    var l = [1, 2, 3];
+    // console.log(SumSquares(l)); // 1 + 4 + 9 = 14
+
+    l = [[1, 2], 3];
+    // console.log('SumSquares', SumSquares(l)); // 1 + 4 + 9 = 14
+
+    l = [[[[[[[[[1]]]]]]]]]
+    // console.log(SumSquares(l)); // 1 = 1
+
+    l = [10, [[10], 10], [10]]
+    // console.log('SumSquares', SumSquares(l)); // 100 + 100 + 100 + 100 = 400
   </script>
 </body>
 
