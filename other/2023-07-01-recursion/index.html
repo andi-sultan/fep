@@ -155,6 +155,31 @@
     // console.log('hasIt', hasIt)
     let doesntHaveIt = contains(nestedObject, "foo"); // false
     // console.log('doesntHaveIt', doesntHaveIt)
+
+    // 7: Parse a multi-dimensional array
+    function totalIntegers(arr) {
+      if (Array.isArray(arr)) {
+        let numsOfInt = 0
+        arr.forEach((ar) => {
+          if (Number.isInteger(ar)) {
+            // console.log('ar int', ar)
+            numsOfInt++
+            // console.log('numsofint', numsOfInt)
+          }
+        })
+        arr.forEach(ar => {
+          if (Array.isArray(ar)) {
+            // console.log('ar2', ar)
+            numsOfInt = numsOfInt + totalIntegers(ar)
+          }
+        })
+        return numsOfInt
+      }
+      return 0
+    }
+
+    var seven = totalIntegers([[[5], 3], 0, 2, ['foo'], [], [4, [5, 6]]]); // 7
+    // console.log(seven)
   </script>
 </body>
 
