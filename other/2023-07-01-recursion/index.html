@@ -223,6 +223,28 @@
     // console.log(replicate(3, 5)) // [5, 5, 5]
     // console.log(replicate(1, 69)) // [69]
     // console.log(replicate(-2, 6)) // []
+
+
+    // fibonacci
+    function fibonacci(n) {
+      let f = []
+      for (let i = 0; i <= n; i++) {
+        if (i < 2) {
+          f.push(i)
+        } else {
+          f.push(f[i - 1] + f[i - 2])
+        }
+      }
+      return f
+    }
+    // console.log(fibonacci(6))
+
+    function fibonacciRec(n) {
+      // todo: return array
+      if (n < 2) return [n]
+      return [n].concat(parseInt(fibonacciRec(n - 1) + fibonacciRec(n - 2)))
+    }
+    // console.log(fibonacciRec(6))
   </script>
 </body>
 
