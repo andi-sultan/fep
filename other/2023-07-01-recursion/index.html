@@ -70,7 +70,8 @@
 <body>
   <div class="top-navbar">
     <a href="/index.html">Home</a> |
-    <a href="https://www.codingame.com/playgrounds/5422/js-interview-prep-recursion">Source</a>
+    <a href="https://www.codingame.com/playgrounds/5422/js-interview-prep-recursion">Source</a> |
+    <a href="https://www.theodinproject.com/lessons/javascript-recursion">Source 2</a>
   </div>
 
   <script>
@@ -257,6 +258,50 @@
       return a
     }
     // console.log(fibonacciRec(3))
+
+    // merge sort
+    function mergeSort(arr) {
+      if (arr.length < 2) return arr
+      const mid = Math.floor(arr.length / 2)
+      const leftArr = arr.slice(0, mid)
+      const rightArr = arr.slice(mid)
+      // console.log('leftArr before, rightArr before', leftArr, rightArr)
+      const sortLeft = mergeSort(leftArr)
+      const sortRight = mergeSort(rightArr)
+      // console.log('sortLeft, sortRight', sortLeft, sortRight)
+      return merge(sortLeft, sortRight)
+    }
+    function merge(leftArr, rightArr) {
+      let newArr = []
+
+      while (leftArr.length && rightArr.length) {
+        // console.log('left, right', leftArr[0], rightArr[0])
+        if (leftArr[0] <= rightArr[0]) {
+          newArr.push(leftArr[0])
+          leftArr.shift()
+        } else {
+          newArr.push(rightArr[0])
+          rightArr.shift()
+        }
+        // console.log('newArr current', newArr)
+      }
+
+      // console.log('leftArr after', leftArr)
+      while (leftArr.length) {
+        newArr.push(leftArr[0])
+        leftArr.shift()
+      }
+      // console.log('rightArr after', rightArr)
+      while (rightArr.length) {
+        newArr.push(rightArr[0])
+        rightArr.shift()
+      }
+
+      // console.log('newArr after', newArr)
+      return newArr
+    }
+
+    // console.log('mergeSort', mergeSort([2, 5, 3, 4, 7, 8, 6]))
   </script>
 </body>
 
