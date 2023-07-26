@@ -15,7 +15,7 @@ class LinkedList {
       return this;
     }
     let tail = this.tail();
-    tail.nextNode = new Node(value);
+    tail.znextNode = new Node(value);
     return tail;
   }
   // prepend(value) adds a new node containing value to the start of the list
@@ -32,8 +32,8 @@ class LinkedList {
     if (!this.head) return null;
     let s = 1;
     let tail = this.head;
-    while (tail.nextNode !== null && tail.nextNode !== undefined) {
-      tail = tail.nextNode;
+    while (tail.znextNode !== null && tail.znextNode !== undefined) {
+      tail = tail.znextNode;
       s++;
     }
     return s;
@@ -46,8 +46,8 @@ class LinkedList {
   tail() {
     if (!this.head) return null;
     let tail = this.head;
-    while (tail.nextNode !== null && tail.nextNode !== undefined) {
-      tail = tail.nextNode;
+    while (tail.znextNode !== null && tail.znextNode !== undefined) {
+      tail = tail.znextNode;
     }
     return tail;
   }
@@ -56,9 +56,9 @@ class LinkedList {
     if (!this.head) return null;
     let s = 0;
     let tail = this.head;
-    while (tail.nextNode !== null && tail.nextNode !== undefined) {
+    while (tail.znextNode !== null && tail.znextNode !== undefined) {
       if (s === index) return tail.value;
-      tail = tail.nextNode;
+      tail = tail.znextNode;
       s++;
     }
     if (s === index) return tail.value;
@@ -68,12 +68,13 @@ class LinkedList {
   pop() {
     if (!this.head) return null;
     let tail = this.head;
-    while (tail.nextNode !== null && tail.nextNode !== undefined) {
-      tail = tail.nextNode;
+    while (tail.znextNode !== null && tail.znextNode !== undefined) {
+      tail = tail.znextNode;
     }
-    if (tail.nextNode !== null && tail.nextNode !== undefined) {
-      tail = tail.nextNode;
+    if (tail.znextNode !== null && tail.znextNode !== undefined) {
+      return tail;
     } else {
+      return this.head;
     }
     return tail;
   }
@@ -85,11 +86,11 @@ class LinkedList {
   // insertAt(value, index) that inserts a new node with the provided value at the given index.
   // removeAt(index) that removes the node at the given index.
 }
-// Node class / factory, containing a value property and a link to the nextNode, set both as null by default.
+// Node class / factory, containing a value property and a link to the znextNode, set both as null by default.
 class Node {
-  constructor(value, nextNode) {
+  constructor(value, znextNode) {
     this.value = null || value;
-    this.nextNode = null || nextNode;
+    this.znextNode = null || znextNode;
   }
 }
 
@@ -99,9 +100,10 @@ myLink.append(2);
 // console.log(myLink);
 myLink.prepend(4);
 myLink.prepend(3);
+myLink.pop();
 // console.log(myLink.size());
-console.log(myLink.at(3));
-// console.log(myLink);
+// console.log(myLink.at(3));
+console.log(myLink);
 // myLink.append('aaa')
 // // myLink.append('ddd')
 // console.log(myNode)
