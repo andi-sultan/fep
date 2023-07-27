@@ -57,40 +57,70 @@ class LinkedList {
     let s = 0;
     let tail = this.head;
     while (tail.znextNode !== null && tail.znextNode !== undefined) {
-      if (s === index) return tail.value;
+      if (s === index) return tail;
       tail = tail.znextNode;
       s++;
     }
-    if (s === index) return tail.value;
+    if (s === index) return tail;
     return null;
   }
   // pop removes the last element from the list
   pop() {
     if (!this.head) return null;
-    let tail = this.head;
-    while (tail.znextNode !== null && tail.znextNode !== undefined) {
-      tail = tail.znextNode;
+    if (!this.head.znextNode) {
+      this.head = null;
+      return;
     }
-    if (tail.znextNode !== null && tail.znextNode !== undefined) {
-      return tail;
-    } else {
-      return this.head;
-    }
-    return tail;
+    let nodeBeforeTail = this.at(this.size() - 2);
+    nodeBeforeTail.znextNode = null;
   }
   // contains(value) returns true if the passed in value is in the list and otherwise returns false.
+  contains(value) {
+    if (!this.head) return false;
+    let current = this.head;
+    while (current.znextNode !== null) {
+      if (value == current.value) return true;
+      current = current.znextNode;
+    }
+    if (value == current.value) return true;
+    return false;
+  }
   // find(value) returns the index of the node containing value, or null if not found.
+  find(value) {
+    if (!this.head) return null;
+    let s = 0;
+    let current = this.head;
+    while (current.znextNode !== null) {
+      if (value == current.value) return s;
+      s++;
+      current = current.znextNode;
+    }
+    if (value == current.value) return s;
+    return null;
+  }
   // toString represents your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
-  toString() {}
+  toString() {
+    let str = "";
+    if (!this.head) return null;
+    let current = this.head;
+    while (current.znextNode !== null) {
+      str += `( ${current.value} )`;
+      str += ` -> `;
+      current = current.znextNode;
+    }
+    str += `( ${current.value} ) -> null`;
+    return str;
+  }
   // Extra credit
   // insertAt(value, index) that inserts a new node with the provided value at the given index.
+  insertAt(value, index) {}
   // removeAt(index) that removes the node at the given index.
 }
 // Node class / factory, containing a value property and a link to the znextNode, set both as null by default.
 class Node {
-  constructor(value, znextNode) {
-    this.value = null || value;
-    this.znextNode = null || znextNode;
+  constructor(value = null, znextNode = null) {
+    this.value = value;
+    this.znextNode = znextNode;
   }
 }
 
@@ -100,9 +130,15 @@ myLink.append(2);
 // console.log(myLink);
 myLink.prepend(4);
 myLink.prepend(3);
-myLink.pop();
+// myLink.pop();
 // console.log(myLink.size());
-// console.log(myLink.at(3));
+// console.log(myLink.at(2));
+// console.log(myLink.contains(0));
+// console.log(myLink.find(1));
+// console.log(myLink.find(2));
+// console.log(myLink.find(3));
+// console.log(myLink.find(4));
+console.log(myLink.toString());
 console.log(myLink);
 // myLink.append('aaa')
 // // myLink.append('ddd')
