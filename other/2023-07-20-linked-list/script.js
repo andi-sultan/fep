@@ -113,7 +113,27 @@ class LinkedList {
   }
   // Extra credit
   // insertAt(value, index) that inserts a new node with the provided value at the given index.
-  insertAt(value, index) {}
+  insertAt(value, index) {
+    // get node at index
+    if (!this.head) this.head = new Node(value);
+    let current = this.head;
+    let secondPart = null;
+    while (current.znextNode !== null) {
+      if (value == current.value) {
+        secondPart = current;
+        break;
+      }
+      current = current.znextNode;
+    }
+    if (value == current.value) {
+      secondPart = current;
+    }
+    console.log(this.toString());
+    return;
+    // get prev node at index
+    // get next node at index
+    // set
+  }
   // removeAt(index) that removes the node at the given index.
 }
 // Node class / factory, containing a value property and a link to the znextNode, set both as null by default.
@@ -138,7 +158,8 @@ myLink.prepend(3);
 // console.log(myLink.find(2));
 // console.log(myLink.find(3));
 // console.log(myLink.find(4));
-console.log(myLink.toString());
+// console.log(myLink.toString());
+myLink.insertAt(1, 2);
 console.log(myLink);
 // myLink.append('aaa')
 // // myLink.append('ddd')
