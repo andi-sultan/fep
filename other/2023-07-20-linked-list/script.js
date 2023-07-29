@@ -116,18 +116,35 @@ class LinkedList {
   insertAt(value, index) {
     // get node at index
     if (!this.head) this.head = new Node(value);
+    // let current = this.head;
+    // let secondPart = null;
+    // while (current.znextNode !== null) {
+    //   if (value == current.value) {
+    //     secondPart = current;
+    //     break;
+    //   }
+    //   current = current.znextNode;
+    // }
+    // if (value == current.value) {
+    //   secondPart = current;
+    // }
+    // this.head = secondPart;
+
+    let temp = null;
     let current = this.head;
     let secondPart = null;
-    while (current.znextNode !== null) {
-      if (value == current.value) {
+    while (this.head.znextNode !== null) {
+      if (value == this.head.value) {
         secondPart = current;
         break;
       }
-      current = current.znextNode;
+      temp;
+      this.head = this.head.znextNode;
     }
-    if (value == current.value) {
-      secondPart = current;
+    if (value == this.head.value) {
+      secondPart = this.head;
     }
+    this.head = secondPart;
     console.log(this.toString());
     return;
     // get prev node at index
