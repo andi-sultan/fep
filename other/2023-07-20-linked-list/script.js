@@ -115,41 +115,25 @@ class LinkedList {
   // insertAt(value, index) that inserts a new node with the provided value at the given index.
   insertAt(value, index) {
     // get node at index
-    if (!this.head) this.head = new Node(value);
-    // let current = this.head;
-    // let secondPart = null;
-    // while (current.znextNode !== null) {
-    //   if (value == current.value) {
-    //     secondPart = current;
-    //     break;
-    //   }
-    //   current = current.znextNode;
-    // }
-    // if (value == current.value) {
-    //   secondPart = current;
-    // }
-    // this.head = secondPart;
-
-    let temp = null;
-    let current = this.head;
-    let secondPart = null;
-    while (this.head.znextNode !== null) {
-      if (value == this.head.value) {
-        secondPart = current;
-        break;
-      }
-      temp;
-      this.head = this.head.znextNode;
+    let node = new Node(value);
+    if (!this.head) this.head = node;
+    if (index === 0) {
+      this.prepend(value);
+      return this.toString();
     }
-    if (value == this.head.value) {
-      secondPart = this.head;
+    if (index > this.size() - 1) {
+      this.append(value);
+      return this.toString();
     }
-    this.head = secondPart;
-    console.log(this.toString());
-    return;
-    // get prev node at index
-    // get next node at index
-    // set
+    let prev = this.at(index - 1);
+    console.log("z", this.toString());
+    node.znextNode = prev.znextNode;
+    console.log("z", this.toString());
+    // prev.znextNode = node;
+    // console.log("z", this.toString());
+    // console.log(prev);
+    // console.log(node);
+    return this.toString();
   }
   // removeAt(index) that removes the node at the given index.
 }
@@ -176,8 +160,10 @@ myLink.prepend(3);
 // console.log(myLink.find(3));
 // console.log(myLink.find(4));
 // console.log(myLink.toString());
-myLink.insertAt(1, 2);
-console.log(myLink);
+console.log(myLink.insertAt(5, 0));
+console.log(myLink.insertAt(6, 9));
+console.log(myLink.insertAt(7, 3));
+// console.log(myLink);
 // myLink.append('aaa')
 // // myLink.append('ddd')
 // console.log(myNode)
