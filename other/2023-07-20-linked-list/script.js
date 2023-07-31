@@ -121,18 +121,15 @@ class LinkedList {
       this.prepend(value);
       return this.toString();
     }
+    // if index > last position
     if (index > this.size() - 1) {
       this.append(value);
       return this.toString();
     }
     let prev = this.at(index - 1);
-    console.log("z", this.toString());
+    // debugger;
     node.znextNode = prev.znextNode;
-    console.log("z", this.toString());
-    // prev.znextNode = node;
-    // console.log("z", this.toString());
-    // console.log(prev);
-    // console.log(node);
+    prev.znextNode = node;
     return this.toString();
   }
   // removeAt(index) that removes the node at the given index.
@@ -160,8 +157,8 @@ myLink.prepend(3);
 // console.log(myLink.find(3));
 // console.log(myLink.find(4));
 // console.log(myLink.toString());
-console.log(myLink.insertAt(5, 0));
-console.log(myLink.insertAt(6, 9));
+myLink.insertAt(5, 0);
+myLink.insertAt(6, 9);
 console.log(myLink.insertAt(7, 3));
 // console.log(myLink);
 // myLink.append('aaa')
