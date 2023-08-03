@@ -14,6 +14,7 @@ class LinkedList {
       this.head = new Node(value);
       return this;
     }
+    // * changing tail is also change current instance (this)
     let tail = this.tail();
     tail.znextNode = new Node(value);
     return tail;
@@ -127,12 +128,34 @@ class LinkedList {
       return this.toString();
     }
     let prev = this.at(index - 1);
+    // * changing prev is also changing the current
+    // * instance that is accessed with "this"
     // debugger;
     node.znextNode = prev.znextNode;
     prev.znextNode = node;
     return this.toString();
   }
   // removeAt(index) that removes the node at the given index.
+  removeAt(index) {
+    if (!this.head) return null;
+    if (index === 0) {
+      this.head = this.head.znextNode;
+      return this.toString();
+    }
+    if (index > this.size() - 1) {
+      return this.toString();
+    }
+    if (index === this.size() - 1) {
+      this.pop();
+      return this.toString();
+    }
+    // let node = new Node(value);
+    let nodeFromIndex = this.at(index - 1);
+    let newnodeFromIndex = nodeFromIndex.znextNode;
+    nodeFromIndex.znextNode = newnodeFromIndex.znextNode;
+    console.log("nodeFromIndex", nodeFromIndex);
+    return this.toString();
+  }
 }
 // Node class / factory, containing a value property and a link to the znextNode, set both as null by default.
 class Node {
@@ -159,10 +182,12 @@ myLink.prepend(3);
 // console.log(myLink.toString());
 myLink.insertAt(5, 0);
 myLink.insertAt(6, 9);
-console.log(myLink.insertAt(7, 3));
+myLink.insertAt(7, 3);
+// console.log(myLink.insertAt(7, 3));
+console.log(myLink.removeAt(3));
 // console.log(myLink);
 // myLink.append('aaa')
 // // myLink.append('ddd')
-// console.log(myNode)
+// console.log(myLink.toString());
 // myLink.toString()
 // console.log(myNode)
