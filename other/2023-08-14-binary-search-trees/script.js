@@ -36,7 +36,22 @@ class BinarySearchTree {
       }
     }
   }
+
+  // buildTree()
 }
+
+const prettyPrint = (node, prefix = "", isLeft = true) => {
+  if (node === null) {
+    return;
+  }
+  if (node.aRight !== null) {
+    prettyPrint(node.aRight, `${prefix}${isLeft ? "│   " : "    "}`, false);
+  }
+  console.log(`${prefix}${isLeft ? "└── " : "┌── "}${node.bValue}`);
+  if (node.cLeft !== null) {
+    prettyPrint(node.cLeft, `${prefix}${isLeft ? "    " : "│   "}`, true);
+  }
+};
 
 const bst = new BinarySearchTree();
 bst.insert(10);
@@ -46,3 +61,4 @@ bst.insert(2);
 bst.insert(7);
 
 console.log(bst);
+prettyPrint(bst.root, "prefix");
