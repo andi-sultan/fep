@@ -37,7 +37,9 @@ class BinarySearchTree {
     }
   }
 
-  // todo: search
+  // todo: delete(value) {
+    
+  // }
 
   buildTree(array) {
     array.sort((a, b) => a - b);
@@ -58,7 +60,23 @@ class BinarySearchTree {
       return root;
     };
 
-    return buildBalancedTree(sortedAndDeduplicatedArray);
+    this.root = buildBalancedTree(sortedAndDeduplicatedArray);
+
+    return this.root;
+  }
+
+  find(value) {
+    let currentNode = this.root;
+    while (currentNode) {
+      if (value === currentNode.bValue) {
+        return currentNode;
+      } else if (value < currentNode.bValue) {
+        currentNode = currentNode.cLeft;
+      } else {
+        currentNode = currentNode.aRight;
+      }
+    }
+    return null;
   }
 }
 
@@ -78,10 +96,11 @@ const prettyPrint = (node, prefix = "", isLeft = true) => {
 const bst = new BinarySearchTree();
 // bst.insert(10);
 // bst.insert(5);
-// bst.insert(15);
 // bst.insert(2);
 // bst.insert(7);
-prettyPrint(bst.buildTree([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]));
+// prettyPrint(bst.buildTree([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]));
+bst.buildTree([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]);
+bst.insert(15);
 
-// console.log(bst);
-// prettyPrint(bst.root, "prefix");
+prettyPrint(bst.root, "prefix");
+console.log(bst.find(7));
