@@ -40,8 +40,8 @@ class BinarySearchTree {
   // todo: delete(value) {
   // Helper function to find the minimum node in a subtree
   findMinNode(node) {
-    while (node.left !== null) {
-      node = node.left;
+    while (node.cLeft !== null) {
+      node = node.cLeft;
     }
     return node;
   }
@@ -64,8 +64,8 @@ class BinarySearchTree {
           node = node.cLeft;
         } else {
           const minRightSubtree = this.findMinNode(node.aRight);
-          node.bValue = minRightSubtree.value;
-          node.aRight = deleteNode(node.aRight, minRightSubtree.value);
+          node.bValue = minRightSubtree.bValue;
+          node.aRight = deleteNode(node.aRight, minRightSubtree.bValue);
         }
       }
       return node;
@@ -135,9 +135,9 @@ bst.buildTree([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]);
 bst.insert(15);
 
 prettyPrint(bst.root, "prefix");
-console.log(bst.find(7));
+// console.log(bst.find(4));
 
-console.log("Before deletion:", bst.find(7)); // Output: true
-bst.delete(7);
-console.log("After deletion:", bst.find(7)); // Output: false
+console.log("Before deletion:", bst.find(67)); // Output: true
+bst.delete(67);
+console.log("After deletion:", bst.find(67)); // Output: false
 prettyPrint(bst.root, "prefix");
