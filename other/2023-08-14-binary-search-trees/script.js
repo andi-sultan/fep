@@ -110,6 +110,34 @@ class BinarySearchTree {
     }
     return null;
   }
+
+  levelOrder(callback = null) {
+    if (!this.root) {
+      return [];
+    }
+
+    const queue = [this.root];
+    const result = [];
+
+    while (queue.length > 0) {
+      const currentNode = queue.shift();
+      if (callback) {
+        callback(currentNode);
+      } else {
+        result.push(currentNode.bValue);
+      }
+
+      if (currentNode.cLeft) {
+        queue.push(currentNode.cLeft);
+      }
+      if (currentNode.aRight) {
+        queue.push(currentNode.aRight);
+      }
+      // console.log("result", result);
+    }
+
+    return result;
+  }
 }
 
 const prettyPrint = (node, prefix = "", isLeft = true) => {
@@ -131,13 +159,22 @@ const bst = new BinarySearchTree();
 // bst.insert(2);
 // bst.insert(7);
 // prettyPrint(bst.buildTree([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]));
-bst.buildTree([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]);
+bst.buildTree([
+  1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324, 12, 35, 56, 67, 3567, 3232,
+]);
 bst.insert(15);
 
 prettyPrint(bst.root, "prefix");
 // console.log(bst.find(4));
 
-console.log("Before deletion:", bst.find(67)); // Output: true
-bst.delete(67);
-console.log("After deletion:", bst.find(67)); // Output: false
-prettyPrint(bst.root, "prefix");
+// console.log("Before deletion:", bst.find(324)); // Output: true
+// bst.delete(324);
+// console.log("After deletion:", bst.find(324)); // Output: false
+// prettyPrint(bst.root, "prefix");
+
+// bst.levelOrder((node) => {
+//   console.log(node.bValue);
+// });
+
+const resultArray = bst.levelOrder();
+console.log(resultArray);
