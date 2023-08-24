@@ -138,6 +138,28 @@ class BinarySearchTree {
 
     return result;
   }
+
+  inorder(callback = null) {
+    const result = [];
+
+    const traverse = (node) => {
+      if (node === null) {
+        return;
+      }
+
+      traverse(node.cLeft);
+      if (callback) {
+        callback(node);
+      } else {
+        result.push(node.bValue);
+      }
+      traverse(node.aRight);
+    };
+
+    traverse(this.root);
+
+    return result;
+  }
 }
 
 const prettyPrint = (node, prefix = "", isLeft = true) => {
@@ -176,5 +198,12 @@ prettyPrint(bst.root, "prefix");
 //   console.log(node.bValue);
 // });
 
-const resultArray = bst.levelOrder();
+// const resultArray = bst.levelOrder();
+// console.log(resultArray);
+
+bst.inorder((node) => {
+  console.log(node.bValue);
+});
+
+const resultArray = bst.inorder();
 console.log(resultArray);
