@@ -160,6 +160,50 @@ class BinarySearchTree {
 
     return result;
   }
+
+  preorder(callback = null) {
+    const result = [];
+
+    const traverse = (node) => {
+      if (node === null) {
+        return;
+      }
+
+      if (callback) {
+        callback(node);
+      } else {
+        result.push(node.bValue);
+      }
+      traverse(node.cLeft);
+      traverse(node.aRight);
+    };
+
+    traverse(this.root);
+
+    return result;
+  }
+
+  postorder(callback = null) {
+    const result = [];
+
+    const traverse = (node) => {
+      if (node === null) {
+        return;
+      }
+
+      traverse(node.cLeft);
+      traverse(node.aRight);
+      if (callback) {
+        callback(node);
+      } else {
+        result.push(node.bValue);
+      }
+    };
+
+    traverse(this.root);
+
+    return result;
+  }
 }
 
 const prettyPrint = (node, prefix = "", isLeft = true) => {
@@ -201,9 +245,19 @@ prettyPrint(bst.root, "prefix");
 // const resultArray = bst.levelOrder();
 // console.log(resultArray);
 
-bst.inorder((node) => {
+// bst.inorder((node) => {
+//   console.log(node.bValue);
+// });
+
+// const resultArray = bst.inorder();
+// console.log(resultArray);
+
+// const resultArray = bst.preorder((node) => {
+//   console.log(node.bValue);
+// });
+// console.log(resultArray);
+
+const resultArray = bst.postorder((node) => {
   console.log(node.bValue);
 });
-
-const resultArray = bst.inorder();
 console.log(resultArray);
