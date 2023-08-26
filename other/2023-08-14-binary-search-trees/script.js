@@ -204,6 +204,17 @@ class BinarySearchTree {
 
     return result;
   }
+
+  height(node) {
+    if (node === null) {
+      return -1;
+    }
+
+    const leftHeight = node.cLeft ? this.height(node.cLeft) : 0;
+    const rightHeight = node.aRight ? this.height(node.aRight) : 0;
+
+    return Math.max(leftHeight, rightHeight) + 1;
+  }
 }
 
 const prettyPrint = (node, prefix = "", isLeft = true) => {
@@ -257,7 +268,10 @@ prettyPrint(bst.root, "prefix");
 // });
 // console.log(resultArray);
 
-const resultArray = bst.postorder((node) => {
-  console.log(node.bValue);
-});
-console.log(resultArray);
+// const resultArray = bst.postorder((node) => {
+//   console.log(node.bValue);
+// });
+// console.log(resultArray);
+
+const rootNodeHeight = bst.height(bst.root);
+console.log("Height of root node:", rootNodeHeight);
