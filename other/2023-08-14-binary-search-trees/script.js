@@ -3,6 +3,7 @@ class Node {
     this.bValue = value;
     this.cLeft = null;
     this.aRight = null;
+    this.aaParent = null;
   }
 }
 
@@ -24,12 +25,14 @@ class BinarySearchTree {
       if (value < currentNode.bValue) {
         if (!currentNode.cLeft) {
           currentNode.cLeft = newNode;
+          newNode.aaParent = currentNode;
           return this;
         }
         currentNode = currentNode.cLeft;
       } else {
         if (!currentNode.aRight) {
           currentNode.aRight = newNode;
+          newNode.aaParent = currentNode;
           return this;
         }
         currentNode = currentNode.aRight;
@@ -37,7 +40,6 @@ class BinarySearchTree {
     }
   }
 
-  // todo: delete(value) {
   // Helper function to find the minimum node in a subtree
   findMinNode(node) {
     while (node.cLeft !== null) {
@@ -77,7 +79,7 @@ class BinarySearchTree {
     array.sort((a, b) => a - b);
     const sortedAndDeduplicatedArray = Array.from(new Set(array));
 
-    const buildBalancedTree = (arr) => {
+    const buildBalancedTree = (arr, curNode) => {
       if (arr.length === 0) {
         return null;
       }
@@ -86,13 +88,14 @@ class BinarySearchTree {
       const middleValue = arr[middleIndex];
 
       const root = new Node(middleValue);
-      root.cLeft = buildBalancedTree(arr.slice(0, middleIndex));
-      root.aRight = buildBalancedTree(arr.slice(middleIndex + 1));
+      root.cLeft = buildBalancedTree(arr.slice(0, middleIndex), root);
+      root.aRight = buildBalancedTree(arr.slice(middleIndex + 1), root);
+      root.aaParent = curNode;
 
       return root;
     };
 
-    this.root = buildBalancedTree(sortedAndDeduplicatedArray);
+    this.root = buildBalancedTree(sortedAndDeduplicatedArray, null);
 
     return this.root;
   }
@@ -242,6 +245,7 @@ bst.buildTree([
 bst.insert(15);
 
 prettyPrint(bst.root, "prefix");
+console.log(bst);
 // console.log(bst.find(4));
 
 // console.log("Before deletion:", bst.find(324)); // Output: true
@@ -273,5 +277,6 @@ prettyPrint(bst.root, "prefix");
 // });
 // console.log(resultArray);
 
-const rootNodeHeight = bst.height(bst.root);
-console.log("Height of root node:", rootNodeHeight);
+// const rootNodeHeight = bst.height(bst.root);
+// console.log("Height of root node:", rootNodeHeight);
+
