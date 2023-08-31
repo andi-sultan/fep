@@ -218,6 +218,40 @@ class BinarySearchTree {
 
     return Math.max(leftHeight, rightHeight) + 1;
   }
+
+  depth(node) {
+    if (node === null) {
+      return -1;
+    }
+
+    return this.depth(node.aaParent) + 1;
+  }
+
+  isBalanced(node = this.root) {
+    if (node === null) {
+      return true;
+    }
+
+    const leftHeight = this.height(node.cLeft);
+    const rightHeight = this.height(node.aRight);
+
+    if (
+      Math.abs(leftHeight - rightHeight) <= 1 &&
+      this.isBalanced(node.cLeft) &&
+      this.isBalanced(node.aRight)
+    ) {
+      return true;
+    }
+
+    return false;
+  }
+
+  rebalance() {
+    if (node === null) {
+      return null;
+    }
+    // todo
+  }
 }
 
 const prettyPrint = (node, prefix = "", isLeft = true) => {
@@ -239,6 +273,9 @@ const bst = new BinarySearchTree();
 // bst.insert(2);
 // bst.insert(7);
 // prettyPrint(bst.buildTree([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]));
+// bst.buildTree([
+//   1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324, 12, 35, 56, 67, 3567, 3232,
+// ]);
 bst.buildTree([
   1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324, 12, 35, 56, 67, 3567, 3232,
 ]);
@@ -280,3 +317,9 @@ console.log(bst);
 // const rootNodeHeight = bst.height(bst.root);
 // console.log("Height of root node:", rootNodeHeight);
 
+// const someNode = bst.find(8);
+// const nodeDepth = bst.depth(someNode);
+// console.log("Depth of the node:", nodeDepth);
+
+const balanced = bst.isBalanced();
+console.log("Is the tree balanced?", balanced);
