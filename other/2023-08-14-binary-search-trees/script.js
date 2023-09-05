@@ -234,6 +234,12 @@ class BinarySearchTree {
 
     const leftHeight = this.height(node.cLeft);
     const rightHeight = this.height(node.aRight);
+    // console.log("--------------");
+    // console.log(node.cLeft);
+    // console.log(node.aRight);
+    // console.log("left-right", Math.abs(leftHeight - rightHeight));
+    // console.log("leftHeight", leftHeight);
+    // console.log("rightHeight", rightHeight);
 
     if (
       Math.abs(leftHeight - rightHeight) <= 1 &&
@@ -246,11 +252,14 @@ class BinarySearchTree {
     return false;
   }
 
-  rebalance() {
+  rebalance(node = this.node) {
     if (node === null) {
       return null;
     }
-    // todo
+
+    const dataInorder = this.inorder();
+    this.buildTree(dataInorder);
+    return this.root;
   }
 }
 
@@ -276,13 +285,16 @@ const bst = new BinarySearchTree();
 // bst.buildTree([
 //   1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324, 12, 35, 56, 67, 3567, 3232,
 // ]);
-bst.buildTree([
-  1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324, 12, 35, 56, 67, 3567, 3232,
-]);
+bst.buildTree([1, 7, 4, 23, 8, 4, 3, 12, 35, 56, 3567, 3232]);
 bst.insert(15);
+bst.insert(5);
+bst.insert(67);
+bst.insert(324);
+bst.insert(6345);
+bst.insert(9);
 
 prettyPrint(bst.root, "prefix");
-console.log(bst);
+// console.log(bst);
 // console.log(bst.find(4));
 
 // console.log("Before deletion:", bst.find(324)); // Output: true
@@ -321,5 +333,13 @@ console.log(bst);
 // const nodeDepth = bst.depth(someNode);
 // console.log("Depth of the node:", nodeDepth);
 
+// const balanced = bst.isBalanced();
+// console.log("Is the tree balanced?", balanced);
+
+const rebalance = bst.rebalance();
+console.log("Rebalance:");
+prettyPrint(bst.root, "rblnce");
 const balanced = bst.isBalanced();
+// console.log(bst);
+// bst.inorder((n)=>console.log(n.bValue))
 console.log("Is the tree balanced?", balanced);
