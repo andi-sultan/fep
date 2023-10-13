@@ -37,7 +37,7 @@ function getKnightMoves(row, col) {
 // getKnightMoves(0, 4);
 
 function knightMoves(startRow, startCol, targetRow, targetCol) {
-  debugger
+  // debugger
   const queue = [{ row: startRow, col: startCol, path: [] }];
   chessboard[startRow][startCol] = true;
 
@@ -47,7 +47,14 @@ function knightMoves(startRow, startCol, targetRow, targetCol) {
     // console.table(queue);
 
     if (row === targetRow && col === targetCol) {
-      return [...path, { row, col }];
+      // return [...path, { row, col }];
+      const moves = path.length;
+      const formattedPath = path
+        .map(({ row, col }) => `[${row},${col}]`)
+        .join("\n");
+      return `You made it in ${moves} move${
+        moves !== 1 ? "s" : ""
+      }!  Here's your path:\n${formattedPath}\n[${targetRow},${targetCol}]`;
     }
 
     let moves = getKnightMoves(row, col);
@@ -64,7 +71,8 @@ function knightMoves(startRow, startCol, targetRow, targetCol) {
     // break;
   }
   // if no path found
-  return [];
+  // return [];
+  return "No valid path found.";
 }
 
 const startRow = 0;
@@ -74,4 +82,4 @@ const targetCol = 0;
 
 const shortestPath = knightMoves(startRow, startCol, targetRow, targetCol);
 // console.log('shortestPath');
-// console.table(shortestPath);
+console.log(shortestPath);
